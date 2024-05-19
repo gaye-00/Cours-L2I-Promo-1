@@ -1,0 +1,114 @@
+<mxfile host="app.diagrams.net" modified="2024-03-07T16:07:19.702Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:123.0) Gecko/20100101 Firefox/123.0" etag="tbUY9cEbzlSM-lb3fqo4" version="24.0.0" type="device">
+  <diagram name="Page-1" id="UXTCf3chc3mtrlU5gDVZ">
+    <mxGraphModel dx="880" dy="419" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="aCDWK8gHsOvtbFuUeT-Q-32" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="50" y="80" width="790" height="670" as="geometry" />
+        </mxCell>
+        <mxCell id="aCDWK8gHsOvtbFuUeT-Q-10" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="aCDWK8gHsOvtbFuUeT-Q-32">
+          <mxGeometry y="250" width="790" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="aCDWK8gHsOvtbFuUeT-Q-1" value="&lt;b&gt;Admin&lt;/b&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="aCDWK8gHsOvtbFuUeT-Q-32">
+          <mxGeometry x="40" y="160" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="aCDWK8gHsOvtbFuUeT-Q-3" value="&lt;u&gt;&lt;b&gt;systeme UASZ&lt;/b&gt;&lt;/u&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#B3B3B3;fillColor=#B3B3B3;" vertex="1" parent="aCDWK8gHsOvtbFuUeT-Q-32">
+          <mxGeometry x="370" y="150" width="90" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="aCDWK8gHsOvtbFuUeT-Q-4" value="&lt;b&gt;Serveur&lt;/b&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="aCDWK8gHsOvtbFuUeT-Q-32">
+          <mxGeometry x="720" y="160" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="aCDWK8gHsOvtbFuUeT-Q-8" value="" style="endArrow=none;html=1;rounded=0;dashed=1;" edge="1" parent="aCDWK8gHsOvtbFuUeT-Q-32">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="420" y="670" as="sourcePoint" />
+            <mxPoint x="420" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aCDWK8gHsOvtbFuUeT-Q-9" value="" style="endArrow=none;html=1;rounded=0;dashed=1;" edge="1" parent="aCDWK8gHsOvtbFuUeT-Q-32">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="740" y="670" as="sourcePoint" />
+            <mxPoint x="740" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aCDWK8gHsOvtbFuUeT-Q-11" value="Login" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="aCDWK8gHsOvtbFuUeT-Q-32">
+          <mxGeometry y="250" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="aCDWK8gHsOvtbFuUeT-Q-7" value="" style="endArrow=none;html=1;rounded=0;dashed=1;" edge="1" parent="aCDWK8gHsOvtbFuUeT-Q-32">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="60" y="670" as="sourcePoint" />
+            <mxPoint x="60" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aCDWK8gHsOvtbFuUeT-Q-12" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="aCDWK8gHsOvtbFuUeT-Q-32">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="410" y="350" as="sourcePoint" />
+            <mxPoint x="60" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aCDWK8gHsOvtbFuUeT-Q-13" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="aCDWK8gHsOvtbFuUeT-Q-32">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="420" y="390" as="sourcePoint" />
+            <mxPoint x="730" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aCDWK8gHsOvtbFuUeT-Q-14" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="aCDWK8gHsOvtbFuUeT-Q-32">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="730" y="430" as="sourcePoint" />
+            <mxPoint x="430" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aCDWK8gHsOvtbFuUeT-Q-16" value="" style="edgeStyle=segmentEdgeStyle;endArrow=classic;html=1;curved=0;rounded=0;endSize=8;startSize=8;" edge="1" parent="aCDWK8gHsOvtbFuUeT-Q-32">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="420" y="470" as="sourcePoint" />
+            <mxPoint x="420" y="510" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="540" y="470" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aCDWK8gHsOvtbFuUeT-Q-17" value="dateActuelle&lt;br&gt; -&lt;br&gt;dateExpiration&lt;br&gt;&amp;lt; 15" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;" vertex="1" parent="aCDWK8gHsOvtbFuUeT-Q-32">
+          <mxGeometry x="600" y="450" width="100" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="aCDWK8gHsOvtbFuUeT-Q-19" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="aCDWK8gHsOvtbFuUeT-Q-32">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="410" y="630" as="sourcePoint" />
+            <mxPoint x="70" y="630" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aCDWK8gHsOvtbFuUeT-Q-22" value="Ouverture d&#39;une session" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="aCDWK8gHsOvtbFuUeT-Q-32">
+          <mxGeometry x="170" y="320" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="aCDWK8gHsOvtbFuUeT-Q-23" value="Requette des données de la licence" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="aCDWK8gHsOvtbFuUeT-Q-32">
+          <mxGeometry x="475" y="358" width="210" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="aCDWK8gHsOvtbFuUeT-Q-24" value="Recuperation des données de la licence" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="aCDWK8gHsOvtbFuUeT-Q-32">
+          <mxGeometry x="460" y="400" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="aCDWK8gHsOvtbFuUeT-Q-25" value="Verification date d&#39;expiration" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="aCDWK8gHsOvtbFuUeT-Q-32">
+          <mxGeometry x="420" y="440" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="aCDWK8gHsOvtbFuUeT-Q-26" value="Generation d&#39;alerte" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="aCDWK8gHsOvtbFuUeT-Q-32">
+          <mxGeometry x="170" y="520" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="aCDWK8gHsOvtbFuUeT-Q-27" value="Garder la session ouverte" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="aCDWK8gHsOvtbFuUeT-Q-32">
+          <mxGeometry x="145" y="598" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="aCDWK8gHsOvtbFuUeT-Q-28" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="aCDWK8gHsOvtbFuUeT-Q-32">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="420" y="550" as="sourcePoint" />
+            <mxPoint x="70" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aCDWK8gHsOvtbFuUeT-Q-29" value="" style="shape=message;html=1;outlineConnect=0;" vertex="1" parent="aCDWK8gHsOvtbFuUeT-Q-28">
+          <mxGeometry width="20" height="14" relative="1" as="geometry">
+            <mxPoint x="-10" y="-7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aCDWK8gHsOvtbFuUeT-Q-31" value="UC : Declancher alerte&lt;br&gt;Bus : Declancher une alerte automatique au cas ou la licence arrive à expiration&lt;br&gt;Scénario nominal &lt;br&gt;&lt;div&gt;Pres Condition : DateActuelle - DateExpiration &amp;lt; 15&lt;/div&gt;&lt;div&gt;Post Condition : La session reste ouverte&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;" vertex="1" parent="aCDWK8gHsOvtbFuUeT-Q-32">
+          <mxGeometry x="130" width="570" height="110" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
