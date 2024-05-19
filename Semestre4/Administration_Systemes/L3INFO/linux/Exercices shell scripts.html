@@ -1,0 +1,1632 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LI-A-1 -->
+<html lang="fr" xmlns:og="http://ogp.me/ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>Exercices shell scripts</title>
+	<link rel="canonical" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/">
+	<meta name="generator" content="developpez-com">
+	<meta name="description" content="Liste d&#39;exercices résolus en shell scripts Bash">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Exercices shell scripts">
+	<meta property="og:image" content="https://www.developpez.com/template/images/logo.png">
+	<meta property="og:url" content="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/">
+	<meta property="og:locale" content="fr_FR">
+	<meta property="og:site_name" content="Developpez.com">
+	<meta property="twitter:card" content="summary">
+	<meta property="twitter:url" content="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/">
+	<meta property="twitter:description" content="Liste d&#39;exercices résolus en shell scripts Bash">
+	<meta property="twitter:title" content="Exercices shell scripts">
+	<meta property="twitter:image" content="https://www.developpez.com/template/images/logo.png">
+	<script src="./Exercices shell scripts_files/rules-p-6Fv0cGNfc_bw8.js.téléchargement" async=""></script><script type="text/javascript" async="" src="./Exercices shell scripts_files/ga.js.téléchargement"></script><script src="./Exercices shell scripts_files/quant.js.téléchargement" async="" type="text/javascript"></script><script async="" type="text/javascript" src="./Exercices shell scripts_files/cmp2.js.téléchargement"></script><script async="" type="text/javascript" src="./Exercices shell scripts_files/choice.js.téléchargement"></script><script type="text/javascript" src="./Exercices shell scripts_files/jquery-3.4.1.js.téléchargement"></script>
+	<script type="text/javascript" src="./Exercices shell scripts_files/popper.js.téléchargement"></script>
+	<script type="text/javascript" src="./Exercices shell scripts_files/bootstrap.bundle.min.js.téléchargement"></script>
+	<script type="text/javascript" src="./Exercices shell scripts_files/bootstrap.js.téléchargement"></script>
+	<link rel="stylesheet" href="./Exercices shell scripts_files/bootstrap.css">
+	<link rel="stylesheet" href="./Exercices shell scripts_files/bootstrap-social.css">
+	<link rel="stylesheet" href="./Exercices shell scripts_files/all.min.css">
+	<link rel="stylesheet" href="./Exercices shell scripts_files/fontawesome.min.css">
+	<script async="" type="text/javascript" src="./Exercices shell scripts_files/saved_resource"></script>
+<!-- Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+<script type="text/javascript" async="true">
+(function() {
+var host = "www.developpez.com";
+var element = document.createElement('script');
+var firstScript = document.getElementsByTagName('script')[0];
+var url = 'https://quantcast.mgr.consensu.org'
+.concat('/choice/', '6Fv0cGNfc_bw8', '/', host, '/choice.js')
+var uspTries = 0;
+var uspTriesLimit = 3;
+element.async = true;
+element.type = 'text/javascript';
+element.src = url;
+
+firstScript.parentNode.insertBefore(element, firstScript);
+
+function makeStub() {
+var TCF_LOCATOR_NAME = '__tcfapiLocator';
+var queue = [];
+var win = window;
+var cmpFrame;
+
+function addFrame() {
+var doc = win.document;
+var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+
+if (!otherCMP) {
+if (doc.body) {
+var iframe = doc.createElement('iframe');
+
+iframe.style.cssText = 'display:none';
+iframe.name = TCF_LOCATOR_NAME;
+doc.body.appendChild(iframe);
+} else {
+setTimeout(addFrame, 5);
+}
+}
+return !otherCMP;
+}
+
+function tcfAPIHandler() {
+var gdprApplies;
+var args = arguments;
+
+if (!args.length) {
+return queue;
+} else if (args[0] === 'setGdprApplies') {
+if (
+args.length > 3 &&
+args[2] === 2 &&
+typeof args[3] === 'boolean'
+) {
+gdprApplies = args[3];
+if (typeof args[2] === 'function') {
+args[2]('set', true);
+}
+}
+} else if (args[0] === 'ping') {
+var retr = {
+gdprApplies: gdprApplies,
+cmpLoaded: false,
+cmpStatus: 'stub'
+};
+
+if (typeof args[2] === 'function') {
+args[2](retr);
+}
+} else {
+queue.push(args);
+}
+}
+
+function postMessageEventHandler(event) {
+var msgIsString = typeof event.data === 'string';
+var json = {};
+
+try {
+if (msgIsString) {
+json = JSON.parse(event.data);
+} else {
+json = event.data;
+}
+} catch (ignore) {}
+
+var payload = json.__tcfapiCall;
+
+if (payload) {
+window.__tcfapi(
+payload.command,
+payload.version,
+function(retValue, success) {
+var returnMsg = {
+tcfapiReturn: {
+returnValue: retValue,
+success: success,
+callId: payload.callId
+}
+};
+if (msgIsString) {
+returnMsg = JSON.stringify(returnMsg);
+}
+if (event && event.source && event.source.postMessage) {
+event.source.postMessage(returnMsg, '*');
+}
+},
+payload.parameter
+);
+}
+}
+
+while (win) {
+try {
+if (win.frames[TCF_LOCATOR_NAME]) {
+cmpFrame = win;
+break;
+}
+} catch (ignore) {}
+
+if (win === window.top) {
+break;
+}
+win = win.parent;
+}
+if (!cmpFrame) {
+addFrame();
+win.__tcfapi = tcfAPIHandler;
+win.addEventListener('message', postMessageEventHandler, false);
+}
+};
+
+makeStub();
+
+var uspStubFunction = function() {
+var arg = arguments;
+if (typeof window.__uspapi !== uspStubFunction) {
+setTimeout(function() {
+if (typeof window.__uspapi !== 'undefined') {
+window.__uspapi.apply(window.__uspapi, arg);
+}
+}, 500);
+}
+};
+
+var checkIfUspIsReady = function() {
+uspTries++;
+if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+console.warn('USP is not accessible');
+} else {
+clearInterval(uspInterval);
+}
+};
+
+if (typeof window.__uspapi === 'undefined') {
+window.__uspapi = uspStubFunction;
+var uspInterval = setInterval(checkIfUspIsReady, 6000);
+}
+})();
+</script>
+<!-- End Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->	<script async="async" src="./Exercices shell scripts_files/gpt.js.téléchargement"></script>
+	<script>
+		var googletag = googletag || {};
+		googletag.cmd = googletag.cmd || [];
+	</script>
+	<script async="" src="./Exercices shell scripts_files/f.txt"></script>
+	<link rel="shortcut icon" type="image/x-icon" href="https://ineumann.developpez.com/template/favicon.ico">
+	<link rel="image_src" href="https://www.developpez.com/facebook-icon.png">
+	<link rel="stylesheet" type="text/css" href="./Exercices shell scripts_files/gabarit.css">
+	<link rel="stylesheet" type="text/css" media="print" href="./Exercices shell scripts_files/printer.css">
+	<script type="text/javascript" src="./Exercices shell scripts_files/gabarit.js.téléchargement"></script>
+	<link rel="stylesheet" type="text/css" media="screen" href="./Exercices shell scripts_files/developpez-kit-generation.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="./Exercices shell scripts_files/code.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="./Exercices shell scripts_files/lightbox.css">
+	<script type="text/javascript" src="./Exercices shell scripts_files/developpez-kit-generation.js.téléchargement"></script>
+	<script type="text/javascript" src="./Exercices shell scripts_files/lightbox.js.téléchargement"></script>
+	<script type="text/javascript" src="./Exercices shell scripts_files/fonctions-kit.js.téléchargement"></script>
+	<meta name="author" content="Idriss NEUMANN">
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="/template/kit/html5_ie.js"></script>
+	<![endif]-->
+	<!--[if IE 9]><link rel="stylesheet" type="text/css" href="/template/kit/ie9.css" /><![endif]-->
+	<!--[if IE 8]><link rel="stylesheet" type="text/css" href="/template/kit/ie8.css" /><![endif]-->
+	<!--[if lt IE 9]><link rel="stylesheet" type="text/css" href="/template/kit/ie.css" /><![endif]-->
+	<!--[if IE 7]><link rel="stylesheet" type="text/css" href="/template/kit/ie7.css" /><![endif]-->
+	<!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="/template/kit/ie6.css" /><![endif]-->
+	<!--[if lt IE 9]><script type="text/javascript" src="/template/kit/html5_ie.js"></script><![endif]-->
+
+<style type="text/css">.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3npS60y-EvfF7G_lioSx2Q{display:block!important;border:1px solid #cdcfd2!important;background-color:#fff!important;color:#373a3d!important;width:100vw!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3npS60y-EvfF7G_lioSx2Q .IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-24GeGuJgk9LrMLp7qVvlyz{background:#6a7e89!important;color:#fff!important;padding:10px!important;font-size:18px!important;font-family:sans-serif!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3npS60y-EvfF7G_lioSx2Q .IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-KVjdulkCFfUZps29EbgAC{background:#f3f6f8!important;border-bottom:1px solid #cdcfd2!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3npS60y-EvfF7G_lioSx2Q .IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-KVjdulkCFfUZps29EbgAC>*{margin-right:10px!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3npS60y-EvfF7G_lioSx2Q .IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1OeZ2PQ98oAp6Vc5mMc6V5{list-style:none!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3npS60y-EvfF7G_lioSx2Q .IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-vCwYmWF_l83ScZBrGnRoi,.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3npS60y-EvfF7G_lioSx2Q .IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1OeZ2PQ98oAp6Vc5mMc6V5{margin:0!important;padding:0!important;width:100%!important;display:block!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3npS60y-EvfF7G_lioSx2Q .IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-vCwYmWF_l83ScZBrGnRoi:not(:last-child){border-bottom:1px solid #cdcfd2!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3npS60y-EvfF7G_lioSx2Q .IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1XQZkb-FlHWABUp4_uShaZ{color:inherit!important;cursor:pointer!important;width:100%!important;display:inline-block!important;margin:10px!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3npS60y-EvfF7G_lioSx2Q .IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1XTzMvb2XKitWz0mFLlyyp{margin:5px!important;display:block!important;width:auto!important;white-space:pre!important;overflow-x:scroll!important;background:inherit!important;color:inherit!important;font-family:monospace}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3npS60y-EvfF7G_lioSx2Q .IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1XTzMvb2XKitWz0mFLlyyp:not(.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-39QUvFFn5B7GMcqMQkOXZ3){display:none!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3npS60y-EvfF7G_lioSx2Q .IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-295DY3nO0DbJWMsOqmjCli{background:#f5f5f5!important;color:#5a5a5a!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3npS60y-EvfF7G_lioSx2Q.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1aQZwu6CUzAf2zUcI7tg0Q .IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-295DY3nO0DbJWMsOqmjCli{display:none!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3npS60y-EvfF7G_lioSx2Q .IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-38EPFyKXMtoP12rPlmrHxs{background:#e6f7ff!important;color:#006097!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3npS60y-EvfF7G_lioSx2Q.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3W4ZnQjhoGfT1gTNcqRXdi .IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-38EPFyKXMtoP12rPlmrHxs{display:none!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3npS60y-EvfF7G_lioSx2Q .IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-HGYnfzlmgOZ-l7eANhQe_{background:#fff3ea!important;color:#993a00!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3npS60y-EvfF7G_lioSx2Q.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-24e52A11B1UIErbKHtBmqc .IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-HGYnfzlmgOZ-l7eANhQe_{display:none!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3npS60y-EvfF7G_lioSx2Q .IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-jji74ZzulHScD0OAD_G7h{background:#fef2f1!important;color:#b10823!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3npS60y-EvfF7G_lioSx2Q.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-28jAOA7cDee-95LvwGsOP- .IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-jji74ZzulHScD0OAD_G7h{display:none!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu{background-color:#0073b1!important;border:0!important;border-radius:2px!important;box-sizing:border-box!important;color:#fff!important;cursor:pointer!important;display:inline-block!important;font-family:-apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Fira Sans,Ubuntu,Oxygen,Oxygen Sans,Cantarell,Droid Sans,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Lucida Grande,Helvetica,Arial,sans-serif!important;font-weight:600!important;overflow:hidden!important;outline-width:2px!important;position:relative!important;text-align:center!important;text-decoration:none!important;vertical-align:middle!important;white-space:nowrap!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu:disabled{cursor:not-allowed!important;opacity:.7!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu:not(:disabled):not(.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1zhzkayakwEXovVYUbq5Gy):hover{background-color:#006097!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu:not(:disabled):not(.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1zhzkayakwEXovVYUbq5Gy):active{background-color:#004b7c!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1zhzkayakwEXovVYUbq5Gy{background-color:#fff!important;color:#0073b1!important;box-shadow:inset 0 0 0 1px rgba(0,0,0,.3)!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1zhzkayakwEXovVYUbq5Gy:not(:disabled):hover{color:#006097!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1zhzkayakwEXovVYUbq5Gy:not(:disabled):active{color:#004b7c!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu>xdoor-icon{display:inline-block!important;height:100%!important;vertical-align:top!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu>xdoor-icon>svg{pointer-events:none!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-7inSbaAsvG5bf7w6lJTEr{font-size:10px!important;height:16px!important;line-height:16px!important;padding:0 6px!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-7inSbaAsvG5bf7w6lJTEr>xdoor-icon{margin-left:-6px!important;margin-right:3px!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-7inSbaAsvG5bf7w6lJTEr>xdoor-icon>svg{height:16px!important;width:16px!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-7inSbaAsvG5bf7w6lJTEr.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-2lrEjt4SOTxqrYsv1piG4c>xdoor-icon{margin-right:-6px!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu,.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3uCBSbQNVNf2QjqHe1rfb6{font-size:11px!important;height:20px!important;line-height:20px!important;padding:0 7px!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3uCBSbQNVNf2QjqHe1rfb6>xdoor-icon,.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu>xdoor-icon{margin-left:-7px!important;margin-right:3.5px!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3uCBSbQNVNf2QjqHe1rfb6>xdoor-icon>svg,.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu>xdoor-icon>svg{height:20px!important;width:20px!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3uCBSbQNVNf2QjqHe1rfb6.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-2lrEjt4SOTxqrYsv1piG4c>xdoor-icon,.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-2lrEjt4SOTxqrYsv1piG4c>xdoor-icon{margin-right:-7px!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-21Smv9YG-5V6M6KP-5v2WG{font-size:14px!important;height:24px!important;line-height:24px!important;padding:0 12px!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-21Smv9YG-5V6M6KP-5v2WG>xdoor-icon{margin-left:-12px!important;margin-right:6px!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-21Smv9YG-5V6M6KP-5v2WG>xdoor-icon>svg{height:24px!important;width:24px!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-21Smv9YG-5V6M6KP-5v2WG.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-2lrEjt4SOTxqrYsv1piG4c>xdoor-icon{margin-right:-12px!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1TGdQUTLZdNG4R87OfAB-q{font-size:16px!important;height:32px!important;line-height:32px!important;padding:0 16px!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1TGdQUTLZdNG4R87OfAB-q>xdoor-icon{margin-left:-16px!important;margin-right:8px!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1TGdQUTLZdNG4R87OfAB-q>xdoor-icon>svg{height:32px!important;width:32px!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1TGdQUTLZdNG4R87OfAB-q.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-2lrEjt4SOTxqrYsv1piG4c>xdoor-icon{margin-right:-16px!important}</style><style type="text/css">.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3npS60y-EvfF7G_lioSx2Q{display:block!important;border:1px solid #cdcfd2!important;background-color:#fff!important;color:#373a3d!important;width:100vw!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3npS60y-EvfF7G_lioSx2Q .IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-24GeGuJgk9LrMLp7qVvlyz{background:#6a7e89!important;color:#fff!important;padding:10px!important;font-size:18px!important;font-family:sans-serif!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3npS60y-EvfF7G_lioSx2Q .IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-KVjdulkCFfUZps29EbgAC{background:#f3f6f8!important;border-bottom:1px solid #cdcfd2!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3npS60y-EvfF7G_lioSx2Q .IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-KVjdulkCFfUZps29EbgAC>*{margin-right:10px!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3npS60y-EvfF7G_lioSx2Q .IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1OeZ2PQ98oAp6Vc5mMc6V5{list-style:none!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3npS60y-EvfF7G_lioSx2Q .IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-vCwYmWF_l83ScZBrGnRoi,.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3npS60y-EvfF7G_lioSx2Q .IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1OeZ2PQ98oAp6Vc5mMc6V5{margin:0!important;padding:0!important;width:100%!important;display:block!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3npS60y-EvfF7G_lioSx2Q .IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-vCwYmWF_l83ScZBrGnRoi:not(:last-child){border-bottom:1px solid #cdcfd2!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3npS60y-EvfF7G_lioSx2Q .IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1XQZkb-FlHWABUp4_uShaZ{color:inherit!important;cursor:pointer!important;width:100%!important;display:inline-block!important;margin:10px!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3npS60y-EvfF7G_lioSx2Q .IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1XTzMvb2XKitWz0mFLlyyp{margin:5px!important;display:block!important;width:auto!important;white-space:pre!important;overflow-x:scroll!important;background:inherit!important;color:inherit!important;font-family:monospace}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3npS60y-EvfF7G_lioSx2Q .IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1XTzMvb2XKitWz0mFLlyyp:not(.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-39QUvFFn5B7GMcqMQkOXZ3){display:none!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3npS60y-EvfF7G_lioSx2Q .IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-295DY3nO0DbJWMsOqmjCli{background:#f5f5f5!important;color:#5a5a5a!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3npS60y-EvfF7G_lioSx2Q.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1aQZwu6CUzAf2zUcI7tg0Q .IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-295DY3nO0DbJWMsOqmjCli{display:none!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3npS60y-EvfF7G_lioSx2Q .IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-38EPFyKXMtoP12rPlmrHxs{background:#e6f7ff!important;color:#006097!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3npS60y-EvfF7G_lioSx2Q.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3W4ZnQjhoGfT1gTNcqRXdi .IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-38EPFyKXMtoP12rPlmrHxs{display:none!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3npS60y-EvfF7G_lioSx2Q .IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-HGYnfzlmgOZ-l7eANhQe_{background:#fff3ea!important;color:#993a00!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3npS60y-EvfF7G_lioSx2Q.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-24e52A11B1UIErbKHtBmqc .IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-HGYnfzlmgOZ-l7eANhQe_{display:none!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3npS60y-EvfF7G_lioSx2Q .IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-jji74ZzulHScD0OAD_G7h{background:#fef2f1!important;color:#b10823!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3npS60y-EvfF7G_lioSx2Q.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-28jAOA7cDee-95LvwGsOP- .IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-jji74ZzulHScD0OAD_G7h{display:none!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu{background-color:#0073b1!important;border:0!important;border-radius:2px!important;box-sizing:border-box!important;color:#fff!important;cursor:pointer!important;display:inline-block!important;font-family:-apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Fira Sans,Ubuntu,Oxygen,Oxygen Sans,Cantarell,Droid Sans,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Lucida Grande,Helvetica,Arial,sans-serif!important;font-weight:600!important;overflow:hidden!important;outline-width:2px!important;position:relative!important;text-align:center!important;text-decoration:none!important;vertical-align:middle!important;white-space:nowrap!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu:disabled{cursor:not-allowed!important;opacity:.7!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu:not(:disabled):not(.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1zhzkayakwEXovVYUbq5Gy):hover{background-color:#006097!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu:not(:disabled):not(.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1zhzkayakwEXovVYUbq5Gy):active{background-color:#004b7c!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1zhzkayakwEXovVYUbq5Gy{background-color:#fff!important;color:#0073b1!important;box-shadow:inset 0 0 0 1px rgba(0,0,0,.3)!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1zhzkayakwEXovVYUbq5Gy:not(:disabled):hover{color:#006097!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1zhzkayakwEXovVYUbq5Gy:not(:disabled):active{color:#004b7c!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu>xdoor-icon{display:inline-block!important;height:100%!important;vertical-align:top!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu>xdoor-icon>svg{pointer-events:none!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-7inSbaAsvG5bf7w6lJTEr{font-size:10px!important;height:16px!important;line-height:16px!important;padding:0 6px!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-7inSbaAsvG5bf7w6lJTEr>xdoor-icon{margin-left:-6px!important;margin-right:3px!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-7inSbaAsvG5bf7w6lJTEr>xdoor-icon>svg{height:16px!important;width:16px!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-7inSbaAsvG5bf7w6lJTEr.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-2lrEjt4SOTxqrYsv1piG4c>xdoor-icon{margin-right:-6px!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu,.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3uCBSbQNVNf2QjqHe1rfb6{font-size:11px!important;height:20px!important;line-height:20px!important;padding:0 7px!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3uCBSbQNVNf2QjqHe1rfb6>xdoor-icon,.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu>xdoor-icon{margin-left:-7px!important;margin-right:3.5px!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3uCBSbQNVNf2QjqHe1rfb6>xdoor-icon>svg,.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu>xdoor-icon>svg{height:20px!important;width:20px!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-3uCBSbQNVNf2QjqHe1rfb6.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-2lrEjt4SOTxqrYsv1piG4c>xdoor-icon,.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-2lrEjt4SOTxqrYsv1piG4c>xdoor-icon{margin-right:-7px!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-21Smv9YG-5V6M6KP-5v2WG{font-size:14px!important;height:24px!important;line-height:24px!important;padding:0 12px!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-21Smv9YG-5V6M6KP-5v2WG>xdoor-icon{margin-left:-12px!important;margin-right:6px!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-21Smv9YG-5V6M6KP-5v2WG>xdoor-icon>svg{height:24px!important;width:24px!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-21Smv9YG-5V6M6KP-5v2WG.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-2lrEjt4SOTxqrYsv1piG4c>xdoor-icon{margin-right:-12px!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1TGdQUTLZdNG4R87OfAB-q{font-size:16px!important;height:32px!important;line-height:32px!important;padding:0 16px!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1TGdQUTLZdNG4R87OfAB-q>xdoor-icon{margin-left:-16px!important;margin-right:8px!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1TGdQUTLZdNG4R87OfAB-q>xdoor-icon>svg{height:32px!important;width:32px!important}.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1TGdQUTLZdNG4R87OfAB-q.IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-2lrEjt4SOTxqrYsv1piG4c>xdoor-icon{margin-right:-16px!important}</style><meta http-equiv="origin-trial" content="A+b/H0b8RPXNaJgaNFpO0YOFuGK6myDQXlwnJB3SwzvNMfcndat4DZYMrP4ClJIzYWo3/yP2S+8FTZ/lpqbPAAEAAABueyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzVGhpcmRQYXJ0eSI6dHJ1ZX0="><meta http-equiv="origin-trial" content="A9ZgbRtm4pU3oZiuNzOsKcC8ppFSZdcjP2qYcdQrFKVzkmiWH1kdYY1Mi9x7G8+PS8HV9Ha9Cz0gaMdKsiVZIgMAAAB7eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AxL6oBxcpn5rQDPKSAs+d0oxNyJYq2/4esBUh3Yx5z8QfcLu+AU8iFCXYRcr/CEEfDnkxxLTsvXPJFQBxHfvkgMAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A9KPtG5kl3oLTk21xqynDPGQ5t18bSOpwt0w6kGa6dEWbuwjpffmdUpR3W+faZDubGT+KIk2do0BX2ca16x8qAcAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A3HucHUo1oW9s+9kIKz8mLkbcmdaj5lxt3eiIMp1Nh49dkkBlg1Fhg4Fd/r0vL69mRRA36YutI9P/lJUfL8csQoAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A0OysezhLoCRYomumeYlubLurZTCmsjTb087OvtCy95jNM65cfEsbajrJnhaGwiTxhz38ZZbm+UhUwQuXfVPTg0AAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="AxoOxdZQmIoA1WeAPDixRAeWDdgs7ZtVFfH2y19ziTgD1iaHE5ZGz2UdSjubkWvob9C5PrjUfkWi4ZSLgWk3Xg8AAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A7+rMYR5onPnACrz+niKSeFdH3xw1IyHo2AZSHmxrofRk9w4HcQPMYcpBUKu6OQ6zsdxf4m/vqa6tG6Na4OLpAQAAAB4eyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AwfG8hAcHnPa/kJ1Co0EvG/K0F9l1s2JZGiDLt2mhC3QI5Fh4qmsmSwrWObZFbRC9ieDaSLU6lHRxhGUF/i9sgoAAACBeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AwQ7dCmHkvR6FuOFxAuNnktYSQrGbL4dF+eBkrwNLALc69Wr//PnO1yzns3pjUoCaYbKHtVcnng2hU+8OUm0PAYAAACHeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AysVDPGQTLD/Scn78x4mLwB1tMfje5jwUpAAzGRpWsr1NzoN7MTFhT3ClmImi2svDZA7V6nWGIV8YTPsSRTe0wYAAACHeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><script src="./Exercices shell scripts_files/pubads_impl_2021060901.js.téléchargement" async=""></script><meta http-equiv="origin-trial" content="A+b/H0b8RPXNaJgaNFpO0YOFuGK6myDQXlwnJB3SwzvNMfcndat4DZYMrP4ClJIzYWo3/yP2S+8FTZ/lpqbPAAEAAABueyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzVGhpcmRQYXJ0eSI6dHJ1ZX0="><meta http-equiv="origin-trial" content="A9ZgbRtm4pU3oZiuNzOsKcC8ppFSZdcjP2qYcdQrFKVzkmiWH1kdYY1Mi9x7G8+PS8HV9Ha9Cz0gaMdKsiVZIgMAAAB7eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AxL6oBxcpn5rQDPKSAs+d0oxNyJYq2/4esBUh3Yx5z8QfcLu+AU8iFCXYRcr/CEEfDnkxxLTsvXPJFQBxHfvkgMAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A9KPtG5kl3oLTk21xqynDPGQ5t18bSOpwt0w6kGa6dEWbuwjpffmdUpR3W+faZDubGT+KIk2do0BX2ca16x8qAcAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AookgM0K6zABiuRTZwpn+R95G2CKmUH/2+zf2kS/QpMlVZ6HTI6QekeLkrJyxeIi62p2ejcQTF464pkdlx0Nwg0AAABmeyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJUcnVzdFRva2VucyIsImV4cGlyeSI6MTYzNDA4MzE5OSwiaXNTdWJkb21haW4iOnRydWV9"><meta http-equiv="origin-trial" content="A3HucHUo1oW9s+9kIKz8mLkbcmdaj5lxt3eiIMp1Nh49dkkBlg1Fhg4Fd/r0vL69mRRA36YutI9P/lJUfL8csQoAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A0OysezhLoCRYomumeYlubLurZTCmsjTb087OvtCy95jNM65cfEsbajrJnhaGwiTxhz38ZZbm+UhUwQuXfVPTg0AAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="AxoOxdZQmIoA1WeAPDixRAeWDdgs7ZtVFfH2y19ziTgD1iaHE5ZGz2UdSjubkWvob9C5PrjUfkWi4ZSLgWk3Xg8AAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A7+rMYR5onPnACrz+niKSeFdH3xw1IyHo2AZSHmxrofRk9w4HcQPMYcpBUKu6OQ6zsdxf4m/vqa6tG6Na4OLpAQAAAB4eyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AwfG8hAcHnPa/kJ1Co0EvG/K0F9l1s2JZGiDLt2mhC3QI5Fh4qmsmSwrWObZFbRC9ieDaSLU6lHRxhGUF/i9sgoAAACBeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AwQ7dCmHkvR6FuOFxAuNnktYSQrGbL4dF+eBkrwNLALc69Wr//PnO1yzns3pjUoCaYbKHtVcnng2hU+8OUm0PAYAAACHeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AysVDPGQTLD/Scn78x4mLwB1tMfje5jwUpAAzGRpWsr1NzoN7MTFhT3ClmImi2svDZA7V6nWGIV8YTPsSRTe0wYAAACHeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><style type="text/css"> .qc-cmp-button.qc-cmp-secondary-button:hover {    background-color: #368bd6 !important;    border-color: transparent !important;  }  .qc-cmp-button.qc-cmp-secondary-button:hover {    color: #ffffff !important;  }  .qc-cmp-button.qc-cmp-secondary-button {    color: #368bd6 !important;  }  .qc-cmp-button.qc-cmp-secondary-button {    background-color: #eee !important;    border-color: transparent !important;  } </style><script type="text/javascript" id="__tcfapiuiscript" src="./Exercices shell scripts_files/cmp2ui-fr.js.téléchargement"></script><style qc-data-emotion="css-global" data-s=""></style><style qc-data-emotion="css" data-s=""></style></head>
+<body><div class="qc-cmp2-container" id="qc-cmp2-container"><div class="qc-cmp2-main" id="qc-cmp2-main"></div></div>
+	<header>
+
+	<div id="gabarit_b1">
+		<div id="gabarit_connexion" style="display: none;">
+	<form>
+		<div><span>Identifiant</span><input type="text" class="form_input form-control" id="formloginConnexion"><span>Mot de passe</span><input type="password" class="form_input form-control" id="formpassConnexion"><input type="button" value="Connexion" id="formbuttonConnexion" class="btn btn-primary"><div id="loadingConnexion" class="spinner-border text-light" role="status"><span class="sr-only">Loading...</span></div></div><a id="mdpoublier" href="http://www.developpez.net/forums/login.php?do=lostpw">Mot de passe oublié ?</a><a id="inscriptionConnexion" href="https://www.developpez.net/forums/inscription/" class="btn btn-primary">Je m'inscris ! (gratuit)</a>	
+	</form>
+</div>		<div id="gabarit-barreRecherche" style="display:none;"><form action="https://www.google.fr/" target="_blank">
+  <div>
+    <input type="hidden" name="cx" value="partner-pub-8110924381468607:6449306375">
+    <input type="hidden" name="ie" value="UTF-8">
+    <input type="text" name="q" size="12">
+    <input type="submit" name="sa" value="Rechercher">
+  </div>
+</form></div>
+<div id="gabarit-new-logo" role="gabarit-accueil" style="width: 200px;">
+	<a href="https://www.developpez.com/"><img src="./Exercices shell scripts_files/logo-dvp-h55.png" width="48" height="55"></a>
+	<a href="https://www.developpez.com/"><span class="dvp"></span></a>
+	<span class="triangle"></span>
+</div>
+<div id="gabarit_recherche">
+	<div class="gabarit-btn-menu profil" role="gabarit-profil"></div>
+	<div class="gabarit-btn-menu profil dn" role="gabarit-connecter"><span></span><a id="gabaritRepereLogout" class="btn btn-primary"></a></div>
+	<div class="gabarit-btn-menu contacts" role="gabarit-contacts"></div>
+	<div class="gabarit-btn-menu recherche" role="gabarit-recherche"></div>
+</div>
+
+<div id="gabarit_superieur">
+	<nav>
+	<ul>
+		<li><a href="https://www.developpez.net/forums/" title="">Forums</a></li>
+		<li><a href="https://general.developpez.com/cours/" title="">Tutoriels</a></li>
+		<li><a href="https://general.developpez.com/faq/" title="">FAQ</a></li>
+		<li><a href="https://www.developpez.net/forums/blogs/" title="">Blogs</a></li>
+		<li><a href="https://chat.developpez.com/" title="">Chat</a></li>
+		<li><a href="https://www.developpez.com/newsletter/">Newsletter</a></li>
+		<li><a href="https://emploi.developpez.com/" title="">Emploi</a></li>
+		<li><a href="https://etudes.developpez.com/">Études</a></li>
+		<li><a href="https://droit.developpez.com/" title="">Droit</a></li>
+		<li><a href="https://club.developpez.com/">Club</a></li>
+	</ul>
+	</nav>
+</div>	</div>
+	<nav>
+
+<ul id="gabarit_menu" style="padding-left:56px;">
+	<li><a href="https://www.developpez.com/" data-idrub="1" data-niv="1" style="padding:0;"><div id="gabarit_home"></div></a>
+			</li>
+	<li><a href="https://solutions-entreprise.developpez.com/" data-idrub="86" data-niv="1">DI/DSI Solutions d'entreprise<!----></a>
+			<ul class="gabarit_sousmenu">
+				<li><a href="https://solutions-entreprise.developpez.com/" data-idrub="86" data-niv="2">DI/DSI Solutions d'entreprise</a></li>
+				<li><a href="https://abbyy.developpez.com/" data-idrub="147" data-niv="2">ABBYY</a></li>
+				<li><a href="https://big-data.developpez.com/" data-idrub="126" data-niv="2">Big Data</a></li>
+				<li><a href="https://bpm.developpez.com/" data-idrub="134" data-niv="2">BPM</a></li>
+				<li><a href="https://business-intelligence.developpez.com/" data-idrub="61" data-niv="2">Business Intelligence</a></li>
+				<li><a href="https://data-science.developpez.com/" data-idrub="151" data-niv="2">Data Science</a></li>
+				<li><a href="https://solutions-entreprise.developpez.com/erp-pgi/presentation-erp-pgi/" data-idrub="91" data-niv="2">ERP / PGI</a></li>
+				<li><a href="https://crm.developpez.com/" data-idrub="92" data-niv="2">CRM</a></li>
+				<li><a href="https://sas.developpez.com/" data-idrub="93" data-niv="2">SAS</a></li>
+				<li><a href="https://sap.developpez.com/" data-idrub="106" data-niv="2">SAP</a></li>
+				<li><a href="https://www.developpez.net/forums/f1664/systemes/windows/windows-serveur/biztalk-server/" data-idrub="115" data-niv="2">Microsoft BizTalk Server</a></li>
+				<li><a href="https://talend.developpez.com/" data-idrub="118" data-niv="2">Talend</a></li>
+				<li><a href="https://droit.developpez.com/" data-idrub="132" data-niv="2">Droit informatique et entreprise</a></li>
+			</ul></li>
+	<li><a href="https://cloud-computing.developpez.com/" data-idrub="103" data-niv="1">Cloud<!----></a>
+			<ul class="gabarit_sousmenu">
+				<li><a href="https://cloud-computing.developpez.com/" data-idrub="103" data-niv="2">Cloud Computing</a></li>
+				<li><a href="https://windows-azure.developpez.com/" data-idrub="107" data-niv="2">Microsoft Azure</a></li>
+				<li><a href="https://ibmcloud.developpez.com/" data-idrub="135" data-niv="2">IBM Cloud</a></li>
+			</ul></li>
+	<li><a href="https://intelligence-artificielle.developpez.com/" data-idrub="143" data-niv="1">IA<!----></a>
+			<ul class="gabarit_sousmenu">
+				<li><a href="https://intelligence-artificielle.developpez.com/" data-idrub="143" data-niv="2">Intelligence artificielle</a></li>
+			</ul></li>
+	<li><a href="https://alm.developpez.com/" data-idrub="42" data-niv="1">ALM<!--<span class="gabarit_tooltip">Cycle de vie du logiciel</span>--></a>
+			<ul class="gabarit_sousmenu">
+				<li><a href="https://alm.developpez.com/" data-idrub="42" data-niv="2">ALM</a></li>
+				<li><a href="https://merise.developpez.com/" data-idrub="43" data-niv="2">Merise</a></li>
+				<li><a href="https://uml.developpez.com/" data-idrub="12" data-niv="2">UML</a></li>
+			</ul></li>
+	<li><a href="https://dotnet.developpez.com/" data-idrub="20" data-niv="1">Microsoft<!----></a>
+			<ul class="gabarit_sousmenu">
+				<li><a href="https://dotnet.developpez.com/" data-idrub="20" data-niv="2">Microsoft &amp; .NET</a></li>
+				<li><a href="https://visualstudio.developpez.com/" data-idrub="84" data-niv="2">Visual Studio</a></li>
+				<li><a href="https://dotnet.developpez.com/aspnet/" data-idrub="83" data-niv="2">ASP.NET</a></li>
+				<li><a href="https://dotnet.developpez.com/csharp/" data-idrub="81" data-niv="2">C#</a></li>
+				<li><a href="https://dotnet.developpez.com/vbnet/" data-idrub="82" data-niv="2">VB.NET</a></li>
+				<li><a href="https://windows-azure.developpez.com/" data-idrub="107" data-niv="2">Microsoft Azure</a></li>
+			</ul></li>
+	<li><a href="https://java.developpez.com/" data-idrub="4" data-niv="1">Java<!--<span class="gabarit_tooltip">Plateforme et langage Java</span>--></a>
+			<ul class="gabarit_sousmenu">
+				<li><a href="https://java.developpez.com/" data-idrub="4" data-niv="2">Java</a></li>
+				<li><a href="https://javaweb.developpez.com/" data-idrub="97" data-niv="2">Java Web</a></li>
+				<li><a href="https://spring.developpez.com/" data-idrub="87" data-niv="2">Spring</a></li>
+				<li><a href="https://android.developpez.com/" data-idrub="95" data-niv="2">Android</a></li>
+				<li><a href="https://eclipse.developpez.com/" data-idrub="55" data-niv="2">Eclipse</a></li>
+				<li><a href="https://netbeans.developpez.com/" data-idrub="66" data-niv="2">NetBeans</a></li>
+			</ul></li>
+	<li><a href="https://web.developpez.com/" data-idrub="8" data-niv="1">Dév. Web<!--<span class="gabarit_tooltip">Développement Web et Webmarketing</span>--></a>
+			<ul class="gabarit_sousmenu">
+				<li><a href="https://web.developpez.com/" data-idrub="8" data-niv="2">Développement et hébergement Web</a></li>
+				<li><a href="https://ajax.developpez.com/" data-idrub="85" data-niv="2">AJAX</a></li>
+				<li><a href="https://apache.developpez.com/" data-idrub="71" data-niv="2">Apache</a></li>
+				<li><a href="https://asp.developpez.com/" data-idrub="10" data-niv="2">ASP</a></li>
+				<li><a href="https://css.developpez.com/" data-idrub="51" data-niv="2">CSS</a></li>
+				<li><a href="https://dart.developpez.com/" data-idrub="125" data-niv="2">Dart</a></li>
+				<li><a href="https://flash.developpez.com/" data-idrub="41" data-niv="2">Flash / Flex</a></li>
+				<li><a href="https://javascript.developpez.com/" data-idrub="45" data-niv="2">JavaScript</a></li>
+				<li><a href="https://nodejs.developpez.com/" data-idrub="141" data-niv="2">NodeJS</a></li>
+				<li><a href="https://php.developpez.com/" data-idrub="9" data-niv="2">PHP</a></li>
+				<li><a href="https://ruby.developpez.com/" data-idrub="53" data-niv="2">Ruby &amp; Rails</a></li>
+				<li><a href="https://typescript.developpez.com/" data-idrub="127" data-niv="2">TypeScript</a></li>
+				<li><a href="https://web-semantique.developpez.com/" data-idrub="111" data-niv="2">Web sémantique</a></li>
+				<li><a href="https://webmarketing.developpez.com/" data-idrub="80" data-niv="2">Webmarketing</a></li>
+				<li><a href="https://xhtml.developpez.com/" data-idrub="50" data-niv="2">(X)HTML</a></li>
+			</ul></li>
+	<li><a href="https://edi.developpez.com/" data-idrub="90" data-niv="1">EDI<!--<span class="gabarit_tooltip">Environnements de Développement Intégré</span>--></a>
+			<ul class="gabarit_sousmenu">
+				<li><a href="https://edi.developpez.com/" data-idrub="90" data-niv="2">EDI</a></li>
+				<li><a href="https://4d.developpez.com/" data-idrub="39" data-niv="2">4D</a></li>
+				<li><a href="https://delphi.developpez.com/" data-idrub="2" data-niv="2">Delphi</a></li>
+				<li><a href="https://eclipse.developpez.com/" data-idrub="55" data-niv="2">Eclipse</a></li>
+				<li><a href="https://jetbrains.developpez.com/" data-idrub="144" data-niv="2">JetBrains</a></li>
+				<li><a href="https://labview.developpez.com/" data-idrub="72" data-niv="2">LabVIEW</a></li>
+				<li><a href="https://netbeans.developpez.com/" data-idrub="66" data-niv="2">NetBeans</a></li>
+				<li><a href="https://matlab.developpez.com/" data-idrub="58" data-niv="2">MATLAB</a></li>
+				<li><a href="https://scilab.developpez.com/" data-idrub="120" data-niv="2">Scilab</a></li>
+				<li><a href="https://visualstudio.developpez.com/" data-idrub="84" data-niv="2">Visual Studio</a></li>
+				<li><a href="https://wind.developpez.com/" data-idrub="74" data-niv="2">WinDev</a></li>
+				<li><a href="https://vb.developpez.com/" data-idrub="5" data-niv="2">Visual Basic 6</a></li>
+				<li><a href="https://lazarus.developpez.com/" data-idrub="96" data-niv="2">Lazarus</a></li>
+				<li><a href="https://qt-creator.developpez.com/" data-idrub="109" data-niv="2">Qt Creator</a></li>
+			</ul></li>
+	<li><a href="https://programmation.developpez.com/" data-idrub="119" data-niv="1">Programmation<!--<span class="gabarit_tooltip">Programmation et langages de programmation applicatifs</span>--></a>
+			<ul class="gabarit_sousmenu">
+				<li><a href="https://programmation.developpez.com/" data-idrub="119" data-niv="2">Programmation</a></li>
+				<li><a href="https://algo.developpez.com/" data-idrub="47" data-niv="2">Débuter - Algorithmique</a></li>
+				<li><a href="https://jeux.developpez.com/" data-idrub="38" data-niv="2">2D - 3D - Jeux</a></li>
+				<li><a href="https://asm.developpez.com/" data-idrub="16" data-niv="2">Assembleur</a></li>
+				<li><a href="https://c.developpez.com/" data-idrub="3" data-niv="2">C</a></li>
+				<li><a href="https://cpp.developpez.com/" data-idrub="59" data-niv="2">C++</a></li>
+				<li><a href="https://d.developpez.com/" data-idrub="123" data-niv="2">D</a></li>
+				<li><a href="https://go.developpez.com/" data-idrub="124" data-niv="2">Go</a></li>
+				<li><a href="https://kotlin.developpez.com/" data-idrub="145" data-niv="2">Kotlin</a></li>
+				<li><a href="https://objective-c.developpez.com/" data-idrub="117" data-niv="2">Objective C</a></li>
+				<li><a href="https://pascal.developpez.com/" data-idrub="7" data-niv="2">Pascal</a></li>
+				<li><a href="https://perl.developpez.com/" data-idrub="29" data-niv="2">Perl</a></li>
+				<li><a href="https://python.developpez.com/" data-idrub="27" data-niv="2">Python</a></li>
+				<li><a href="https://rust.developpez.com/" data-idrub="137" data-niv="2">Rust</a></li>
+				<li><a href="https://swift.developpez.com/" data-idrub="128" data-niv="2">Swift</a></li>
+				<li><a href="https://qt.developpez.com/" data-idrub="65" data-niv="2">Qt</a></li>
+				<li><a href="https://xml.developpez.com/" data-idrub="11" data-niv="2">XML</a></li>
+				<li><a href="https://general.developpez.com/cours/" data-idrub="21" data-niv="2">Autres</a></li>
+			</ul></li>
+	<li><a href="https://sgbd.developpez.com/" data-idrub="13" data-niv="1">SGBD<!--<span class="gabarit_tooltip">Systèmes de Gestion de Bases de Données</span>--></a>
+			<ul class="gabarit_sousmenu">
+				<li><a href="https://sgbd.developpez.com/" data-idrub="13" data-niv="2">SGBD &amp; SQL</a></li>
+				<li><a href="https://4d.developpez.com/" data-idrub="39" data-niv="2">4D</a></li>
+				<li><a href="https://access.developpez.com/" data-idrub="19" data-niv="2">Access</a></li>
+				<li><a href="https://big-data.developpez.com/" data-idrub="126" data-niv="2">Big Data</a></li>
+				<li><a href="https://data-science.developpez.com/" data-idrub="151" data-niv="2">Data Science</a></li>
+				<li><a href="https://db2.developpez.com/" data-idrub="36" data-niv="2">DB2</a></li>
+				<li><a href="https://firebird.developpez.com/" data-idrub="73" data-niv="2">Firebird</a></li>
+				<li><a href="https://interbase.developpez.com/" data-idrub="32" data-niv="2">InterBase</a></li>
+				<li><a href="https://mysql.developpez.com/" data-idrub="31" data-niv="2">MySQL</a></li>
+				<li><a href="https://nosql.developpez.com/" data-idrub="114" data-niv="2">NoSQL</a></li>
+				<li><a href="https://postgresql.developpez.com/" data-idrub="33" data-niv="2">PostgreSQL</a></li>
+				<li><a href="https://oracle.developpez.com/" data-idrub="25" data-niv="2">Oracle</a></li>
+				<li><a href="https://sybase.developpez.com/" data-idrub="37" data-niv="2">Sybase</a></li>
+				<li><a href="https://sqlserver.developpez.com/" data-idrub="34" data-niv="2">SQL-Server</a></li>
+				<li><a href="https://mongodb.developpez.com/" data-idrub="148" data-niv="2">MongoDB</a></li>
+			</ul></li>
+	<li><a href="https://office.developpez.com/" data-idrub="54" data-niv="1">Office<!--<span class="gabarit_tooltip">Bureautique pour l'entreprise</span>--></a>
+			<ul class="gabarit_sousmenu">
+				<li><a href="https://office.developpez.com/" data-idrub="54" data-niv="2">Microsoft Office</a></li>
+				<li><a href="https://access.developpez.com/" data-idrub="19" data-niv="2">Access</a></li>
+				<li><a href="https://excel.developpez.com/" data-idrub="75" data-niv="2">Excel</a></li>
+				<li><a href="https://word.developpez.com/" data-idrub="76" data-niv="2">Word</a></li>
+				<li><a href="https://outlook.developpez.com/" data-idrub="77" data-niv="2">Outlook</a></li>
+				<li><a href="https://powerpoint.developpez.com/" data-idrub="78" data-niv="2">PowerPoint</a></li>
+				<li><a href="https://sharepoint.developpez.com/" data-idrub="79" data-niv="2">SharePoint</a></li>
+				<li><a href="https://project.developpez.com/" data-idrub="99" data-niv="2">Microsoft Project</a></li>
+				<li><a href="https://openoffice-libreoffice.developpez.com/" data-idrub="116" data-niv="2">OpenOffice &amp; LibreOffice</a></li>
+			</ul></li>
+	<li><a href="https://mobiles.developpez.com/" data-idrub="94" data-niv="1">Mobiles<!--<span class="gabarit_tooltip">Logiciels et matériels mobiles</span>--></a>
+			<ul class="gabarit_sousmenu">
+				<li><a href="https://mobiles.developpez.com/" data-idrub="94" data-niv="2">Mobiles</a></li>
+				<li><a href="https://android.developpez.com/" data-idrub="95" data-niv="2">Android</a></li>
+				<li><a href="https://ios.developpez.com/" data-idrub="101" data-niv="2">iOS</a></li>
+			</ul></li>
+	<li><a href="https://systeme.developpez.com/" data-idrub="30" data-niv="1" class="gabarit_selection">Systèmes<!--<span class="gabarit_tooltip">Logiciels et matériels systèmes</span>--></a>
+			<ul class="gabarit_sousmenu">
+				<li><a href="https://systeme.developpez.com/" data-idrub="30" data-niv="2">Systèmes</a></li>
+				<li><a href="https://windows.developpez.com/" data-idrub="17" data-niv="2">Windows</a></li>
+				<li><a href="https://linux.developpez.com/" data-idrub="18" data-niv="2">Linux</a></li>
+				<li><a href="https://arduino.developpez.com/" data-idrub="142" data-niv="2">Arduino</a></li>
+				<li><a href="https://securite.developpez.com/" data-idrub="40" data-niv="2">Sécurité</a></li>
+				<li><a href="https://hardware.developpez.com/" data-idrub="64" data-niv="2">Hardware</a></li>
+				<li><a href="https://hpc.developpez.com/" data-idrub="139" data-niv="2">HPC</a></li>
+				<li><a href="https://mac.developpez.com/" data-idrub="57" data-niv="2">Mac</a></li>
+				<li><a href="https://raspberry-pi.developpez.com/" data-idrub="131" data-niv="2">Raspberry Pi</a></li>
+				<li><a href="https://reseau.developpez.com/" data-idrub="70" data-niv="2">Réseau</a></li>
+				<li><a href="https://green-it.developpez.com/" data-idrub="104" data-niv="2">Green IT</a></li>
+				<li><a href="https://embarque.developpez.com/" data-idrub="110" data-niv="2">Systèmes embarqués</a></li>
+				<li><a href="https://virtualisation.developpez.com/" data-idrub="108" data-niv="2">Virtualisation</a></li>
+			</ul></li>
+</ul>
+
+<ul id="gabarit_barre1"><li><a href="https://systeme.developpez.com/">Systèmes</a></li><li><a href="https://windows.developpez.com/">Windows</a></li><li class="gabarit_selection"><a href="https://linux.developpez.com/">Linux</a></li><li><a href="https://arduino.developpez.com/">Arduino</a></li><li><a href="https://securite.developpez.com/">Sécurité</a></li><li><a href="https://hardware.developpez.com/">Hardware</a></li><li><a href="https://hpc.developpez.com/">HPC</a></li><li><a href="https://mac.developpez.com/">Mac</a></li><li><a href="https://raspberry-pi.developpez.com/">Raspberry Pi</a></li><li><a href="https://reseau.developpez.com/">Réseau</a></li><li><a href="https://green-it.developpez.com/">Green IT</a></li><li><a href="https://embarque.developpez.com/">Systèmes embarqués</a></li><li><a href="https://virtualisation.developpez.com/">Virtualisation</a></li></ul>
+
+<div id="gabarit_barre2">
+	<a class="gabarit_social gabarit_facebook" href="http://www.facebook.com/pages/Linux/115293835150068" target="_blank" title="Retrouver Developpez sur Facebook"></a>
+	<a class="gabarit_social gabarit_twitter" href="http://twitter.com/Linux_DVP" target="_blank" title="Retrouver Developpez sur Twitter"></a>
+	<a class="gabarit_social gabarit_rss" href="http://linux.developpez.com/index/rss" target="_blank" title="Flux RSS"></a>
+	<ul>
+<li><a href="https://www.developpez.net/forums/f17/hardware-systemes-logiciels/linux/">FORUM LINUX</a></li><li><a href="https://linux.developpez.com/faq/">FAQ LINUX</a></li><li><a href="https://linux.developpez.com/cours/">TUTORIELS LINUX</a></li><li><a href="https://linux.developpez.com/telecharger/">OUTILS LINUX</a></li><li><a href="https://linux.developpez.com/livres/">LIVRES LINUX</a></li><li><a href="http://linux.developpez.tv/">LINUX TV</a></li><li><a href="http://unix.developpez.com/">UNIX</a></li><li><a href="http://gtk.developpez.com/">GTK+</a></li><li><a href="http://qt.developpez.com/">Qt</a></li><li><a href="http://apache.developpez.com/">APACHE</a></li><li><a href="http://open-source.developpez.com/">OPEN SOURCE</a></li>	</ul>
+</div>
+
+</nav>
+
+
+	</header>
+	<section>
+
+	<div id="gabarit_pubBB">
+		<div id="gabarit_pub0"></div><div id="yn18if0p" class="dvpb0" style="display: inline-block; width: 728px; height: 90px"><iframe width="728" height="90" style="border: 0" scrolling="no" src="./Exercices shell scripts_files/offres.html"></iframe></div>
+	</div>
+
+	<div class="contenuPage" style="min-height: auto;">
+		<article class="ArticleComplet" itemscope="" itemtype="https://schema.org/Article" style="margin: 0px;">
+<meta itemprop="genre" content="informatique">
+<meta itemprop="inLanguage" content="fr-FR">
+		<h1 class="titre-article" itemprop="name">Exercices shell scripts</h1><h2 class="soustitre-article">
+		<b>Entraînez-vous avec Bash (ou autres langages shell compatibles)</b>
+	</h2><section style="grid-template-columns: 300px auto;">
+
+<nav class="nav-sommaire fixed2" role="navigation">
+<h2 class="TitreHeader ToggleGecko">Table des matières<img class="ToggleImgPlier" title="Plier" alt="Plier" src="./Exercices shell scripts_files/fleche-haut-bleue.png"><img class="ToggleImgDeplier" title="Déplier" alt="Déplier" src="./Exercices shell scripts_files/fleche-bas-bleue.png" style="display:none;"></h2>
+<ul id="nav_sommaire_ul_principal" class="nav-sommaire-ul" style="overflow-y: scroll;">
+		<li><a class="summaryIndent0" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LI">I. Niveau débutant</a><ul class="nav-sommaire-ul IndentationI">
+			
+			<li><a class="summaryIndent1" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LI-A">I-A. Exercice 1 - Appréciation de note</a><ul class="nav-sommaire-ul IndentationI-A">
+				
+				<li><a class="summaryIndent2" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LI-A-1">I-A-1. Énoncé</a></li>
+				<li><a class="summaryIndent2" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LI-A-2">I-A-2. Solution</a></li>
+			</ul></li>
+			<li><a class="summaryIndent1" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LI-B">I-B. Exercice 2 - Appréciation de note (v2)</a><ul class="nav-sommaire-ul IndentationI-B">
+				
+				<li><a class="summaryIndent2" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LI-B-1">I-B-1. Énoncé</a></li>
+				<li><a class="summaryIndent2" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LI-B-2">I-B-2. Solution</a></li>
+			</ul></li>
+			<li><a class="summaryIndent1" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LI-C">I-C. Exercice 3 - Nombre élevé à sa propre puissance</a><ul class="nav-sommaire-ul IndentationI-C">
+				
+				<li><a class="summaryIndent2" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LI-C-1">I-C-1. Énoncé</a></li>
+				<li><a class="summaryIndent2" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LI-C-2">I-C-2. Solution 1</a></li>
+				<li><a class="summaryIndent2" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LI-C-3">I-C-3. Solution 2</a></li>
+			</ul></li>
+		</ul></li>
+		<li><a class="summaryIndent0" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LII">II. Niveau intermédiaire</a><ul class="nav-sommaire-ul IndentationII">
+			
+			<li><a class="summaryIndent1" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LII-A">II-A. Exercice 1 - Appréciation de note (v3)</a><ul class="nav-sommaire-ul IndentationII-A">
+				
+				<li><a class="summaryIndent2" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LII-A-1">II-A-1. Énoncé</a></li>
+				<li><a class="summaryIndent2" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LII-A-2">II-A-2. Solution</a></li>
+			</ul></li>
+			<li><a class="summaryIndent1" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LII-B">II-B. Exercice 2 - TestUser</a><ul class="nav-sommaire-ul IndentationII-B">
+				
+				<li><a class="summaryIndent2" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LII-B-1">II-B-1. Énoncé</a></li>
+				<li><a class="summaryIndent2" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LII-B-2">II-B-2. Solution</a></li>
+			</ul></li>
+			<li><a class="summaryIndent1" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LII-C">II-C. Exercice 3 - Calculatrice</a><ul class="nav-sommaire-ul IndentationII-C">
+				
+				<li><a class="summaryIndent2" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LII-C-1">II-C-1. Énoncé</a></li>
+				<li><a class="summaryIndent2" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LII-C-2">II-C-2. Solution 1</a></li>
+				<li><a class="summaryIndent2" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LII-C-3">II-C-3. Solution 2</a></li>
+				<li><a class="summaryIndent2" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LII-C-4">II-C-4. Solution 3</a></li>
+			</ul></li>
+			<li><a class="summaryIndent1" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LII-D">II-D. Exercice 4 - La factorielle</a><ul class="nav-sommaire-ul IndentationII-D">
+				
+				<li><a class="summaryIndent2" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LII-D-1">II-D-1. Énoncé</a></li>
+				<li><a class="summaryIndent2" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LII-D-2">II-D-2. Solution 1</a></li>
+				<li><a class="summaryIndent2" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LII-D-3">II-D-3. Solution 2</a></li>
+			</ul></li>
+			<li><a class="summaryIndent1" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LII-E">II-E. Exercice 5 - Les fichiers</a><ul class="nav-sommaire-ul IndentationII-E">
+				
+				<li><a class="summaryIndent2" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LII-E-1">II-E-1. Énoncé</a></li>
+				<li><a class="summaryIndent2" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LII-E-2">II-E-2. Solution</a></li>
+			</ul></li>
+			<li><a class="summaryIndent1" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LII-F">II-F. Exercice 6 - Tri à bulle</a><ul class="nav-sommaire-ul IndentationII-F">
+				
+				<li><a class="summaryIndent2" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LII-F-1">II-F-1. Énoncé</a></li>
+				<li><a class="summaryIndent2" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LII-F-2">II-F-2. Solution</a></li>
+			</ul></li>
+			<li><a class="summaryIndent1" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LII-G">II-G. Exercice 7 - ls avec ordre inversé</a><ul class="nav-sommaire-ul IndentationII-G">
+				
+				<li><a class="summaryIndent2" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LII-G-1">II-G-1. Énoncé</a></li>
+				<li><a class="summaryIndent2" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LII-G-2">II-G-2. Solution 1</a></li>
+				<li><a class="summaryIndent2" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LII-G-3">II-G-3. Solution 2</a></li>
+				<li><a class="summaryIndent2" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LII-G-4">II-G-4. Solution 3</a></li>
+				<li><a class="summaryIndent2" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LII-G-5">II-G-5. Solution 4</a></li>
+				<li><a class="summaryIndent2" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LII-G-6">II-G-6. Solution 5</a></li>
+			</ul></li>
+		</ul></li>
+		<li><a class="summaryIndent0" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LIII">III. Niveau confirmé</a><ul class="nav-sommaire-ul IndentationIII">
+			
+			<li><a class="summaryIndent1" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LIII-A">III-A. Exercice 1 - Fichier de notes</a><ul class="nav-sommaire-ul IndentationIII-A">
+				
+				<li><a class="summaryIndent2" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LIII-A-1">III-A-1. Énoncé</a></li>
+				<li><a class="summaryIndent2" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LIII-A-2">III-A-2. Solution</a></li>
+			</ul></li>
+			<li><a class="summaryIndent1" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LIII-B">III-B. Exercice 2 - Liste d'utilisateurs</a><ul class="nav-sommaire-ul IndentationIII-B">
+				
+				<li><a class="summaryIndent2" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LIII-B-1">III-B-1. Énoncé</a></li>
+				<li><a class="summaryIndent2" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LIII-B-2">III-B-2. Solution</a></li>
+			</ul></li>
+			<li><a class="summaryIndent1" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LIII-C">III-C. Exercice 3 - Convertisseur décimal/binaire</a><ul class="nav-sommaire-ul IndentationIII-C">
+				
+				<li><a class="summaryIndent2" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LIII-C-1">III-C-1. Énoncé</a></li>
+				<li><a class="summaryIndent2" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LIII-C-2">III-C-2. Solution 1</a></li>
+				<li><a class="summaryIndent2" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LIII-C-3">III-C-3. Solution 2</a></li>
+				<li><a class="summaryIndent2" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LIII-C-4">III-C-4. Solution 3</a></li>
+			</ul></li>
+			<li><a class="summaryIndent1" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LIII-D">III-D. Exercice 4 - Moyenne de notes sur un fichier</a><ul class="nav-sommaire-ul IndentationIII-D">
+				
+				<li><a class="summaryIndent2" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LIII-D-1">III-D-1. Énoncé</a></li>
+				<li><a class="summaryIndent2" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LIII-D-2">III-D-2. Solution 1</a></li>
+				<li><a class="summaryIndent2" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LIII-D-3">III-D-3. Solution 2</a></li>
+			</ul></li>
+		</ul></li>
+		<li><a class="summaryIndent0" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LIV">IV. Liens utiles</a></li>
+		<li><a class="summaryIndent0" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#LV">V. Remerciements</a></li>
+	</ul></nav>
+
+<div class="contenu">
+
+<section itemprop="about" class="SectionSynopsis">
+		<p>Cet article regroupe des exercices corrigés en shell scripts Bash et autres langages shell compatibles. Les exercices sont classés par niveaux et peuvent posséder plusieurs solutions.</p>
+		<p>N'hésitez pas à proposer vos solutions où les énoncés via ce lien : <a class="lienforum" href="https://www.developpez.net/forums/showthread.php?t=1213452">44&nbsp;commentaires</a> <img src="./Exercices shell scripts_files/kitstars-5-0.png" width="66" height="14" style="border: none" alt="Donner une note � l&#39;article (5)"></p>
+	<p class="TextNbrVues" style="display: block;">Article lu <span id="NbrVues">246148</span> fois.</p></section><div class="InfoAuthArtBook">
+	<section class="SectionAuteurs">
+	<h2 class="TitreHeader">L'auteur</h2>
+<p class="auteur" itemprop="name" itemscope="" itemtype="http://schema.org/Person"><a itemprop="url" class="auteur" href="https://www.developpez.net/forums/u289749/ok-idriss/"><span itemprop="author">Idriss NEUMANN</span></a><a class="homepage" href="https://www.developpez.com/user/profil/289749/ok-idriss/"><img src="./Exercices shell scripts_files/pro.png" title="Profil Pro" alt="Profil Pro" style="vertical-align:middle;"></a><a class="homepage" href="https://ineumann.developpez.com/"><img src="./Exercices shell scripts_files/kitbm-site-personnel.png" title="page personnelle" alt="Site personnel" style="vertical-align:middle;"></a></p>
+</section>
+<section class="SectionInformationArticle">
+<h2 class="TitreHeader">L'article</h2>
+
+<p class="InfoArticle">Publié&nbsp;le&nbsp;<span itemprop="datePublished">13&nbsp;décembre&nbsp;2009&nbsp;</span>- Mis&nbsp;à&nbsp;jour&nbsp;le&nbsp;<span itemprop="dateModified">20&nbsp;juillet&nbsp;2014&nbsp;</span></p>
+		
+		
+<p class="InfoArticle"><img alt="Public visé : débutant" src="./Exercices shell scripts_files/public-vise-2.png"></p>
+	<p>
+<span class="lientelechargementpdf"><a class="lientelechargement" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/exercices-shell.pdf" title="Télécharger la version PDF de cet article.">Version PDF</a></span>
+<span class="lientelechargementzip"><a class="lientelechargement" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/exercices-shell.zip" title="Télécharger la version HTML de cet article.">Version hors-ligne</a></span></p>
+<p><span class="lientelechargementebook"><a class="lientelechargement" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/exercices-shell.epub" title="Télécharger la version ePub de l&#39;article compatible avec la plupart des liseuses non Kindle (Amazon).">ePub</a></span>, <span class="lientelechargementebook"><a class="lientelechargement" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/exercices-shell.azw" title="Télécharger la version Azw spécifique aux liseuses Kindle (Amazon).">Azw</a></span> et <span class="lientelechargementebook"><a class="lientelechargement" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/exercices-shell.mobi" title="Télécharger la version Mobi de l&#39;article compatible avec les liseuses Amazon.">Mobi</a></span></p>
+</section>
+<section class="SectionBookmarks">
+<h2 class="TitreHeader">Liens&nbsp;sociaux</h2>
+<div class="InfoBookmarks"><a title="Viadeo" href="http://www.viadeo.com/shareit/share/?url=https%3A%2F%2Fineumann.developpez.com%2Ftutoriels%2Flinux%2Fexercices-shell%2F&amp;Title=Exercices+shell+scripts" rel="nofollow"><img alt="Viadeo" src="./Exercices shell scripts_files/kitbm-viadeo.png"></a>&nbsp;<a title="Twitter" href="http://twitter.com/timeline/home?status=https%3A%2F%2Fineumann.developpez.com%2Ftutoriels%2Flinux%2Fexercices-shell%2F" rel="nofollow"><img alt="Twitter" src="./Exercices shell scripts_files/kitbm-twitter.png"></a>&nbsp;<a title="Facebook" href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fineumann.developpez.com%2Ftutoriels%2Flinux%2Fexercices-shell%2F" rel="nofollow"><img alt="Facebook" src="./Exercices shell scripts_files/kitbm-facebook.png"></a>&nbsp;<a title="Google +" href="https://plus.google.com/share?url=https%3A%2F%2Fineumann.developpez.com%2Ftutoriels%2Flinux%2Fexercices-shell%2F" onclick="javascript:window.open(this.href, &#39;&#39;, &#39;menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600&#39;);return false;"><img src="./Exercices shell scripts_files/gplus-16.png" alt="Share on Google+"></a>&nbsp;<script src="./Exercices shell scripts_files/in.js.téléchargement" type="text/javascript"> lang: fr_FR</script>
+			<span class="IN-widget" data-lnkd-debug="&lt;script type=&quot;IN/Share+init&quot; data-url=&quot;$url&quot;&gt;&lt;/script&gt;" style="display: inline-block; line-height: 1; vertical-align: bottom; padding: 0px; margin: 0px; text-indent: 0px; text-align: center;"><span style="padding: 0px !important; margin: 0px !important; text-indent: 0px !important; display: inline-block !important; vertical-align: bottom !important; font-size: 1px !important;"><button class="IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu"><xdoor-icon aria-hidden="true"><svg viewBox="0 0 24 24" width="24px" height="24px" x="0" y="0" preserveAspectRatio="xMinYMin meet">
+      <g style="fill: currentColor">
+        <rect x="-0.003" style="fill:none;" width="24" height="24"></rect>
+        <path style="" d="M20,2h-16c-1.1,0-2,0.9-2,2v16c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2V4C22,2.9,21.1,2,20,2zM8,19h-3v-9h3V19zM6.5,8.8C5.5,8.8,4.7,8,4.7,7s0.8-1.8,1.8-1.8S8.3,6,8.3,7S7.5,8.8,6.5,8.8zM19,19h-3v-4c0-1.4-0.6-2-1.5-2c-1.1,0-1.5,0.8-1.5,2.2V19h-3v-9h2.9v1.1c0.5-0.7,1.4-1.3,2.6-1.3c2.3,0,3.5,1.1,3.5,3.7V19z"></path>
+      </g>
+    </svg></xdoor-icon>Partager</button></span></span>&nbsp;</div>
+</section></div><section itemprop="articleBody" class="articleBody">
+		
+		<h2 class="TitreSection0" id="LI">I. Niveau débutant<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h2><div class="BlocSection0">
+			
+			
+		<h3 class="TitreSection1" id="LI-A">I-A. Exercice 1 - Appréciation de note<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h3><div class="BlocSection1">
+				
+				
+		<h4 class="TitreSection2" id="LI-A-1">I-A-1. Énoncé<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h4><div class="BlocSection2">
+					
+					<p>Créer un script qui demande à l'utilisateur de saisir une note et qui affiche un message en fonction de cette note :</p>
+					<ul class="ListeDVP">
+						<li>"très bien" si la note est entre 16 et 20&nbsp;;</li>
+						<li>"bien" lorsqu'elle est entre 14 et 16&nbsp;;</li>
+						<li>"assez bien" si la note est entre 12 et 14&nbsp;; </li>
+						<li>"moyen" si la note est entre 10 et 12&nbsp;;</li>
+						<li>"insuffisant" si la note est inférieur à 10.</li>
+					</ul>
+				</div>
+				
+		<h4 class="TitreSection2" id="LI-A-2">I-A-2. Solution<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h4><div class="BlocSection2">
+					
+					<p>Solution proposée par <a class="lienArticle https" href="https://www.developpez.net/forums/u289749/ok-idriss/" target="_blank">ok.Idriss</a> :</p>
+					<div class="code_et_titre"><div class="titre_des_codes" id="IdTitreCode-d0e175">solution exercice 1<div class="selectionner_code"><span class="selectionner_code LienSelectionne" id="code-d0e175" onclick="selectionCode(&#39;contenuCoded0e175&#39;, &#39;IdTitreCode-d0e175&#39;);">Sélectionnez</span></div></div><pre class="code_uniquement" style="overflow:auto;"><code id="contenuCoded0e175" class="contenuCode"><code class="shellscript_comment2">#!/bin/bash </code>
+ 
+echo <code class="shellscript_literal1">"Entrez votre note :"</code> 
+read -r note 
+ 
+<code class="shellscript_keyword1">if</code> [ <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$note</code><code class="shellscript_literal1">"</code> -ge <code class="shellscript_digit">16</code> ]; <code class="shellscript_keyword1">then</code> 
+    echo <code class="shellscript_literal1">"très bien"</code> 
+<code class="shellscript_keyword1">elif</code> [ <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$note</code><code class="shellscript_literal1">"</code> -ge <code class="shellscript_digit">14</code> ]; <code class="shellscript_keyword1">then</code> 
+    echo <code class="shellscript_literal1">"bien"</code> 
+<code class="shellscript_keyword1">elif</code> [ <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$note</code><code class="shellscript_literal1">"</code> -ge <code class="shellscript_digit">12</code> ]; <code class="shellscript_keyword1">then</code> 
+    echo <code class="shellscript_literal1">"assez bien"</code> 
+<code class="shellscript_keyword1">elif</code> [ <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$note</code><code class="shellscript_literal1">"</code> -ge <code class="shellscript_digit">10</code> ]; <code class="shellscript_keyword1">then</code> 
+    echo <code class="shellscript_literal1">"moyen"</code> 
+<code class="shellscript_keyword1">else</code> 
+    echo <code class="shellscript_literal1">"insuffisant"</code> 
+<code class="shellscript_keyword1">fi</code></code></pre></div>
+				</div>
+			</div>
+			
+		<h3 class="TitreSection1" id="LI-B">I-B. Exercice 2 - Appréciation de note (v2)<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h3><div class="BlocSection1">
+				
+				
+		<h4 class="TitreSection2" id="LI-B-1">I-B-1. Énoncé<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h4><div class="BlocSection2">
+					
+					<p>Reprenez l'exercice 1 et faites en sorte que le programme se répète tant que l'utilisateur n'a pas saisi une note négative ou 'q' (pour quitter).<br><br>
+		Le script doit calculer le nombre de notes de saisies et en faire la moyenne tout à la fin.</p>
+				</div>
+				
+		<h4 class="TitreSection2" id="LI-B-2">I-B-2. Solution<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h4><div class="BlocSection2">
+					
+					<p>Solution proposée par <a class="lienArticle https" href="https://www.developpez.net/forums/u289749/ok-idriss/" target="_blank">ok.Idriss</a> :</p>
+					<div class="code_et_titre"><div class="titre_des_codes" id="IdTitreCode-d0e297">solution exercice 2<div class="selectionner_code"><span class="selectionner_code LienSelectionne" id="code-d0e297" onclick="selectionCode(&#39;contenuCoded0e297&#39;, &#39;IdTitreCode-d0e297&#39;);">Sélectionnez</span></div></div><pre class="code_uniquement" style="overflow:auto;"><code id="contenuCoded0e297" class="contenuCode"><code class="shellscript_comment2">#!/bin/bash </code>
+ 
+<code class="shellscript_keyword2">note</code><code class="shellscript_operator">=</code><code class="shellscript_digit">0</code> 
+<code class="shellscript_keyword2">moyenne</code><code class="shellscript_operator">=</code><code class="shellscript_digit">0</code> 
+<code class="shellscript_keyword2">i</code><code class="shellscript_operator">=</code><code class="shellscript_digit">0</code> 
+ 
+until [ <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$note</code><code class="shellscript_literal1">"</code> -lt <code class="shellscript_digit">0</code> ]; <code class="shellscript_keyword1">do</code> 
+    echo <code class="shellscript_literal1">"Entrez votre note (q pour quitter) :"</code> 
+    read -r note 
+    <code class="shellscript_keyword1">if</code> [ <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$note</code><code class="shellscript_literal1">"</code> <code class="shellscript_operator">=</code> <code class="shellscript_literal1">"q"</code> ]; <code class="shellscript_keyword1">then</code> 
+        <code class="shellscript_keyword2">note</code><code class="shellscript_operator">=</code>-<code class="shellscript_digit">1</code> 
+        echo <code class="shellscript_literal1">"au revoir !"</code> 
+    <code class="shellscript_keyword1">elif</code> [ <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$note</code><code class="shellscript_literal1">"</code> -ge <code class="shellscript_digit">16</code> ]; <code class="shellscript_keyword1">then</code> 
+        echo <code class="shellscript_literal1">"très bien"</code> 
+    <code class="shellscript_keyword1">elif</code> [ <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$note</code><code class="shellscript_literal1">"</code> -ge <code class="shellscript_digit">14</code> ]; <code class="shellscript_keyword1">then</code> 
+        echo <code class="shellscript_literal1">"bien"</code> 
+    <code class="shellscript_keyword1">elif</code> [ <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$note</code><code class="shellscript_literal1">"</code> -ge <code class="shellscript_digit">12</code> ]; <code class="shellscript_keyword1">then</code> 
+        echo <code class="shellscript_literal1">"assez bien"</code> 
+    <code class="shellscript_keyword1">elif</code> [ <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$note</code><code class="shellscript_literal1">"</code> -ge <code class="shellscript_digit">10</code> ]; <code class="shellscript_keyword1">then</code> 
+        echo <code class="shellscript_literal1">"moyen"</code> 
+    <code class="shellscript_keyword1">elif</code> [ <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$note</code><code class="shellscript_literal1">"</code> -ge <code class="shellscript_digit">0</code> ]; <code class="shellscript_keyword1">then</code> 
+        echo <code class="shellscript_literal1">"insuffisant"</code> 
+    <code class="shellscript_keyword1">else</code> 
+        echo <code class="shellscript_literal1">"au revoir !"</code> 
+    <code class="shellscript_keyword1">fi</code> 
+ 
+    <code class="shellscript_keyword1">if</code> [ <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$note</code><code class="shellscript_literal1">"</code> -ge <code class="shellscript_digit">0</code> ]; <code class="shellscript_keyword1">then</code> 
+        let <code class="shellscript_keyword2">moyenne</code><code class="shellscript_operator">=</code><code class="shellscript_keyword2">$moyenne</code>+<code class="shellscript_keyword2">$note</code> 
+        let <code class="shellscript_keyword2">i</code><code class="shellscript_operator">=</code><code class="shellscript_keyword2">$i</code>+<code class="shellscript_digit">1</code> 
+    <code class="shellscript_keyword1">fi</code> 
+<code class="shellscript_keyword1">done</code> 
+ 
+<code class="shellscript_keyword1">if</code> [ <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$i</code><code class="shellscript_literal1">"</code> -le <code class="shellscript_digit">0</code> ]; <code class="shellscript_keyword1">then</code> 
+    let <code class="shellscript_keyword2">i</code><code class="shellscript_operator">=</code><code class="shellscript_digit">1</code> 
+<code class="shellscript_keyword1">fi</code> 
+ 
+let <code class="shellscript_keyword2">moyenne</code><code class="shellscript_operator">=</code><code class="shellscript_keyword2">$moyenne</code>/<code class="shellscript_keyword2">$i</code> 
+echo <code class="shellscript_literal1">"La moyenne est de </code><code class="shellscript_keyword2">$moyenne</code><code class="shellscript_literal1"> (</code><code class="shellscript_keyword2">$i</code><code class="shellscript_literal1"> notes)"</code></code></pre></div>
+				</div>
+			</div>
+			
+		<h3 class="TitreSection1" id="LI-C">I-C. Exercice 3 - Nombre élevé à sa propre puissance<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h3><div class="BlocSection1">
+				
+				
+		<h4 class="TitreSection2" id="LI-C-1">I-C-1. Énoncé<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h4><div class="BlocSection2">
+					
+					<p>Créer un script qui prend un nombre en saisie et l'élève à sa propre puissance. C'est un peu le même principe que la factorielle mais cette fois, <b>l'usage de la boucle for est imposé</b>.</p>
+					<p>Exemple d'exécution :</p>
+					<div class="code_et_titre"><div class="titre_des_codes" id="IdTitreCode-d0e582">&nbsp;<div class="selectionner_code"><span class="selectionner_code LienSelectionne" id="code-d0e582" onclick="selectionCode(&#39;contenuCoded0e582&#39;, &#39;IdTitreCode-d0e582&#39;);">Sélectionnez</span></div></div><pre class="code_uniquement" style="overflow:auto;"><code id="contenuCoded0e582" class="contenuCode">[ ~] ./NomDuScript.sh 
+Saisir une valeur : 
+<code class="shellscript_digit">2</code> 
+<code class="shellscript_digit">2</code>^<code class="shellscript_digit">2</code> <code class="shellscript_operator">=</code> <code class="shellscript_digit">4</code></code></pre></div>
+				</div>
+				
+		<h4 class="TitreSection2" id="LI-C-2">I-C-2. Solution 1<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h4><div class="BlocSection2">
+					
+					<p>Solution proposée par <a class="lienArticle https" href="https://www.developpez.net/forums/u289749/ok-idriss/" target="_blank">ok.Idriss</a> :</p>
+					<div class="code_et_titre"><div class="titre_des_codes" id="IdTitreCode-d0e611">Solution 1 exercice 3<div class="selectionner_code"><span class="selectionner_code LienSelectionne" id="code-d0e611" onclick="selectionCode(&#39;contenuCoded0e611&#39;, &#39;IdTitreCode-d0e611&#39;);">Sélectionnez</span></div></div><pre class="code_uniquement" style="overflow:auto;"><code id="contenuCoded0e611" class="contenuCode"><code class="shellscript_comment2">#!/bin/bash </code>
+echo <code class="shellscript_literal1">"Saisir une valeur"</code> 
+read -r value 
+<code class="shellscript_keyword2">result</code><code class="shellscript_operator">=</code><code class="shellscript_digit">1</code> 
+<code class="shellscript_keyword1">for</code> <code class="shellscript_operator">((</code> <code class="shellscript_keyword2">i</code><code class="shellscript_operator">=</code><code class="shellscript_digit">0</code> ; i<code class="shellscript_operator">&lt;</code><code class="shellscript_keyword2">$value</code> ; i++ )); <code class="shellscript_keyword1">do</code> 
+    let <code class="shellscript_keyword2">result</code><code class="shellscript_operator">=</code><code class="shellscript_keyword2">$result</code>*<code class="shellscript_keyword2">$value</code> 
+<code class="shellscript_keyword1">done</code> 
+echo <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$value</code><code class="shellscript_literal1">^</code><code class="shellscript_keyword2">$value</code><code class="shellscript_literal1"> = </code><code class="shellscript_keyword2">$result</code><code class="shellscript_literal1">"</code></code></pre></div>
+				</div>
+				
+		<h4 class="TitreSection2" id="LI-C-3">I-C-3. Solution 2<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h4><div class="BlocSection2">
+					
+					<p>Solution proposée par <a class="lienArticle https" href="https://www.developpez.net/forums/u289749/ok-idriss/" target="_blank">ok.Idriss</a> :</p>
+					<div class="code_et_titre"><div class="titre_des_codes" id="IdTitreCode-d0e686">solution 2 exercice 3<div class="selectionner_code"><span class="selectionner_code LienSelectionne" id="code-d0e686" onclick="selectionCode(&#39;contenuCoded0e686&#39;, &#39;IdTitreCode-d0e686&#39;);">Sélectionnez</span></div></div><pre class="code_uniquement" style="overflow:auto;"><code id="contenuCoded0e686" class="contenuCode"><code class="shellscript_comment2">#!/bin/bash </code>
+ 
+operation <code class="shellscript_operator">(</code>) { 
+    <code class="shellscript_keyword2">result</code><code class="shellscript_operator">=</code><code class="shellscript_digit">1</code> 
+    <code class="shellscript_keyword1">for</code> <code class="shellscript_operator">((</code> <code class="shellscript_keyword2">i</code><code class="shellscript_operator">=</code><code class="shellscript_digit">0</code> ; i<code class="shellscript_operator">&lt;</code><code class="shellscript_keyword2">$value</code> ; i++ )) 
+    <code class="shellscript_keyword1">do</code> 
+        let <code class="shellscript_keyword2">result</code><code class="shellscript_operator">=</code><code class="shellscript_keyword2">$result</code>*<code class="shellscript_keyword2">$value</code> 
+    <code class="shellscript_keyword1">done</code> 
+    echo <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$value</code><code class="shellscript_literal1">^</code><code class="shellscript_keyword2">$value</code><code class="shellscript_literal1"> = </code><code class="shellscript_keyword2">$result</code><code class="shellscript_literal1">"</code> 
+} 
+ 
+<code class="shellscript_keyword1">if</code> [ <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$</code><code class="shellscript_literal1">#"</code> -eq <code class="shellscript_digit">0</code> ]; <code class="shellscript_keyword1">then</code> 
+    echo <code class="shellscript_literal1">"Saisir une valeur"</code> 
+    read -r value 
+<code class="shellscript_keyword1">else</code> 
+    <code class="shellscript_keyword2">value</code><code class="shellscript_operator">=</code><code class="shellscript_keyword2">$1</code> 
+<code class="shellscript_keyword1">fi</code> 
+operation</code></pre></div>
+				</div>
+			</div>
+		</div>
+		
+		<h2 class="TitreSection0" id="LII">II. Niveau intermédiaire<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h2><div class="BlocSection0">
+			
+			
+		<h3 class="TitreSection1" id="LII-A">II-A. Exercice 1 - Appréciation de note (v3)<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h3><div class="BlocSection1">
+				
+				
+		<h4 class="TitreSection2" id="LII-A-1">II-A-1. Énoncé<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h4><div class="BlocSection2">
+					
+					<p>Reprenez uniquement la version 1 de l'exercice. La note devra être donnée en paramètre ou bien saisie en cas d'absences d'arguments. La comparaison de la note devra être faite dans une fonction <span class="italique"><b>appreciation()</b></span>.</p>
+				</div>
+				
+		<h4 class="TitreSection2" id="LII-A-2">II-A-2. Solution<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h4><div class="BlocSection2">
+					
+					<p>Solution proposée par <a class="lienArticle https" href="https://www.developpez.net/forums/u289749/ok-idriss/" target="_blank">ok.Idriss</a> :</p>
+					<div class="code_et_titre"><div class="titre_des_codes" id="IdTitreCode-d0e819">solution exercice 1<div class="selectionner_code"><span class="selectionner_code LienSelectionne" id="code-d0e819" onclick="selectionCode(&#39;contenuCoded0e819&#39;, &#39;IdTitreCode-d0e819&#39;);">Sélectionnez</span></div></div><pre class="code_uniquement" style="overflow:auto;"><code id="contenuCoded0e819" class="contenuCode"><code class="shellscript_comment2">#!/bin/bash    </code>
+ 
+appreciation <code class="shellscript_operator">(</code>) { 
+    <code class="shellscript_keyword1">if</code> [ <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$note</code><code class="shellscript_literal1">"</code> -ge <code class="shellscript_digit">16</code> ]; <code class="shellscript_keyword1">then</code> 
+        echo <code class="shellscript_literal1">"très bien"</code> 
+    <code class="shellscript_keyword1">elif</code> [ <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$note</code><code class="shellscript_literal1">"</code> -ge <code class="shellscript_digit">14</code> ]; <code class="shellscript_keyword1">then</code> 
+        echo <code class="shellscript_literal1">"bien"</code> 
+    <code class="shellscript_keyword1">elif</code> [ <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$note</code><code class="shellscript_literal1">"</code> -ge <code class="shellscript_digit">12</code> ]; <code class="shellscript_keyword1">then</code> 
+        echo <code class="shellscript_literal1">"assez bien"</code> 
+    <code class="shellscript_keyword1">elif</code> [ <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$note</code><code class="shellscript_literal1">"</code> -ge <code class="shellscript_digit">10</code> ]; <code class="shellscript_keyword1">then</code> 
+        echo <code class="shellscript_literal1">"moyen"</code> 
+    <code class="shellscript_keyword1">else</code> 
+        echo <code class="shellscript_literal1">"insuffisant"</code> 
+    <code class="shellscript_keyword1">fi</code> 
+} 
+ 
+<code class="shellscript_comment1"># programme principal </code>
+clear 
+<code class="shellscript_keyword1">if</code> [ <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$</code><code class="shellscript_literal1">#"</code> -ne <code class="shellscript_digit">0</code> ]; <code class="shellscript_keyword1">then</code> 
+    <code class="shellscript_keyword2">note</code><code class="shellscript_operator">=</code><code class="shellscript_keyword2">$1</code> 
+<code class="shellscript_keyword1">else</code> 
+    echo <code class="shellscript_literal1">"Saisir une note"</code> 
+    read -r note 
+<code class="shellscript_keyword1">fi</code> 
+appreciation</code></pre></div>
+				</div>
+			</div>
+			
+		<h3 class="TitreSection1" id="LII-B">II-B. Exercice 2 - TestUser<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h3><div class="BlocSection1">
+				
+				
+		<h4 class="TitreSection2" id="LII-B-1">II-B-1. Énoncé<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h4><div class="BlocSection2">
+					
+					<p>Créer un script qui vous propose le menu suivant :</p>
+					<div class="code_et_titre"><div class="titre_des_codes" id="IdTitreCode-d0e962">&nbsp;<div class="selectionner_code"><span class="selectionner_code LienSelectionne" id="code-d0e962" onclick="selectionCode(&#39;contenuCoded0e962&#39;, &#39;IdTitreCode-d0e962&#39;);">Sélectionnez</span></div></div><pre class="code_uniquement" style="overflow:auto;"><code id="contenuCoded0e962" class="contenuCode"><code class="shellscript_digit">1</code> - Vérifier l<code class="shellscript_literal1">'existence d'</code>un utilisateur
+<code class="shellscript_digit">2</code> - Connaître l<code class="shellscript_literal1">'UID d'</code>un utilisateur
+q - Quitter</code></pre></div>
+					<p>L'utilisateur devra être saisi, à l'aide d'une fonction. Son existence devra être vérifiée à l'aide d'une autre fonction.</p>
+				</div>
+				
+		<h4 class="TitreSection2" id="LII-B-2">II-B-2. Solution<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h4><div class="BlocSection2">
+					
+					<p>Solution proposée par <a class="lienArticle https" href="https://www.developpez.net/forums/u289749/ok-idriss/" target="_blank">ok.Idriss</a> :</p>
+					<div class="code_et_titre"><div class="titre_des_codes" id="IdTitreCode-d0e991">solution exercice 2<div class="selectionner_code"><span class="selectionner_code LienSelectionne" id="code-d0e991" onclick="selectionCode(&#39;contenuCoded0e991&#39;, &#39;IdTitreCode-d0e991&#39;);">Sélectionnez</span></div></div><pre class="code_uniquement" style="overflow:auto;"><code id="contenuCoded0e991" class="contenuCode"><code class="shellscript_comment2">#!/bin/bash </code>
+ 
+function pause { 
+    echo <code class="shellscript_literal1">"Appuyez sur ENTER pour continuer"</code> 
+    read
+} 
+ 
+function saisirUser { 
+    echo <code class="shellscript_literal1">"Saisir l'utilisateur"</code> 
+    read -r util 
+} 
+ 
+function verifyUser { 
+    <code class="shellscript_keyword1">if</code> grep <code class="shellscript_literal1">"^</code><code class="shellscript_keyword2">$util</code><code class="shellscript_literal1">:"</code> /etc/passwd <code class="shellscript_operator">&gt;</code> /dev/null; <code class="shellscript_keyword1">then</code> 
+        echo <code class="shellscript_literal1">"L'utilisateur existe"</code> 
+    <code class="shellscript_keyword1">else</code> 
+        echo <code class="shellscript_literal1">"L'utilisateur n'existe pas"</code> 
+    <code class="shellscript_keyword1">fi</code> 
+    pause    
+} 
+ 
+<code class="shellscript_keyword2">rep</code><code class="shellscript_operator">=</code><code class="shellscript_digit">1</code> 
+<code class="shellscript_keyword1">while</code> [ <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$rep</code><code class="shellscript_literal1">"</code> -eq <code class="shellscript_digit">1</code> ]; <code class="shellscript_keyword1">do</code> 
+    clear 
+    printf <code class="shellscript_literal1">"menu :\n\n"</code> 
+    echo <code class="shellscript_literal1">"1. Vérifier l'existence d'un utilisateur"</code> 
+    echo <code class="shellscript_literal1">"2. Connaître l'UID d'un utilisateur"</code> 
+    echo -e <code class="shellscript_literal1">"3. Quitter\n"</code> 
+    read -r choix 
+    <code class="shellscript_keyword1">case</code> <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$choix</code><code class="shellscript_literal1">"</code> <code class="shellscript_keyword1">in</code> 
+        <code class="shellscript_digit">1</code>) 
+            saisirUser 
+            verifyUser <code class="shellscript_operator">;;</code> 
+ 
+        <code class="shellscript_digit">2</code>)     
+            saisirUser 
+            id <code class="shellscript_keyword2">$util</code> 
+            pause <code class="shellscript_operator">;;</code> 
+ 
+        q) 
+            echo <code class="shellscript_literal1">"Au revoir"</code> 
+            pause 
+            <code class="shellscript_keyword2">rep</code><code class="shellscript_operator">=</code><code class="shellscript_digit">0</code> <code class="shellscript_operator">;;</code> 
+        *) 
+            echo <code class="shellscript_literal1">"Erreur de saisie"</code> 
+            pause <code class="shellscript_operator">;;</code> 
+    <code class="shellscript_keyword1">esac</code> 
+<code class="shellscript_keyword1">done</code></code></pre></div>
+				</div>
+			</div>
+			
+		<h3 class="TitreSection1" id="LII-C">II-C. Exercice 3 - Calculatrice<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h3><div class="BlocSection1">
+				
+				
+		<h4 class="TitreSection2" id="LII-C-1">II-C-1. Énoncé<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h4><div class="BlocSection2">
+					
+					<p>Créer un script dans lequel deux nombres opérandes et un signe opérateur (+-*/) devront être donnés en paramètres, ou saisis. Le script doit réaliser l'opération souhaitée.</p>
+					<p>Exemple :</p>
+					<div class="code_et_titre"><div class="titre_des_codes" id="IdTitreCode-d0e1135">&nbsp;<div class="selectionner_code"><span class="selectionner_code LienSelectionne" id="code-d0e1135" onclick="selectionCode(&#39;contenuCoded0e1135&#39;, &#39;IdTitreCode-d0e1135&#39;);">Sélectionnez</span></div></div><pre class="code_uniquement" style="overflow:auto;"><code id="contenuCoded0e1135" class="contenuCode">[ ~] ./calculette.sh <code class="shellscript_digit">7</code> + <code class="shellscript_digit">4</code> 
+Le résultat est : <code class="shellscript_digit">11</code></code></pre></div>
+					<p>Le calcul devra être fait à l'aide d'une fonction <span class="italique"><b>calcul ()</b></span>.</p>
+				</div>
+				
+		<h4 class="TitreSection2" id="LII-C-2">II-C-2. Solution 1<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h4><div class="BlocSection2">
+					
+					<p>Solution proposée par <a class="lienArticle https" href="https://www.developpez.net/forums/u289749/ok-idriss/" target="_blank">ok.Idriss</a> :</p>
+					<div class="code_et_titre"><div class="titre_des_codes" id="IdTitreCode-d0e1165">solution 1 exercice 3<div class="selectionner_code"><span class="selectionner_code LienSelectionne" id="code-d0e1165" onclick="selectionCode(&#39;contenuCoded0e1165&#39;, &#39;IdTitreCode-d0e1165&#39;);">Sélectionnez</span></div></div><pre class="code_uniquement" style="overflow:auto;"><code id="contenuCoded0e1165" class="contenuCode"><code class="shellscript_comment2">#!/bin/bash </code>
+ 
+saisir <code class="shellscript_operator">(</code>) { 
+    printf <code class="shellscript_literal1">"Saisir le premier nombre, puis le signe de l'opération puis le deuxième nombre :\n\n"</code> 
+    read -r nb1 
+    read -r s 
+    read -r nb2 
+} 
+ 
+calcul <code class="shellscript_operator">(</code>) { 
+    <code class="shellscript_keyword1">case</code> <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$s</code><code class="shellscript_literal1">"</code> <code class="shellscript_keyword1">in</code> 
+        <code class="shellscript_literal1">"+"</code>) let <code class="shellscript_keyword2">result</code><code class="shellscript_operator">=</code><code class="shellscript_keyword2">$nb1</code>+<code class="shellscript_keyword2">$nb2</code> <code class="shellscript_operator">;;</code> 
+        <code class="shellscript_literal1">"-"</code>) let <code class="shellscript_keyword2">result</code><code class="shellscript_operator">=</code><code class="shellscript_keyword2">$nb1</code>-<code class="shellscript_keyword2">$nb2</code> <code class="shellscript_operator">;;</code> 
+        <code class="shellscript_literal1">"*"</code>) let <code class="shellscript_keyword2">result</code><code class="shellscript_operator">=</code><code class="shellscript_keyword2">$nb1</code>*<code class="shellscript_keyword2">$nb2</code> <code class="shellscript_operator">;;</code> 
+        <code class="shellscript_literal1">"/"</code>) let <code class="shellscript_keyword2">result</code><code class="shellscript_operator">=</code><code class="shellscript_keyword2">$nb1</code>/<code class="shellscript_keyword2">$nb2</code> <code class="shellscript_operator">;;</code> 
+        *) 
+            let <code class="shellscript_keyword2">result</code><code class="shellscript_operator">=</code><code class="shellscript_digit">0</code> 
+            echo -e <code class="shellscript_literal1">"Erreur de saisie !\nLe résultat est faux."</code><code class="shellscript_operator">;;</code> 
+    <code class="shellscript_keyword1">esac</code> 
+} 
+ 
+calcul2 <code class="shellscript_operator">(</code>) { 
+    let <code class="shellscript_keyword2">result</code><code class="shellscript_operator">=</code><code class="shellscript_keyword2">$nb1$s$nb2</code> 
+} 
+  
+<code class="shellscript_keyword1">if</code> [ <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$</code><code class="shellscript_literal1">#"</code> -eq <code class="shellscript_digit">3</code> ]; <code class="shellscript_keyword1">then</code> 
+    <code class="shellscript_keyword2">nb1</code><code class="shellscript_operator">=</code><code class="shellscript_keyword2">$1</code> ; <code class="shellscript_keyword2">s</code><code class="shellscript_operator">=</code><code class="shellscript_keyword2">$2</code> ; <code class="shellscript_keyword2">nb2</code><code class="shellscript_operator">=</code><code class="shellscript_keyword2">$3</code> 
+<code class="shellscript_keyword1">else</code> 
+    saisir 
+<code class="shellscript_keyword1">fi</code> 
+calcul 
+echo <code class="shellscript_literal1">"Le résultat est </code><code class="shellscript_keyword2">$result</code><code class="shellscript_literal1">"</code> 
+calcul2 
+echo <code class="shellscript_literal1">"Calculé d'une autre façon : </code><code class="shellscript_keyword2">$result</code><code class="shellscript_literal1">"</code></code></pre></div>
+				</div>
+				
+		<h4 class="TitreSection2" id="LII-C-3">II-C-3. Solution 2<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h4><div class="BlocSection2">
+					
+					<p>Solution proposée par <a class="lienArticle https" href="https://www.developpez.net/forums/u289749/ok-idriss/" target="_blank">ok.Idriss</a> :</p>
+					<div class="code_et_titre"><div class="titre_des_codes" id="IdTitreCode-d0e1349">solution 2 exercice 3<div class="selectionner_code"><span class="selectionner_code LienSelectionne" id="code-d0e1349" onclick="selectionCode(&#39;contenuCoded0e1349&#39;, &#39;IdTitreCode-d0e1349&#39;);">Sélectionnez</span></div></div><pre class="code_uniquement" style="overflow:auto;"><code id="contenuCoded0e1349" class="contenuCode"><code class="shellscript_comment2">#!/bin/bash </code>
+
+<code class="shellscript_keyword1">if</code> [ <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$</code><code class="shellscript_literal1">#"</code> -lt <code class="shellscript_digit">3</code> ]; <code class="shellscript_keyword1">then</code> 
+    echo <code class="shellscript_literal1">"Erreur : Il manque des paramètres !"</code> 
+<code class="shellscript_keyword1">elif</code>  [[ <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$1</code><code class="shellscript_literal1">"</code> <code class="shellscript_operator">=</code>~ ^[<code class="shellscript_digit">0</code>-<code class="shellscript_digit">9</code>]+<code class="shellscript_keyword2">$</code> ]] <code class="shellscript_operator">&amp;&amp;</code> [[ <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$3</code><code class="shellscript_literal1">"</code> <code class="shellscript_operator">=</code>~ ^[<code class="shellscript_digit">0</code>-<code class="shellscript_digit">9</code>]+<code class="shellscript_keyword2">$</code> ]]; <code class="shellscript_keyword1">then</code> 
+    <code class="shellscript_keyword1">if</code> [[ <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$2</code><code class="shellscript_literal1">"</code> <code class="shellscript_operator">=</code>~ ^<code class="shellscript_operator">(</code>\+<code class="shellscript_operator">|</code>\-<code class="shellscript_operator">|</code>\/<code class="shellscript_operator">|</code>\*){<code class="shellscript_digit">1</code>}<code class="shellscript_keyword2">$</code> ]]; <code class="shellscript_keyword1">then</code> 
+        <code class="shellscript_keyword1">if</code> [ <code class="shellscript_keyword2">$3</code> -ne <code class="shellscript_digit">0</code> ] <code class="shellscript_operator">||</code> [ <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$2</code><code class="shellscript_literal1">"</code> <code class="shellscript_operator">!=</code> <code class="shellscript_literal1">"/"</code> ]; <code class="shellscript_keyword1">then</code> 
+            echo <code class="shellscript_literal1">"Le résultat est : "</code><code class="shellscript_keyword2">$</code><code class="shellscript_operator">((</code> <code class="shellscript_keyword2">$1</code> <code class="shellscript_keyword2">$2</code> <code class="shellscript_keyword2">$3</code> )) 
+        <code class="shellscript_keyword1">else</code> 
+            echo <code class="shellscript_literal1">"Erreur : division par 0 !"</code> 
+        <code class="shellscript_keyword1">fi</code> 
+    <code class="shellscript_keyword1">else</code> 
+        echo <code class="shellscript_literal1">"Erreur : opérateur invalide !"</code> 
+    <code class="shellscript_keyword1">fi</code> 
+<code class="shellscript_keyword1">else</code> 
+    echo <code class="shellscript_literal1">"Erreur : opérandes invalides !"</code> 
+<code class="shellscript_keyword1">fi</code></code></pre></div>
+				</div>
+				
+		<h4 class="TitreSection2" id="LII-C-4">II-C-4. Solution 3<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h4><div class="BlocSection2">
+					
+					<p>Solution proposée par <a class="lienArticle https" href="https://www.developpez.net/forums/u289749/ok-idriss/" target="_blank">ok.Idriss</a> :</p>
+					<div class="code_et_titre"><div class="titre_des_codes" id="IdTitreCode-d0e1536">solution 3 exercice 3<div class="selectionner_code"><span class="selectionner_code LienSelectionne" id="code-d0e1536" onclick="selectionCode(&#39;contenuCoded0e1536&#39;, &#39;IdTitreCode-d0e1536&#39;);">Sélectionnez</span></div></div><pre class="code_uniquement" style="overflow:auto;"><code id="contenuCoded0e1536" class="contenuCode"><code class="shellscript_comment2">#!/bin/sh </code>
+
+<code class="shellscript_keyword1">if</code> [ <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$</code><code class="shellscript_literal1">#"</code> -lt <code class="shellscript_digit">3</code> ]; <code class="shellscript_keyword1">then</code> 
+    echo <code class="shellscript_literal1">"Erreur : Il manque des paramètres !"</code> 
+<code class="shellscript_keyword1">elif</code> echo <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$1$3</code><code class="shellscript_literal1">"</code> <code class="shellscript_operator">|</code> grep -E <code class="shellscript_literal1">"^[0-9]{2,}</code><code class="shellscript_keyword2">$</code><code class="shellscript_literal1">"</code> <code class="shellscript_operator">&gt;</code> /dev/null; <code class="shellscript_keyword1">then</code> 
+    <code class="shellscript_keyword1">if</code> echo <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$2</code><code class="shellscript_literal1">"</code> <code class="shellscript_operator">|</code> grep -E <code class="shellscript_literal1">"^(\+|\-|\/|\*){1}</code><code class="shellscript_keyword2">$</code><code class="shellscript_literal1">"</code> <code class="shellscript_operator">&gt;</code> /dev/null; <code class="shellscript_keyword1">then</code> 
+        <code class="shellscript_keyword1">if</code> [ <code class="shellscript_keyword2">$3</code> -ne <code class="shellscript_digit">0</code> ] <code class="shellscript_operator">||</code> [ <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$2</code><code class="shellscript_literal1">"</code> <code class="shellscript_operator">!=</code> <code class="shellscript_literal1">"/"</code> ]; <code class="shellscript_keyword1">then</code> 
+            echo <code class="shellscript_literal1">"Le résultat est : "</code><code class="shellscript_keyword2">$</code><code class="shellscript_operator">((</code> <code class="shellscript_keyword2">$1</code> <code class="shellscript_keyword2">$2</code> <code class="shellscript_keyword2">$3</code> )) 
+        <code class="shellscript_keyword1">else</code> 
+            echo <code class="shellscript_literal1">"Erreur : division par 0 !"</code> 
+        <code class="shellscript_keyword1">fi</code> 
+    <code class="shellscript_keyword1">else</code> 
+        echo <code class="shellscript_literal1">"Erreur : opérateur invalide !"</code> 
+    <code class="shellscript_keyword1">fi</code> 
+<code class="shellscript_keyword1">else</code> 
+    echo <code class="shellscript_literal1">"Erreur : opérandes invalides !"</code> 
+<code class="shellscript_keyword1">fi</code></code></pre></div>
+				</div>
+			</div>
+			
+		<h3 class="TitreSection1" id="LII-D">II-D. Exercice 4 - La factorielle<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h3><div class="BlocSection1">
+				
+				
+		<h4 class="TitreSection2" id="LII-D-1">II-D-1. Énoncé<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h4><div class="BlocSection2">
+					
+					<p>Créer un script qui permet de calculer et d'afficher la factorielle d'un nombre donné en paramètre (ou saisi en cas d'absence de paramètres).</p>
+				</div>
+				
+		<h4 class="TitreSection2" id="LII-D-2">II-D-2. Solution 1<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h4><div class="BlocSection2">
+					
+					<p>Solution proposée par <a class="lienArticle https" href="https://www.developpez.net/forums/u289749/ok-idriss/" target="_blank">ok.Idriss</a> :</p>
+					<div class="code_et_titre"><div class="titre_des_codes" id="IdTitreCode-d0e1709">solution 1 exercice 4<div class="selectionner_code"><span class="selectionner_code LienSelectionne" id="code-d0e1709" onclick="selectionCode(&#39;contenuCoded0e1709&#39;, &#39;IdTitreCode-d0e1709&#39;);">Sélectionnez</span></div></div><pre class="code_uniquement" style="overflow:auto;"><code id="contenuCoded0e1709" class="contenuCode"><code class="shellscript_comment2">#!/bin/bash </code>
+ 
+<code class="shellscript_keyword1">if</code> [ <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$</code><code class="shellscript_literal1">#"</code> -eq <code class="shellscript_digit">0</code> ]; <code class="shellscript_keyword1">then</code> 
+    echo <code class="shellscript_literal1">"Saisir une valeur : "</code> 
+    read -r val 
+<code class="shellscript_keyword1">else</code> 
+    <code class="shellscript_keyword2">val</code><code class="shellscript_operator">=</code><code class="shellscript_keyword2">$1</code> 
+<code class="shellscript_keyword1">fi</code> 
+ 
+<code class="shellscript_comment1"># Dans le cas où c'est négatif, on rend la valeur positive </code>
+<code class="shellscript_keyword1">if</code> [ <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$val</code><code class="shellscript_literal1">"</code> -lt <code class="shellscript_digit">0</code> ]; <code class="shellscript_keyword1">then</code> 
+    let <code class="shellscript_keyword2">val</code><code class="shellscript_operator">=</code>-<code class="shellscript_digit">1</code>*<code class="shellscript_keyword2">$val</code> 
+<code class="shellscript_keyword1">fi</code> 
+ 
+<code class="shellscript_keyword2">result</code><code class="shellscript_operator">=</code><code class="shellscript_digit">1</code> 
+<code class="shellscript_keyword2">val2</code><code class="shellscript_operator">=</code><code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$val</code><code class="shellscript_literal1">"</code>
+ 
+<code class="shellscript_keyword1">while</code> [ <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$val</code><code class="shellscript_literal1">"</code> -ne <code class="shellscript_digit">0</code> ]; <code class="shellscript_keyword1">do</code> 
+    printf <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$val</code><code class="shellscript_literal1"> "</code> 
+    let <code class="shellscript_keyword2">result</code><code class="shellscript_operator">=</code><code class="shellscript_keyword2">$result</code>*<code class="shellscript_keyword2">$val</code> 
+    let <code class="shellscript_keyword2">val</code><code class="shellscript_operator">=</code><code class="shellscript_keyword2">$val</code>-<code class="shellscript_digit">1</code> 
+    <code class="shellscript_keyword1">if</code> [ <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$val</code><code class="shellscript_literal1">"</code> -ne <code class="shellscript_digit">0</code> ]; <code class="shellscript_keyword1">then</code> 
+        printf <code class="shellscript_literal1">"* "</code> 
+    <code class="shellscript_keyword1">fi</code> 
+<code class="shellscript_keyword1">done</code> 
+ 
+echo <code class="shellscript_literal1">"= </code><code class="shellscript_keyword2">$result</code><code class="shellscript_literal1">"</code></code></pre></div>
+				</div>
+				
+		<h4 class="TitreSection2" id="LII-D-3">II-D-3. Solution 2<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h4><div class="BlocSection2">
+					
+					<p>Solution proposée par <a class="lienArticle simple" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/fichiers/Solution%20propos%C3%A9e%20par%20ok.Idriss%20:" target="_blank">Sve@r</a> :</p>
+					<div class="code_et_titre"><div class="titre_des_codes" id="IdTitreCode-d0e1883">solution 2 exercice 2<div class="selectionner_code"><span class="selectionner_code LienSelectionne" id="code-d0e1883" onclick="selectionCode(&#39;contenuCoded0e1883&#39;, &#39;IdTitreCode-d0e1883&#39;);">Sélectionnez</span></div></div><pre class="code_uniquement" style="overflow:auto;"><code id="contenuCoded0e1883" class="contenuCode"><code class="shellscript_comment2">#!/bin/sh </code>
+ 
+<code class="shellscript_keyword1">if</code> test <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$</code><code class="shellscript_literal1">#"</code> -eq 0; <code class="shellscript_keyword1">then</code> 
+    echo <code class="shellscript_literal1">"Saisissez une valeur correcte"</code> 
+    read -r val 
+    set -- <code class="shellscript_keyword2">$val</code> 
+<code class="shellscript_keyword1">fi</code> 
+ 
+<code class="shellscript_keyword2">nb</code><code class="shellscript_operator">=</code><code class="shellscript_keyword2">${nb:-$1}</code> 
+<code class="shellscript_keyword2">res</code><code class="shellscript_operator">=</code><code class="shellscript_keyword2">${res:-1}</code> 
+<code class="shellscript_keyword1">if</code> test <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$nb</code><code class="shellscript_literal1">"</code> -eq 0; <code class="shellscript_keyword1">then</code> 
+    echo <code class="shellscript_keyword2">$res</code> 
+    exit 
+<code class="shellscript_keyword1">fi</code> 
+ 
+<code class="shellscript_keyword2">res</code><code class="shellscript_operator">=</code><code class="shellscript_keyword3">`expr </code><code class="shellscript_keyword2">$res</code><code class="shellscript_keyword3"> \* </code><code class="shellscript_keyword2">$nb</code><code class="shellscript_keyword3">`</code> 
+<code class="shellscript_keyword2">nb</code><code class="shellscript_operator">=</code><code class="shellscript_keyword3">`expr </code><code class="shellscript_keyword2">$nb</code><code class="shellscript_keyword3"> - 1`</code> 
+. <code class="shellscript_keyword2">$0</code></code></pre></div>
+				</div>
+			</div>
+			
+		<h3 class="TitreSection1" id="LII-E">II-E. Exercice 5 - Les fichiers<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h3><div class="BlocSection1">
+				
+				
+		<h4 class="TitreSection2" id="LII-E-1">II-E-1. Énoncé<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h4><div class="BlocSection2">
+					
+					<p>Créer un script qui doit calculer le nombre de fichiers standard, de sous-répertoires, et d'exécutables d'un répertoire quelconque qui sera donné en paramètre (ou saisis en cas d'absence du paramètre).</p>
+				</div>
+				
+		<h4 class="TitreSection2" id="LII-E-2">II-E-2. Solution<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h4><div class="BlocSection2">
+					
+					<p>Solution proposée par <a class="lienArticle https" href="https://www.developpez.net/forums/u289749/ok-idriss/" target="_blank">ok.Idriss</a> :</p>
+					<div class="code_et_titre"><div class="titre_des_codes" id="IdTitreCode-d0e1998">solution exercice 5<div class="selectionner_code"><span class="selectionner_code LienSelectionne" id="code-d0e1998" onclick="selectionCode(&#39;contenuCoded0e1998&#39;, &#39;IdTitreCode-d0e1998&#39;);">Sélectionnez</span></div></div><pre class="code_uniquement" style="overflow:auto;"><code id="contenuCoded0e1998" class="contenuCode"><code class="shellscript_comment2">#!/bin/bash </code>
+ 
+<code class="shellscript_keyword2">j</code><code class="shellscript_operator">=</code><code class="shellscript_digit">0</code> 
+<code class="shellscript_keyword2">k</code><code class="shellscript_operator">=</code><code class="shellscript_digit">0</code> 
+<code class="shellscript_keyword2">l</code><code class="shellscript_operator">=</code><code class="shellscript_digit">0</code> 
+ 
+<code class="shellscript_keyword1">if</code> [ <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$</code><code class="shellscript_literal1">#"</code> -eq <code class="shellscript_digit">0</code> ]; <code class="shellscript_keyword1">then</code> 
+    echo <code class="shellscript_literal1">"Saisir le répertoire"</code> 
+    read -r rep 
+<code class="shellscript_keyword1">else</code> 
+    <code class="shellscript_keyword2">rep</code><code class="shellscript_operator">=</code><code class="shellscript_keyword2">$1</code> 
+<code class="shellscript_keyword1">fi</code> 
+ 
+cd <code class="shellscript_keyword2">$rep</code> 
+ 
+<code class="shellscript_keyword1">for</code> i <code class="shellscript_keyword1">in</code> *; <code class="shellscript_keyword1">do</code> 
+    <code class="shellscript_keyword1">if</code> [ -d <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$i</code><code class="shellscript_literal1">"</code> ]; <code class="shellscript_keyword1">then</code> 
+        echo <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$i</code><code class="shellscript_literal1">"</code> 
+        let <code class="shellscript_keyword2">j</code><code class="shellscript_operator">=</code><code class="shellscript_keyword2">$j</code>+<code class="shellscript_digit">1</code> 
+    <code class="shellscript_keyword1">fi</code> 
+    <code class="shellscript_keyword1">if</code> [ -f <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$i</code><code class="shellscript_literal1">"</code> ]; <code class="shellscript_keyword1">then</code> 
+        echo <code class="shellscript_keyword2">$i</code> 
+        let <code class="shellscript_keyword2">k</code><code class="shellscript_operator">=</code><code class="shellscript_keyword2">$k</code>+<code class="shellscript_digit">1</code> 
+    <code class="shellscript_keyword1">fi</code> 
+    <code class="shellscript_keyword1">if</code> [ -x <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$i</code><code class="shellscript_literal1">"</code> ]; <code class="shellscript_keyword1">then</code> 
+        echo <code class="shellscript_keyword2">$i</code> 
+        let <code class="shellscript_keyword2">l</code><code class="shellscript_operator">=</code><code class="shellscript_keyword2">$l</code>+<code class="shellscript_digit">1</code> 
+    <code class="shellscript_keyword1">fi</code> 
+<code class="shellscript_keyword1">done</code> 
+echo <code class="shellscript_literal1">"Il y a </code><code class="shellscript_keyword2">$j</code><code class="shellscript_literal1"> répertoires, </code><code class="shellscript_keyword2">$k</code><code class="shellscript_literal1"> fichiers et </code><code class="shellscript_keyword2">$l</code><code class="shellscript_literal1"> exécutables dans </code><code class="shellscript_keyword2">$rep</code><code class="shellscript_literal1">"</code></code></pre></div>
+				</div>
+			</div>
+			
+		<h3 class="TitreSection1" id="LII-F">II-F. Exercice 6 - Tri à bulle<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h3><div class="BlocSection1">
+				
+				
+		<h4 class="TitreSection2" id="LII-F-1">II-F-1. Énoncé<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h4><div class="BlocSection2">
+					
+					<p>Créer un script qui devra enregistrer à l'aide d'un tableau, un nombre d'entiers donné en paramètre (ou en saisie) puis trier ceux-ci dans l'ordre croissant dans ce même tableau (sans passer par un autre) et enfin afficher le contenu du tableau (ordonné) sur la sortie standard.</p>
+				</div>
+				
+		<h4 class="TitreSection2" id="LII-F-2">II-F-2. Solution<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h4><div class="BlocSection2">
+					
+					<p>Solution proposée par <a class="lienArticle https" href="https://www.developpez.net/forums/u289749/ok-idriss/" target="_blank">ok.Idriss</a> :</p>
+					<div class="code_et_titre"><div class="titre_des_codes" id="IdTitreCode-d0e2207">solution exercice 6<div class="selectionner_code"><span class="selectionner_code LienSelectionne" id="code-d0e2207" onclick="selectionCode(&#39;contenuCoded0e2207&#39;, &#39;IdTitreCode-d0e2207&#39;);">Sélectionnez</span></div></div><pre class="code_uniquement" style="overflow:auto;"><code id="contenuCoded0e2207" class="contenuCode"><code class="shellscript_comment2">#!/bin/bash </code>
+  
+<code class="shellscript_keyword1">if</code> [ <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$</code><code class="shellscript_literal1">#"</code> -lt <code class="shellscript_digit">1</code> ]; <code class="shellscript_keyword1">then</code> 
+    echo <code class="shellscript_literal1">"Saisir le nombre d'éléments à ordonner"</code> 
+    read -r SIZE 
+<code class="shellscript_keyword1">else</code> 
+    <code class="shellscript_keyword2">SIZE</code><code class="shellscript_operator">=</code><code class="shellscript_keyword2">$1</code> 
+<code class="shellscript_keyword1">fi</code> 
+ 
+echo <code class="shellscript_literal1">"Saisir les éléments :"</code> 
+ 
+<code class="shellscript_keyword1">for</code> <code class="shellscript_operator">((</code> <code class="shellscript_keyword2">i</code><code class="shellscript_operator">=</code><code class="shellscript_digit">0</code> ; i<code class="shellscript_operator">&lt;</code>SIZE ; i++ )); <code class="shellscript_keyword1">do</code> 
+    read -r tab[i] 
+<code class="shellscript_keyword1">done</code> 
+ 
+<code class="shellscript_keyword1">for</code> <code class="shellscript_operator">((</code> <code class="shellscript_keyword2">i</code><code class="shellscript_operator">=</code><code class="shellscript_digit">0</code> ; i<code class="shellscript_operator">&lt;</code>SIZE ; i++ )); <code class="shellscript_keyword1">do</code> 
+    <code class="shellscript_keyword1">for</code> <code class="shellscript_operator">((</code> <code class="shellscript_keyword2">j</code><code class="shellscript_operator">=</code><code class="shellscript_keyword2">$i</code>+<code class="shellscript_digit">1</code> ; j<code class="shellscript_operator">&lt;</code>SIZE ; j++ )) 
+    <code class="shellscript_keyword1">do</code> 
+        <code class="shellscript_keyword1">if</code> [ <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">${tab[$j]}</code><code class="shellscript_literal1">"</code> -le <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">${tab[$i]}</code><code class="shellscript_literal1">"</code> ]; <code class="shellscript_keyword1">then</code> 
+            <code class="shellscript_keyword2">tampon</code><code class="shellscript_operator">=</code><code class="shellscript_literal1">"</code><code class="shellscript_keyword2">${tab[$i]}</code><code class="shellscript_literal1">"</code> 
+            tab[<code class="shellscript_keyword2">$i</code>]<code class="shellscript_operator">=</code><code class="shellscript_literal1">"</code><code class="shellscript_keyword2">${tab[$j]}</code><code class="shellscript_literal1">"</code> 
+            tab[<code class="shellscript_keyword2">$j</code>]<code class="shellscript_operator">=</code><code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$tampon</code><code class="shellscript_literal1">"</code> 
+        <code class="shellscript_keyword1">fi</code> 
+    <code class="shellscript_keyword1">done</code> 
+<code class="shellscript_keyword1">done</code> 
+ 
+echo <code class="shellscript_literal1">"Valeurs ordonnées :"</code> 
+ 
+<code class="shellscript_keyword1">for</code> <code class="shellscript_operator">((</code> <code class="shellscript_keyword2">i</code><code class="shellscript_operator">=</code><code class="shellscript_digit">0</code> ; i<code class="shellscript_operator">&lt;</code>SIZE ; i++ )); <code class="shellscript_keyword1">do</code> 
+    echo <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">${tab[$i]}</code><code class="shellscript_literal1">"</code> 
+<code class="shellscript_keyword1">done</code></code></pre></div>
+				</div>
+			</div>
+			
+		<h3 class="TitreSection1" id="LII-G">II-G. Exercice 7 - ls avec ordre inversé<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h3><div class="BlocSection1">
+				
+				
+		<h4 class="TitreSection2" id="LII-G-1">II-G-1. Énoncé<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h4><div class="BlocSection2">
+					
+					<p>Créer un script qui renvoie la même sortie que la commande <span class="italique"><b>ls</b></span> mais <b>dans l'ordre décroissant</b> (autrement dit : le script devra lister le contenu d'un répertoire dans l'ordre décroissant). Vous ne devez ni vous servir de la commande <span class="italique"><b>ls</b></span>, ni de la commande <span class="italique"><b>sort</b></span>.</p>
+				</div>
+				
+		<h4 class="TitreSection2" id="LII-G-2">II-G-2. Solution 1<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h4><div class="BlocSection2">
+					
+					<p>Solution proposée par <a class="lienArticle https" href="https://www.developpez.net/forums/u289749/ok-idriss/" target="_blank">ok.Idriss</a> :</p>
+					<div class="code_et_titre"><div class="titre_des_codes" id="IdTitreCode-d0e2447">solution 1 exercice 7<div class="selectionner_code"><span class="selectionner_code LienSelectionne" id="code-d0e2447" onclick="selectionCode(&#39;contenuCoded0e2447&#39;, &#39;IdTitreCode-d0e2447&#39;);">Sélectionnez</span></div></div><pre class="code_uniquement" style="overflow:auto;"><code id="contenuCoded0e2447" class="contenuCode"><code class="shellscript_comment2">#!/bin/bash </code>
+  
+<code class="shellscript_comment1"># Si on a au moins un paramètre et que le premier paramètre est un répertoire </code>
+<code class="shellscript_keyword1">if</code> [ <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$</code><code class="shellscript_literal1">#"</code> -ge <code class="shellscript_digit">1</code> ] <code class="shellscript_operator">&amp;&amp;</code> [ -d <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$1v</code><code class="shellscript_literal1"> ]; then </code>
+<code class="shellscript_literal1">    cd </code><code class="shellscript_keyword2">$1</code><code class="shellscript_literal1"> </code>
+<code class="shellscript_literal1">fi </code>
+<code class="shellscript_literal1"> </code>
+<code class="shellscript_literal1">nb=0 </code>
+<code class="shellscript_literal1"> </code>
+<code class="shellscript_literal1">for fichier in *; do </code>
+<code class="shellscript_literal1">    tab[</code><code class="shellscript_keyword2">$nb</code><code class="shellscript_literal1">]="</code><code class="shellscript_keyword2">$fichier</code><code class="shellscript_literal1">" </code>
+<code class="shellscript_literal1">    let nb=</code><code class="shellscript_keyword2">$nb</code><code class="shellscript_literal1">+1 </code>
+<code class="shellscript_literal1">done </code>
+<code class="shellscript_literal1"> </code>
+<code class="shellscript_literal1"># affichage inversé </code>
+<code class="shellscript_literal1">for (( i=</code><code class="shellscript_keyword2">$nb</code><code class="shellscript_literal1"> ; i&gt;=0 ; i=</code><code class="shellscript_keyword2">$i</code><code class="shellscript_literal1">-1 )); do </code>
+<code class="shellscript_literal1">    echo </code><code class="shellscript_keyword2">${tab[$i]}</code><code class="shellscript_literal1"> </code>
+<code class="shellscript_literal1">done</code></code></pre></div>
+				</div>
+				
+		<h4 class="TitreSection2" id="LII-G-3">II-G-3. Solution 2<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h4><div class="BlocSection2">
+					
+					<p>Solution proposée par <a class="lienArticle https" href="https://www.developpez.net/forums/u55998/becket/" target="_blank">becket</a> :</p>
+					<div class="code_et_titre"><div class="titre_des_codes" id="IdTitreCode-d0e2559">solution 2 exercice 7<div class="selectionner_code"><span class="selectionner_code LienSelectionne" id="code-d0e2559" onclick="selectionCode(&#39;contenuCoded0e2559&#39;, &#39;IdTitreCode-d0e2559&#39;);">Sélectionnez</span></div></div><pre class="code_uniquement" style="overflow:auto;"><code id="contenuCoded0e2559" class="contenuCode"><code class="shellscript_comment2">#!/bin/bash </code>
+ 
+<code class="shellscript_keyword2">listing</code><code class="shellscript_operator">=(</code> * ) 
+ 
+<code class="shellscript_keyword1">for</code> <code class="shellscript_operator">((</code> <code class="shellscript_keyword2">i</code><code class="shellscript_operator">=</code><code class="shellscript_keyword2">${#listing[@]}</code>-<code class="shellscript_digit">1</code> ; i <code class="shellscript_operator">&gt;=</code> <code class="shellscript_digit">0</code> ; <code class="shellscript_keyword2">i</code><code class="shellscript_operator">=</code>i-<code class="shellscript_digit">1</code> )); <code class="shellscript_keyword1">do</code> 
+    echo <code class="shellscript_keyword2">${listing[$i]}</code> 
+<code class="shellscript_keyword1">done</code></code></pre></div>
+				</div>
+				
+		<h4 class="TitreSection2" id="LII-G-4">II-G-4. Solution 3<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h4><div class="BlocSection2">
+					
+					<p>Solution proposée par <a class="lienArticle https" href="https://www.developpez.net/forums/u219247/n_bah/" target="_blank">N_Bah</a> :</p>
+					<div class="code_et_titre"><div class="titre_des_codes" id="IdTitreCode-d0e2619">solution 3 exercice 7<div class="selectionner_code"><span class="selectionner_code LienSelectionne" id="code-d0e2619" onclick="selectionCode(&#39;contenuCoded0e2619&#39;, &#39;IdTitreCode-d0e2619&#39;);">Sélectionnez</span></div></div><pre class="code_uniquement" style="overflow:auto;"><code id="contenuCoded0e2619" class="contenuCode"><code class="shellscript_comment2">#!/bin/bash </code>
+ 
+read -rp <code class="shellscript_literal1">'Entrez le nom du répertoire : '</code> repertoire 
+ 
+<code class="shellscript_keyword1">if</code> [ -d <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$repertoire</code><code class="shellscript_literal1">"</code> ]; <code class="shellscript_keyword1">then</code> 
+    [[ <code class="shellscript_keyword2">$repertoire</code> <code class="shellscript_operator">!=</code> */  ]] <code class="shellscript_operator">&amp;&amp;</code> <code class="shellscript_keyword2">repertoire</code><code class="shellscript_operator">=</code><code class="shellscript_literal1">"</code><code class="shellscript_keyword2">${repertoire:+$repertoire/}</code><code class="shellscript_literal1">"</code> 
+    shopt -s nullglob <code class="shellscript_comment1">#sinon repertoireVide/*, retournera repertoireVide/* </code>
+    <code class="shellscript_keyword2">fichiers</code><code class="shellscript_operator">=(</code> <code class="shellscript_keyword2">${repertoire}</code>* ) 
+    <code class="shellscript_operator">((</code><code class="shellscript_keyword2">${#fichiers[@]}</code>)) <code class="shellscript_operator">&amp;&amp;</code> { 
+        <code class="shellscript_keyword1">for</code> <code class="shellscript_operator">((</code> <code class="shellscript_keyword2">x</code><code class="shellscript_operator">=</code><code class="shellscript_keyword2">${#fichiers[@]}</code>-1; x<code class="shellscript_operator">&gt;=</code>0; x-- )); <code class="shellscript_keyword1">do</code> 
+            echo <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">${fichiers[x]}</code><code class="shellscript_literal1">"</code> 
+        <code class="shellscript_keyword1">done</code> 
+    } <code class="shellscript_operator">||</code> echo <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$repertoire</code><code class="shellscript_literal1"> est vide"</code> 
+<code class="shellscript_keyword1">else</code> 
+    echo <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$repertoire</code><code class="shellscript_literal1"> n'est pas un répertoire"</code> 
+<code class="shellscript_keyword1">fi</code></code></pre></div>
+				</div>
+				
+		<h4 class="TitreSection2" id="LII-G-5">II-G-5. Solution 4<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h4><div class="BlocSection2">
+					
+					<p>Solution proposée par <a class="lienArticle https" href="https://www.developpez.net/forums/u450766/chardclo/" target="_blank">chardclo</a> :</p>
+					<div class="code_et_titre"><div class="titre_des_codes" id="IdTitreCode-d0e2742">solution 4 exercice 7<div class="selectionner_code"><span class="selectionner_code LienSelectionne" id="code-d0e2742" onclick="selectionCode(&#39;contenuCoded0e2742&#39;, &#39;IdTitreCode-d0e2742&#39;);">Sélectionnez</span></div></div><pre class="code_uniquement" style="overflow:auto;"><code id="contenuCoded0e2742" class="contenuCode"><code class="shellscript_comment2">#!/bin/bash </code>
+read -rp <code class="shellscript_literal1">'Entrez le nom du répertoire : '</code> repertoire 
+[ -d <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$repertoire</code><code class="shellscript_literal1">"</code> ] <code class="shellscript_operator">||</code> { 
+    printf <code class="shellscript_literal1">"%s n'est pas un nom de dossier valide."</code> <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$repertoire</code><code class="shellscript_literal1">"</code> 
+    exit <code class="shellscript_digit">1</code> 
+} 
+compgen -o default <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">${repertoire}</code><code class="shellscript_literal1">/"</code> <code class="shellscript_operator">|</code> tac</code></pre></div>
+				</div>
+				
+		<h4 class="TitreSection2" id="LII-G-6">II-G-6. Solution 5<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h4><div class="BlocSection2">
+					
+					<p>Solution proposée par <a class="lienArticle https" href="https://www.developpez.net/forums/u450766/chardclo/" target="_blank">chardclo</a> :</p>
+					<div class="code_et_titre"><div class="titre_des_codes" id="IdTitreCode-d0e2795">solution 5 exercice 7<div class="selectionner_code"><span class="selectionner_code LienSelectionne" id="code-d0e2795" onclick="selectionCode(&#39;contenuCoded0e2795&#39;, &#39;IdTitreCode-d0e2795&#39;);">Sélectionnez</span></div></div><pre class="code_uniquement" style="overflow:auto;"><code id="contenuCoded0e2795" class="contenuCode"><code class="shellscript_comment2">#!/bin/bash </code>
+read -rp <code class="shellscript_literal1">'Entrez le nom du répertoire : '</code> repertoire 
+[ -d <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$repertoire</code><code class="shellscript_literal1">"</code> ] <code class="shellscript_operator">||</code> { 
+    printf <code class="shellscript_literal1">"%s n'est pas un nom de dossier valide.\n"</code> <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$repertoire</code><code class="shellscript_literal1">"</code> 
+    exit <code class="shellscript_digit">1</code> 
+} 
+ 
+<code class="shellscript_keyword2">text</code><code class="shellscript_operator">=</code><code class="shellscript_literal1">""</code> 
+<code class="shellscript_keyword1">while</code> read -r; <code class="shellscript_keyword1">do</code> 
+    <code class="shellscript_keyword2">text</code><code class="shellscript_operator">=</code><code class="shellscript_literal1">"</code><code class="shellscript_keyword2">${REPLY}</code><code class="shellscript_literal1">\n</code><code class="shellscript_keyword2">${text}</code><code class="shellscript_literal1">"</code> 
+<code class="shellscript_keyword1">done</code> <code class="shellscript_operator">&lt;</code> <code class="shellscript_operator">&lt;(</code>compgen -o default <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">${repertoire}</code><code class="shellscript_literal1">/"</code>) 
+ 
+[[ <code class="shellscript_keyword2">${text}</code> ]] <code class="shellscript_operator">&amp;&amp;</code> printf <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$text</code><code class="shellscript_literal1">"</code> <code class="shellscript_operator">||</code> printf <code class="shellscript_literal1">"le dossier %s est vide.\n"</code> <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$repertoire</code><code class="shellscript_literal1">"</code></code></pre></div>
+				</div>
+			</div>
+		</div>
+		
+		<h2 class="TitreSection0" id="LIII">III. Niveau confirmé<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h2><div class="BlocSection0">
+			
+			
+		<h3 class="TitreSection1" id="LIII-A">III-A. Exercice 1 - Fichier de notes<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h3><div class="BlocSection1">
+				
+				
+		<h4 class="TitreSection2" id="LIII-A-1">III-A-1. Énoncé<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h4><div class="BlocSection2">
+					
+					<p>Créer un script qui va devra exploiter les données d'un fichier de notes que vous aller créer au préalable dans le même répertoire que le script.<br><br>
+		Ce fichier sera appelé <span class="italique">FichierNote.txt</span> et devra se présenter comme ceci :</p>
+					<div class="code_et_titre"><div class="titre_des_codes" id="IdTitreCode-d0e2922">&nbsp;<div class="selectionner_code"><span class="selectionner_code LienSelectionne" id="code-d0e2922" onclick="selectionCode(&#39;contenuCoded0e2922&#39;, &#39;IdTitreCode-d0e2922&#39;);">Sélectionnez</span></div></div><pre class="code_uniquement" style="overflow:auto;"><code id="contenuCoded0e2922" class="contenuCode">Dupont François 12
+Durand Françoise 8
+Dujardin Nicole 14</code></pre></div>
+					<p>Le script devra afficher les lignes dans lesquelles la note est supérieure ou égale à 10.</p>
+					<p>Exemple :</p>
+					<div class="code_et_titre"><div class="titre_des_codes" id="IdTitreCode-d0e2931">solution exercice 1<div class="selectionner_code"><span class="selectionner_code LienSelectionne" id="code-d0e2931" onclick="selectionCode(&#39;contenuCoded0e2931&#39;, &#39;IdTitreCode-d0e2931&#39;);">Sélectionnez</span></div></div><pre class="code_uniquement" style="overflow:auto;"><code id="contenuCoded0e2931" class="contenuCode">[ ~] ./NomDuScript 
+Dupont        François        <code class="shellscript_digit">12</code> 
+Dujardin Nicole        <code class="shellscript_digit">14</code></code></pre></div>
+				</div>
+				
+		<h4 class="TitreSection2" id="LIII-A-2">III-A-2. Solution<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h4><div class="BlocSection2">
+					
+					<p>Solution proposée par <a class="lienArticle https" href="https://www.developpez.net/forums/u289749/ok-idriss/" target="_blank">ok.Idriss</a> :</p>
+					<div class="code_et_titre"><div class="titre_des_codes" id="IdTitreCode-d0e2951">solution exercice 1<div class="selectionner_code"><span class="selectionner_code LienSelectionne" id="code-d0e2951" onclick="selectionCode(&#39;contenuCoded0e2951&#39;, &#39;IdTitreCode-d0e2951&#39;);">Sélectionnez</span></div></div><pre class="code_uniquement" style="overflow:auto;"><code id="contenuCoded0e2951" class="contenuCode"><code class="shellscript_comment2">#!/bin/bash </code>
+
+<code class="shellscript_keyword2">fichier</code><code class="shellscript_operator">=</code><code class="shellscript_literal1">"FichierNote.txt"</code>
+
+<code class="shellscript_keyword1">while</code> read -r ligne; <code class="shellscript_keyword1">do</code> 
+    set -- <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$ligne</code><code class="shellscript_literal1">"</code> 
+    <code class="shellscript_keyword1">if</code> [ <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$3</code><code class="shellscript_literal1">"</code> -ge <code class="shellscript_digit">10</code> ]; <code class="shellscript_keyword1">then</code> 
+        echo <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$ligne</code><code class="shellscript_literal1">"</code> 
+    <code class="shellscript_keyword1">fi</code> 
+<code class="shellscript_keyword1">done</code> <code class="shellscript_operator">&lt;</code> <code class="shellscript_keyword2">$fichier</code></code></pre></div>
+				</div>
+			</div>
+			
+		<h3 class="TitreSection1" id="LIII-B">III-B. Exercice 2 - Liste d'utilisateurs<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h3><div class="BlocSection1">
+				
+				
+		<h4 class="TitreSection2" id="LIII-B-1">III-B-1. Énoncé<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h4><div class="BlocSection2">
+					
+					<p>Créer un script qui prend en paramètre (ou en saisie en cas d'absence du paramètre) un fichier qui contient des lignes comme ceci : <span class="italique">Login + Tabulation + Nom + Tabulation + Prénom</span>. </p>
+					<p>Exemple :</p>
+					<div class="code_et_titre"><div class="titre_des_codes" id="IdTitreCode-d0e3031">&nbsp;<div class="selectionner_code"><span class="selectionner_code LienSelectionne" id="code-d0e3031" onclick="selectionCode(&#39;contenuCoded0e3031&#39;, &#39;IdTitreCode-d0e3031&#39;);">Sélectionnez</span></div></div><pre class="code_uniquement" style="overflow:auto;"><code id="contenuCoded0e3031" class="contenuCode">dupontf Dupont François
+fdurand Durand Françoise
+nicoled Dujardin Nicole</code></pre></div>
+					<p>Le script devra vérifier, à l'aide d'une fonction, l'existence des utilisateurs enregistrés dans le fichier. Admettons, par exemple, que seul <span class="italique">Dupont François</span> soit un utilisateur et que le fichier se nomme <span class="italique">~/Documents/FichierUser</span>, le script devra s'exécuter comme ceci :</p>
+					<div class="code_et_titre"><div class="titre_des_codes" id="IdTitreCode-d0e3043">&nbsp;<div class="selectionner_code"><span class="selectionner_code LienSelectionne" id="code-d0e3043" onclick="selectionCode(&#39;contenuCoded0e3043&#39;, &#39;IdTitreCode-d0e3043&#39;);">Sélectionnez</span></div></div><pre class="code_uniquement" style="overflow:auto;"><code id="contenuCoded0e3043" class="contenuCode">[ ~] ./NomDuScript ~/Doucuments/FichierUser 
+dupontf        Dupont        François 
+[ ~] ./NomDuScript 
+Saisissez le fichier à traiter : 
+~/Documents/UserFichier 
+Le fichier n<code class="shellscript_literal1">'existe pas.</code>
+<code class="shellscript_literal1">[ ~]</code></code></pre></div>
+					<p>Le script devra donc, au préalable, vérifier l'existence du fichier avant de comparer son contenu au fichier /etc/passwd. Le script devra également quitter la boucle si le fichier est vide.</p>
+				</div>
+				
+		<h4 class="TitreSection2" id="LIII-B-2">III-B-2. Solution<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h4><div class="BlocSection2">
+					
+					<p>Solution proposée par <a class="lienArticle https" href="https://www.developpez.net/forums/u289749/ok-idriss/" target="_blank">ok.Idriss</a> :</p>
+					<div class="code_et_titre"><div class="titre_des_codes" id="IdTitreCode-d0e3066">solution exercice 2<div class="selectionner_code"><span class="selectionner_code LienSelectionne" id="code-d0e3066" onclick="selectionCode(&#39;contenuCoded0e3066&#39;, &#39;IdTitreCode-d0e3066&#39;);">Sélectionnez</span></div></div><pre class="code_uniquement" style="overflow:auto;"><code id="contenuCoded0e3066" class="contenuCode"><code class="shellscript_comment2">#!/bin/bash </code>
+
+TestUser <code class="shellscript_operator">(</code>) { 
+    <code class="shellscript_keyword1">if</code> grep <code class="shellscript_literal1">"^</code><code class="shellscript_keyword2">$util</code><code class="shellscript_literal1">:"</code> /etc/passwd <code class="shellscript_operator">&gt;</code> /dev/null 
+    <code class="shellscript_keyword1">then</code> 
+        echo <code class="shellscript_keyword2">$ligne</code> 
+    <code class="shellscript_keyword1">fi</code> 
+} 
+
+<code class="shellscript_keyword1">if</code> [ <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$</code><code class="shellscript_literal1">#"</code> -eq <code class="shellscript_digit">0</code> ]; <code class="shellscript_keyword1">then</code> 
+    echo <code class="shellscript_literal1">"Chemin et nom du fichier :"</code> 
+    read -r fichier 
+<code class="shellscript_keyword1">else</code> 
+    <code class="shellscript_keyword2">fichier</code><code class="shellscript_operator">=</code><code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$1</code><code class="shellscript_literal1">"</code> 
+<code class="shellscript_keyword1">fi</code> 
+
+<code class="shellscript_keyword1">if</code> [ -e <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$fichier</code><code class="shellscript_literal1">"</code> ]; <code class="shellscript_keyword1">then</code> 
+    <code class="shellscript_keyword1">while</code> read -r ligne; <code class="shellscript_keyword1">do</code> 
+        set -- <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$ligne</code><code class="shellscript_literal1">"</code> 
+        <code class="shellscript_keyword2">util</code><code class="shellscript_operator">=</code><code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$1</code><code class="shellscript_literal1">"</code> 
+        TestUser 
+    <code class="shellscript_keyword1">done</code> <code class="shellscript_operator">&lt;</code> <code class="shellscript_keyword2">$fichier</code> 
+<code class="shellscript_keyword1">else</code> 
+    echo <code class="shellscript_literal1">"Le fichier </code><code class="shellscript_keyword2">$fichier</code><code class="shellscript_literal1"> n'existe pas."</code> 
+<code class="shellscript_keyword1">fi</code></code></pre></div>
+				</div>
+			</div>
+			
+		<h3 class="TitreSection1" id="LIII-C">III-C. Exercice 3 - Convertisseur décimal/binaire<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h3><div class="BlocSection1">
+				
+				
+		<h4 class="TitreSection2" id="LIII-C-1">III-C-1. Énoncé<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h4><div class="BlocSection2">
+					
+					<p>Créer un script qui prend en paramètre (ou en saisie en cas d'absence de paramètres) une valeur décimale et qui doit la convertir en binaire.<br><br>
+		Vous devez travailler sur 8 bits et chaque bit devra être contenu dans une case d'un tableau mono-dimensionnel et à la fin on affiche toutes les cases de ce tableau pour avoir la valeur en binaire lisible de droite à gauche, à partir de la valeur décimale saisie au départ.</p>
+				</div>
+				
+		<h4 class="TitreSection2" id="LIII-C-2">III-C-2. Solution 1<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h4><div class="BlocSection2">
+					
+					<p>Solution proposée par <a class="lienArticle https" href="https://www.developpez.net/forums/u289749/ok-idriss/" target="_blank">ok.Idriss</a> :</p>
+					<div class="code_et_titre"><div class="titre_des_codes" id="IdTitreCode-d0e3220">solution 1 exercice 3<div class="selectionner_code"><span class="selectionner_code LienSelectionne" id="code-d0e3220" onclick="selectionCode(&#39;contenuCoded0e3220&#39;, &#39;IdTitreCode-d0e3220&#39;);">Sélectionnez</span></div></div><pre class="code_uniquement" style="overflow:auto;"><code id="contenuCoded0e3220" class="contenuCode"><code class="shellscript_comment2">#!/bin/bash </code>
+ 
+<code class="shellscript_keyword2">MaxBits</code><code class="shellscript_operator">=</code><code class="shellscript_digit">8</code> 
+ 
+pow <code class="shellscript_operator">(</code>) { 
+    <code class="shellscript_keyword2">value2</code><code class="shellscript_operator">=</code><code class="shellscript_digit">1</code> 
+    <code class="shellscript_keyword1">for</code> <code class="shellscript_operator">((</code> <code class="shellscript_keyword2">k</code><code class="shellscript_operator">=</code><code class="shellscript_digit">1</code> ; k<code class="shellscript_operator">&lt;</code><code class="shellscript_keyword2">$i</code> ; k ++ )); <code class="shellscript_keyword1">do</code> 
+        let <code class="shellscript_keyword2">value2</code><code class="shellscript_operator">=</code><code class="shellscript_keyword2">$value2</code>*<code class="shellscript_digit">2</code> 
+    <code class="shellscript_keyword1">done</code> 
+} 
+ 
+<code class="shellscript_keyword1">if</code> [ <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$</code><code class="shellscript_literal1">#"</code> -eq <code class="shellscript_digit">0</code> ]; <code class="shellscript_keyword1">then</code> 
+    echo <code class="shellscript_literal1">"Saisir une valeur décimale"</code> 
+    read -r value 
+<code class="shellscript_keyword1">else</code> 
+    <code class="shellscript_keyword2">value</code><code class="shellscript_operator">=</code><code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$1</code><code class="shellscript_literal1">"</code> 
+<code class="shellscript_keyword1">fi</code> 
+ 
+declare -a bin 
+ 
+<code class="shellscript_keyword2">j</code><code class="shellscript_operator">=</code><code class="shellscript_digit">0</code> 
+<code class="shellscript_keyword1">for</code> <code class="shellscript_operator">((</code> <code class="shellscript_keyword2">i</code><code class="shellscript_operator">=</code><code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$MaxBits</code><code class="shellscript_literal1">"</code> ; i<code class="shellscript_operator">&gt;=</code><code class="shellscript_digit">0</code> ; i-- )); <code class="shellscript_keyword1">do</code> 
+    pow 
+    <code class="shellscript_keyword1">if</code> [ <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$value</code><code class="shellscript_literal1">"</code> -ge <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$value2</code><code class="shellscript_literal1">"</code> ]; <code class="shellscript_keyword1">then</code> 
+        bin[<code class="shellscript_keyword2">$j</code>]<code class="shellscript_operator">=</code><code class="shellscript_literal1">"1"</code> 
+        let <code class="shellscript_keyword2">value</code><code class="shellscript_operator">=</code><code class="shellscript_keyword2">$value</code>-<code class="shellscript_keyword2">$value2</code> 
+    <code class="shellscript_keyword1">else</code> 
+        bin[<code class="shellscript_keyword2">$j</code>]<code class="shellscript_operator">=</code><code class="shellscript_literal1">"0"</code> 
+    <code class="shellscript_keyword1">fi</code> 
+    let <code class="shellscript_keyword2">j</code><code class="shellscript_operator">=</code><code class="shellscript_keyword2">$j</code>+<code class="shellscript_digit">1</code> 
+<code class="shellscript_keyword1">done</code> 
+ 
+printf <code class="shellscript_literal1">"La valeur binaire est de : "</code> 
+<code class="shellscript_keyword1">for</code> <code class="shellscript_operator">((</code> <code class="shellscript_keyword2">i</code><code class="shellscript_operator">=</code><code class="shellscript_digit">0</code> ; i<code class="shellscript_operator">&lt;</code><code class="shellscript_keyword2">$MaxBits</code> ; i++ )); <code class="shellscript_keyword1">do</code> 
+    printf <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">${bin[$i]}</code><code class="shellscript_literal1">"</code> 
+<code class="shellscript_keyword1">done</code> 
+echo <code class="shellscript_literal1">""</code></code></pre></div>
+				</div>
+				
+		<h4 class="TitreSection2" id="LIII-C-3">III-C-3. Solution 2<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h4><div class="BlocSection2">
+					
+					<p>Solution proposée par <a class="lienArticle https" href="https://www.developpez.net/forums/u55998/becket/" target="_blank">becket</a> :</p>
+					<div class="code_et_titre"><div class="titre_des_codes" id="IdTitreCode-d0e3457">solution 2 exercie 3<div class="selectionner_code"><span class="selectionner_code LienSelectionne" id="code-d0e3457" onclick="selectionCode(&#39;contenuCoded0e3457&#39;, &#39;IdTitreCode-d0e3457&#39;);">Sélectionnez</span></div></div><pre class="code_uniquement" style="overflow:auto;"><code id="contenuCoded0e3457" class="contenuCode"><code class="shellscript_comment2">#!/bin/bash </code>
+ 
+unset resultat   
+echo  <code class="shellscript_literal1">"Entrez une valeur a convertir : "</code> 
+read -r i  
+<code class="shellscript_keyword1">for</code> <code class="shellscript_operator">((</code> <code class="shellscript_keyword2">cpt</code><code class="shellscript_operator">=</code><code class="shellscript_digit">8</code> ; <code class="shellscript_keyword2">$cpt</code> <code class="shellscript_operator">&gt;</code> <code class="shellscript_digit">1</code>  ; cpt-- )); <code class="shellscript_keyword1">do</code>  
+        let resultat[<code class="shellscript_keyword2">$cpt</code>]<code class="shellscript_operator">=</code><code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$i</code><code class="shellscript_literal1"> &amp; 1"</code>  
+        let <code class="shellscript_keyword2">i</code><code class="shellscript_operator">=</code><code class="shellscript_literal1">"i &gt;&gt;= 1"</code>    
+<code class="shellscript_keyword1">done</code>  
+echo <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">${resultat[@]}</code><code class="shellscript_literal1">"</code></code></pre></div>
+				</div>
+				
+		<h4 class="TitreSection2" id="LIII-C-4">III-C-4. Solution 3<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h4><div class="BlocSection2">
+					
+					<p>Solution proposée par <a class="lienArticle https" href="https://www.developpez.net/forums/u450766/chardclo/" target="_blank">chardclo</a> :</p>
+					<div class="code_et_titre"><div class="titre_des_codes" id="IdTitreCode-d0e3530">solution 3 exercice 3<div class="selectionner_code"><span class="selectionner_code LienSelectionne" id="code-d0e3530" onclick="selectionCode(&#39;contenuCoded0e3530&#39;, &#39;IdTitreCode-d0e3530&#39;);">Sélectionnez</span></div></div><pre class="code_uniquement" style="overflow:auto;"><code id="contenuCoded0e3530" class="contenuCode"><code class="shellscript_comment2">#!/bin/bash </code>
+
+unset res 
+<code class="shellscript_keyword2">dec</code><code class="shellscript_operator">=</code><code class="shellscript_keyword2">$1</code> 
+[[ <code class="shellscript_keyword2">$dec</code> ]] <code class="shellscript_operator">||</code> read -rp  <code class="shellscript_literal1">"Entrez une valeur a convertir : "</code> dec 
+<code class="shellscript_keyword1">while</code> true; <code class="shellscript_keyword1">do</code> 
+    res[<code class="shellscript_keyword2">$dec</code>]<code class="shellscript_operator">=</code><code class="shellscript_keyword2">$</code><code class="shellscript_operator">((</code>dec <code class="shellscript_operator">&amp;</code> <code class="shellscript_digit">1</code>)) 
+    <code class="shellscript_operator">((</code>dec<code class="shellscript_operator">&gt;&gt;=</code><code class="shellscript_digit">1</code> )) <code class="shellscript_operator">||</code> break 
+<code class="shellscript_keyword1">done</code> 
+echo <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">${res[@]}</code><code class="shellscript_literal1">"</code></code></pre></div>
+				</div>
+			</div>
+			
+		<h3 class="TitreSection1" id="LIII-D">III-D. Exercice 4 - Moyenne de notes sur un fichier<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h3><div class="BlocSection1">
+				
+				
+		<h4 class="TitreSection2" id="LIII-D-1">III-D-1. Énoncé<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h4><div class="BlocSection2">
+					
+					<p>Créer un script qui prend en paramètre ou en saisie le nom d'un fichier contenant le nom des élèves et leurs trois notes. Le script devra : afficher les noms des élèves, puis calculer et afficher la moyenne de chaque élève<br><br>
+		Voici comment se présente le fichier :</p>
+					<div class="code_et_titre"><div class="titre_des_codes" id="IdTitreCode-d0e3611">&nbsp;<div class="selectionner_code"><span class="selectionner_code LienSelectionne" id="code-d0e3611" onclick="selectionCode(&#39;contenuCoded0e3611&#39;, &#39;IdTitreCode-d0e3611&#39;);">Sélectionnez</span></div></div><pre class="code_uniquement" style="overflow:auto;"><code id="contenuCoded0e3611" class="contenuCode">Durand 12 9 14 
+Lucas 8 11 4 
+Martin 9 12 1</code></pre></div>
+				</div>
+				
+		<h4 class="TitreSection2" id="LIII-D-2">III-D-2. Solution 1<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h4><div class="BlocSection2">
+					
+					<p>Solution proposée par <a class="lienArticle https" href="https://www.developpez.net/forums/u289749/ok-idriss/" target="_blank">ok.Idriss</a> :</p>
+					<div class="code_et_titre"><div class="titre_des_codes" id="IdTitreCode-d0e3626">solution 1 exercice 4<div class="selectionner_code"><span class="selectionner_code LienSelectionne" id="code-d0e3626" onclick="selectionCode(&#39;contenuCoded0e3626&#39;, &#39;IdTitreCode-d0e3626&#39;);">Sélectionnez</span></div></div><pre class="code_uniquement" style="overflow:auto;"><code id="contenuCoded0e3626" class="contenuCode"><code class="shellscript_comment2">#!/bin/bash </code>
+
+<code class="shellscript_keyword1">if</code> [ <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$</code><code class="shellscript_literal1">#"</code> -lt <code class="shellscript_digit">1</code> ]; <code class="shellscript_keyword1">then</code> 
+    echo <code class="shellscript_literal1">"Saisir le nom du fichier"</code> 
+    read -r fichier 
+<code class="shellscript_keyword1">else</code> 
+    <code class="shellscript_keyword2">fichier</code><code class="shellscript_operator">=</code><code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$1</code><code class="shellscript_literal1">"</code> 
+<code class="shellscript_keyword1">fi</code> 
+
+<code class="shellscript_keyword1">while</code> read -r ligne; <code class="shellscript_keyword1">do</code> 
+    set -- <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$ligne</code><code class="shellscript_literal1">"</code>
+    let <code class="shellscript_keyword2">moyenne</code><code class="shellscript_operator">=(</code><code class="shellscript_keyword2">$2</code>+<code class="shellscript_keyword2">$3</code>+<code class="shellscript_keyword2">$4</code>)/<code class="shellscript_digit">3</code> 
+    echo <code class="shellscript_literal1">"L'élève </code><code class="shellscript_keyword2">$1</code><code class="shellscript_literal1"> a pour moyenne </code><code class="shellscript_keyword2">$moyenne</code><code class="shellscript_literal1">"</code> 
+<code class="shellscript_keyword1">done</code> <code class="shellscript_operator">&lt;</code> <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$fichier</code><code class="shellscript_literal1">"</code></code></pre></div>
+				</div>
+				
+		<h4 class="TitreSection2" id="LIII-D-3">III-D-3. Solution 2<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h4><div class="BlocSection2">
+					
+					<p>Solution proposée par <a class="lienArticle https" href="https://www.developpez.net/forums/u219247/n_bah/" target="_blank">N_Bah</a> :</p>
+					<div class="code_et_titre"><div class="titre_des_codes" id="IdTitreCode-d0e3731">solution 2 exercice 4<div class="selectionner_code"><span class="selectionner_code LienSelectionne" id="code-d0e3731" onclick="selectionCode(&#39;contenuCoded0e3731&#39;, &#39;IdTitreCode-d0e3731&#39;);">Sélectionnez</span></div></div><pre class="code_uniquement" style="overflow:auto;"><code id="contenuCoded0e3731" class="contenuCode"><code class="shellscript_comment2">#!/bin/bash </code>
+ 
+<code class="shellscript_function">moyenne</code><code class="shellscript_operator">(</code>) { 
+    declare -i somme 
+    <code class="shellscript_keyword1">for</code> i <code class="shellscript_keyword1">in</code> <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$</code><code class="shellscript_literal1">@"</code>; <code class="shellscript_keyword1">do</code> 
+        somme+<code class="shellscript_operator">=</code><code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$i</code><code class="shellscript_literal1">"</code> 
+    <code class="shellscript_keyword1">done</code> 
+    echo <code class="shellscript_literal1">"</code><code class="shellscript_keyword3">$((somme / ${#@})</code><code class="shellscript_literal1">)"</code> 
+} 
+ 
+[ -f <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$1</code><code class="shellscript_literal1">"</code> ] <code class="shellscript_operator">&amp;&amp;</code> <code class="shellscript_keyword2">fichier</code><code class="shellscript_operator">=</code><code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$1</code><code class="shellscript_literal1">"</code> <code class="shellscript_operator">||</code> read -rep <code class="shellscript_literal1">'Entrez le nom du fichier qui contient les données : '</code> fichier 
+ 
+<code class="shellscript_keyword1">while</code> read -r nom notes; <code class="shellscript_keyword1">do</code> 
+    echo -n <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$nom</code><code class="shellscript_literal1"> : "</code> 
+    moyenne <code class="shellscript_keyword2">$notes</code> 
+<code class="shellscript_keyword1">done</code> <code class="shellscript_operator">&lt;</code> <code class="shellscript_literal1">"</code><code class="shellscript_keyword2">$fichier</code><code class="shellscript_literal1">"</code></code></pre></div>
+				</div>
+			</div>
+		</div>
+		
+		<h2 class="TitreSection0" id="LIV">IV. Liens utiles<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h2><div class="BlocSection0">
+			
+			<p>Quelques liens utiles permettant d'acquérir de bonnes bases :</p>
+			<p><a class="lienArticle simple" href="http://tldp.org/LDP/abs/html/" target="_blank">Advanced Bash-Scripting Guide</a> (<a class="lienArticle simple" href="http://abs.traduc.org/abs-fr/" target="_blank">traduction</a>)</p>
+			<p>
+				<a class="lienArticle https" href="https://frederic-lang.developpez.com/tutoriels/linux/prog-shell/" target="_blank">Un cours complet sur la programmation Shell</a>
+			</p>
+			<p>
+				<a class="lienArticle https" href="https://ineumann.developpez.com/tutoriels/linux/bash-bonnes-pratiques/" target="_blank">Quelques bonnes pratiques dans l'écriture de scripts en Bash</a>
+			</p>
+			<p>
+				<a class="lienArticle https" href="https://marcg.developpez.com/ksh/" target="_blank">Présentation et cours Korn Shell (compatible avec le Bash)</a>
+			</p>
+			<p>
+				<a class="lienArticle https" href="https://linux.developpez.com/faq/?page=Le-Shell" target="_blank">La section «&nbsp;Le Shell&nbsp;» de la FAQ Linux</a>
+			</p>
+		</div>
+		
+		<h2 class="TitreSection0" id="LV">V. Remerciements<a class="HautPage" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/#" title="Haut de page">▲</a></h2><div class="BlocSection0">
+			
+			<p>Je souhaite remercier tous les contributeurs qui m'ont aidé à enrichir cet article par des exercices et/ou des solutions. Il s'agit en l'occurrence de <a class="lienArticle https" href="https://www.developpez.net/forums/u55998/becket/" target="_blank">becket</a>, <a class="lienArticle https" href="https://www.developpez.net/forums/u450766/chardclo/" target="_blank">chardclo</a>, <a class="lienArticle https" href="https://www.developpez.net/forums/u219247/n_bah/" target="_blank">N_Bah</a> et <a class="lienArticle https" href="https://www.developpez.net/forums/u85865/sve-r/" target="_blank">Sve@r</a> merci à eux.</p>
+			<p>Je tiens également à remercier <a class="lienArticle https" href="https://www.developpez.net/forums/u240267/littlewhite/" target="_blank">LittleWhite</a>, <a class="lienArticle https" href="https://www.developpez.net/forums/u528431/louson/" target="_blank">Louson</a> et <a class="lienArticle https" href="https://www.developpez.net/forums/u95215/paissad/" target="_blank">paissad</a> pour leur relecture technique et leurs conseils.</p>
+			<p>Je tiens enfin à remercier <a class="lienArticle https" href="https://www.developpez.net/forums/u83713/jacques_jean/" target="_blank">jacques_jean</a> pour son effort de relecture orthographique.</p>
+		</div>
+	</section><section class="articleBody"><p>Vous avez aimé ce tutoriel&nbsp;? Alors partagez-le en cliquant sur les boutons suivants&nbsp;: <a title="Viadeo" href="http://www.viadeo.com/shareit/share/?url=https%3A%2F%2Fineumann.developpez.com%2Ftutoriels%2Flinux%2Fexercices-shell%2F&amp;Title=Exercices+shell+scripts" rel="nofollow"><img alt="Viadeo" src="./Exercices shell scripts_files/kitbm-viadeo.png"></a>&nbsp;<a title="Twitter" href="http://twitter.com/timeline/home?status=https%3A%2F%2Fineumann.developpez.com%2Ftutoriels%2Flinux%2Fexercices-shell%2F" rel="nofollow"><img alt="Twitter" src="./Exercices shell scripts_files/kitbm-twitter.png"></a>&nbsp;<a title="Facebook" href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fineumann.developpez.com%2Ftutoriels%2Flinux%2Fexercices-shell%2F" rel="nofollow"><img alt="Facebook" src="./Exercices shell scripts_files/kitbm-facebook.png"></a>&nbsp;<a title="Google +" href="https://plus.google.com/share?url=https%3A%2F%2Fineumann.developpez.com%2Ftutoriels%2Flinux%2Fexercices-shell%2F" onclick="javascript:window.open(this.href, &#39;&#39;, &#39;menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600&#39;);return false;"><img src="./Exercices shell scripts_files/gplus-16.png" alt="Share on Google+"></a>&nbsp;<script src="./Exercices shell scripts_files/in.js.téléchargement" type="text/javascript"> lang: fr_FR</script>
+			<span class="IN-widget" data-lnkd-debug="&lt;script type=&quot;IN/Share+init&quot; data-url=&quot;$url&quot;&gt;&lt;/script&gt;" style="display: inline-block; line-height: 1; vertical-align: bottom; padding: 0px; margin: 0px; text-indent: 0px; text-align: center;"><span style="padding: 0px !important; margin: 0px !important; text-indent: 0px !important; display: inline-block !important; vertical-align: bottom !important; font-size: 1px !important;"><button class="IN-6d5494f8-69f0-4a9d-8c6b-3e3c3eb1b33b-1G9ISYhSF8XoOmdcl0yKDu"><xdoor-icon aria-hidden="true"><svg viewBox="0 0 24 24" width="24px" height="24px" x="0" y="0" preserveAspectRatio="xMinYMin meet">
+      <g style="fill: currentColor">
+        <rect x="-0.003" style="fill:none;" width="24" height="24"></rect>
+        <path style="" d="M20,2h-16c-1.1,0-2,0.9-2,2v16c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2V4C22,2.9,21.1,2,20,2zM8,19h-3v-9h3V19zM6.5,8.8C5.5,8.8,4.7,8,4.7,7s0.8-1.8,1.8-1.8S8.3,6,8.3,7S7.5,8.8,6.5,8.8zM19,19h-3v-4c0-1.4-0.6-2-1.5-2c-1.1,0-1.5,0.8-1.5,2.2V19h-3v-9h2.9v1.1c0.5-0.7,1.4-1.3,2.6-1.3c2.3,0,3.5,1.1,3.5,3.7V19z"></path>
+      </g>
+    </svg></xdoor-icon>Partager</button></span></span>&nbsp;</p></section><p class="licence">
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.fr">
+	<img alt="Licence Creative Commons" style="border-width:0" src="./Exercices shell scripts_files/88x31.png">
+</a>
+<br>
+Le contenu de cet article est rédigé par Idriss NEUMANN et est mis à disposition selon les termes de la
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.fr">Licence Creative Commons Attribution - Pas d'Utilisation Commerciale - Partage dans les Mêmes Conditions 3.0 non transposé</a>.
+<br>Les logos Developpez.com, en-tête, pied de page, css, et look &amp; feel de l'article sont Copyright © 2012 Developpez.com.</p></div>
+
+</section>
+</article>
+		
+
+<script type="text/javascript">
+	$(function() {
+		if ($("#gabarit_pubBB").is(":hidden"))
+			$('.contenuPage').attr('style', 'min-height:auto;padding-top:20px !important');
+	$("#gabarit_voiraussi").load("https://www.developpez.com/voiraussi/index/rubrique/18/");
+	$("#gabarit_encartemploi").load("https://www.developpez.com/ws/offres?alt=3&utf8=1");
+});
+</script>
+
+<img src="./Exercices shell scripts_files/compter-18" alt="" width="1" height="1" style="position: absolute; left: 1px; top: 1px">
+<img src="./Exercices shell scripts_files/0" alt="" width="1" height="1" style="position: absolute; left: 1px; top: 1px">
+<img src="./Exercices shell scripts_files/compter-18(1)" alt="" width="1" height="1" style="position: absolute; left: 1px; top: 1px">
+<script type="text/javascript">$(function(){$("#yn18if0p").load("/template/yn18if0p"+'0'+".jpg");});</script>
+<style type="text/css">@media screen and (max-width: 975px) { #yn18if0p { display:none !important; } }</style>
+</div>
+
+	</section><iframe name="__tcfapiLocator" style="display: none;" src="./Exercices shell scripts_files/saved_resource.html"></iframe>
+
+	<div id="gabarit_voiraussi">					<script type="text/javascript">
+			$(function() {
+				$('#gabarit_voiraussi .gabarit_voiraussi article').hover(
+					function() {						
+						$('<div class="gabarit_voiraussi_hover" style="line-height:'+ $(this).height() +'px;"><i class="fas fa-eye"></i></div>').prependTo($(this).find('a'));
+					}, function() {
+						$('.gabarit_voiraussi_hover').remove();
+					}
+				);
+			});
+		</script>
+		<style type="text/css">
+							#gabarit_voiraussi { 
+					background: #293a4e; 
+					border: 0;	
+					-webkit-box-shadow: inset 0px 0px 7px -5px #293a4e;
+					box-shadow: inset 0px 0px 7px -5px #293a4e;
+					text-shadow: 0px 0px 1px #e4e4e4;
+				}
+						#gabarit_voiraussi { text-align:center; }
+			#gabarit_voiraussi .gabarit_voiraussi {  
+				display:inline-grid;
+				grid-gap:4px; 
+				align-items:stretch;
+				justify-items: center;
+				padding:5px 4px;
+				text-align:center;
+				grid-template-rows:max-content;
+				height:349px;
+			}
+			
+							#gabarit_voiraussi .gabarit_voiraussi { grid-template-columns: repeat(4, 1fr); }
+						
+			#gabarit_voiraussi .gabarit_voiraussi a { display:contents; font-weight:bold; font-size:13px; text-decoration:none; color:#202e3e; }
+			
+			#gabarit_voiraussi .gabarit_voiraussi article {  
+				width:100%;
+				position:relative;
+				border:1px solid #1e2c3c;
+				background: white;
+				-webkit-box-shadow: inset 0 0 2px 0 #000;
+				box-shadow: inset 0 0 2px 0 #000;
+				display: grid;
+				grid-template-rows: 200px auto;
+				justify-items: center;
+			}
+			
+			#gabarit_voiraussi .gabarit_voiraussi article a {  
+				position:relative;
+				z-index:2;
+			}
+			
+			#gabarit_voiraussi .gabarit_voiraussi .gabarit_voiraussi_hover { 
+				position:absolute;
+				top:0;
+				z-index:1;
+				width:100%;
+				height:100%;
+				cursor:pointer;
+				opacity:.5;
+				background:#97a3b1; 
+			}
+			
+			#gabarit_voiraussi .gabarit_voiraussi .gabarit_voiraussi_hover i { 
+				color:#051221; 
+				font-size:8rem; 
+				line-height:inherit; 
+				text-shadow: 0 0 2.5rem #fff;
+			}
+			
+			#gabarit_voiraussi .gabarit_voiraussi article div.image { 
+				position:relative;
+				top:1px;
+				left:0;
+				width: calc(100% - 2px); 
+				height: 200px; 
+				background-repeat: no-repeat; 
+				background-position: center center;
+				opacity:.9;				
+			}
+			
+			#gabarit_voiraussi .gabarit_voiraussi article div.texte { align-self: center; padding: 10px; padding-top:30px; }
+			
+		</style>
+		<div class="gabarit_voiraussi">
+			<article>
+	<a href="https://www.developpez.com/voiraussi/clic/i/308814/r/89205/rub/18/">
+		<div class="image" style="background-image: url(https://www.developpez.net/forums/attachments/p579245d1/x/x/x);"></div>
+		<div class="texte">Deepin Linux 20 stable est disponible et en cela attise encore plus la curiosité sur UOS Linux, le nouvel OS chinois capable de démarrer en 30 s sur des CPU locaux et destiné à remplacer Windows</div>
+	</a>
+</article>
+
+<article>
+	<a href="https://www.developpez.com/voiraussi/clic/i/306744/r/88452/rub/18/">
+		<div class="image" style="background-image: url(https://www.developpez.net/forums/attachments/p573965d1/x/x/x);"></div>
+		<div class="texte">Linux Mint 20 « Ulyana » est disponible, cette version n'est publiée que sur l'architecture 64 bits</div>
+	</a>
+</article>
+
+<article>
+	<a href="https://www.developpez.com/voiraussi/clic/i/308553/r/89116/rub/18/">
+		<div class="image" style="background-image: url(https://www.developpez.net/forums/attachments/p578624d1/x/x/x);"></div>
+		<div class="texte">Linusgate : plus de 250 plaintes de violation du code de conduite du projet Debian par Linus Torvalds font l'objet de fuite</div>
+	</a>
+</article>
+
+<article>
+	<a href="https://www.developpez.com/voiraussi/clic/i/310521/r/89866/rub/18/">
+		<div class="image" style="background-image: url(https://www.developpez.com/images/logos/90x90/cloud-computing.png);"></div>
+		<div class="texte">[Tutoriel]Tutoriel sur l'autohébergement</div>
+	</a>
+</article>
+
+		</div>
+	
+</div>
+	<div id="gabarit_encartemploi_desactive"></div>
+
+	<footer>
+
+	<div id="gabarit_responsable">
+			Responsable bénévole de la rubrique Linux :
+		<a href="https://www.developpez.net/forums/u449691/chrtophe/" target="_blank">chrtophe</a> -
+								<script type="text/javascript">
+		document.write("<a href=\"");
+		document.write("znvygb:yvahk@erqnpgvba-qrirybccrm.pbz".replace(/[A-Z]/gi, c =>
+    "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm"[
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".indexOf(c)]));
+		document.write("\">Contacter par email</a>");
+</script><a href="mailto:linux@redaction-developpez.com">Contacter par email</a>
+			</div>
+
+	<ul id="gabarit_pied">
+		<li><a href="https://club.developpez.com/contacts/">Nous contacter</a>
+		</li><li><a href="https://www.developpez.com/participez/">Participez</a>
+	</li><li><a href="https://www.developpez.com/hebergement/">Hébergement</a>
+	</li><li><a href="https://www.developpez.com/advertising/">Publicité / Advertising</a>
+	</li><li><a href="https://www.developpez.com/legal/">Informations légales</a>
+			</li><li>Partenaire : <a href="https://www.planethoster.com/fr/" target="_blank" rel="noopener">Hébergement Web</a>
+		</li></ul>
+
+<p id="gabarit_copyright">© 2000-2021 - www.developpez.com</p>
+
+
+	</footer>
+<!-- Google Analytics general -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28115938-1']);
+  _gaq.push(['_setDomainName', 'developpez.com']);
+  _gaq.push(['_setCustomVar', 1, 'rubrique', 'linux-professionnel', 3]);
+  _gaq.push(['_setCustomVar', 2, 'type', 'Tutoriel', 3]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+
+
+
+		<div id="lightboxOverlay" tabindex="-1" class="lightboxOverlay" style="display: none;"></div><div id="lightbox" tabindex="-1" class="lightbox" style="display: none;"><div class="lb-outerContainer"><div class="lb-container"><img class="lb-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt=""><div class="lb-nav"><a class="lb-prev" aria-label="Previous image" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/"></a><a class="lb-next" aria-label="Next image" href="https://ineumann.developpez.com/tutoriels/linux/exercices-shell/"></a></div><div class="lb-loader"><a class="lb-cancel"></a></div></div></div><div class="lb-dataContainer"><div class="lb-data"><div class="lb-details"><span class="lb-caption"></span><span class="lb-number"></span></div><div class="lb-closeContainer"><a class="lb-close"></a></div></div></div></div><iframe src="./Exercices shell scripts_files/quantcast.html" id="_qc_cookie_access" style="display: none;"></iframe></body><iframe id="google_esf" name="google_esf" src="./Exercices shell scripts_files/zrt_lookup.html" style="display: none;"></iframe></html>

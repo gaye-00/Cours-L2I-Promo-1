@@ -1,0 +1,36 @@
+@charset "UTF-8";
+.w3docs {
+	margin-left: 70px;
+	font-weight: bold;
+	text-align: left;
+	font-family: sans-serif, bold, Arial, Helvetica;
+	font-size: 14px;
+}
+.buttons {
+	display: flex;
+	align-items: center;
+	width: 100%;
+}
+div input {
+	margin-right: 10px;
+}
+form {
+	margin: 0 auto;
+	width: 600px;
+}
+form input {
+	padding: 10px;
+}
+form select {
+	background-color: #ffffff;
+	padding: 5px;
+}
+form textarea {
+	padding: 10px;
+	margin-bottom: 5px;
+}
+form label {
+	display: block;
+	width: 100%;
+	margin-bottom: 5px;
+}

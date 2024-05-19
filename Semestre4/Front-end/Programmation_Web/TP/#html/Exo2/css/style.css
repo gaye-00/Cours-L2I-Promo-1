@@ -1,0 +1,16 @@
+ th{
+    background-color: red;
+    border-bottom:1px solid black;
+}
+tr{
+    border-color: blue;
+    
+}
+tr:nth-child(even){
+    background-color: chartreuse;
+  
+}
+tr:nth-child(odd)
+{
+   background-color:royalblue/* Couleur mauve clair */; /*Donne la couleur au ligne pair*/
+}

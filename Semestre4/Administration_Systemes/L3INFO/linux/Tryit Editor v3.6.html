@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)https://www.w3schools.com/css/tryit.asp?filename=trycss_default -->
+<html lang="fr" class="translated-ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Tryit Editor v3.6</title>
+<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:image" content="https://www.w3schools.com/images/w3schools_logo.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="200">
+<meta property="og:image:height" content="200">
+<link rel="preload" href="https://www.w3schools.com/lib/fonts/fontawesome.woff2?14663396" as="font" type="font/woff2" crossorigin=""> 
+<link rel="preload" href="https://www.w3schools.com/lib/fonts/source-code-pro-v14-latin-regular.woff2" as="font" type="font/woff2" crossorigin=""> 
+<link rel="stylesheet" href="./Tryit Editor v3.6_files/w3schools27.css">
+<link rel="stylesheet" href="./Tryit Editor v3.6_files/codemirror.css">
+<script src="./Tryit Editor v3.6_files/osd.js.téléchargement"></script><script type="text/javascript" async="" src="./Tryit Editor v3.6_files/js"></script><script async="" src="./Tryit Editor v3.6_files/analytics.js.téléchargement"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-3855518-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('require', 'GTM-WJ88MZ5');
+  ga('send', 'pageview');
+</script>
+
+<script type="text/javascript">
+var k42 = false;
+var googletag = googletag || {}; googletag.cmd = googletag.cmd || [];
+
+k42 = true;
+googletag.cmd.push(function() { googletag.pubads().setTargeting("page_section",(function () {
+    var folder = location.pathname;
+    folder = folder.replace("/", "");
+    folder = folder.substr(0, folder.indexOf("/"));
+    return folder + "tryit";
+  })());
+});  
+(adsbygoogle=window.adsbygoogle||[]).pauseAdRequests=1;
+
+var snhb = snhb || {}; snhb.queue = snhb.queue || [];
+snhb.options = {
+               logOutputEnabled : false,
+               autoStartAuction: false
+               };
+
+</script>
+<script src="./Tryit Editor v3.6_files/sncmp_stub.min.js.téléchargement"></script>
+<style>
+#snigel-cmp-framework .sn-b-def.sn-blue {color: #ffffff!important;background-color: #4CAF50!important;border-color: #4CAF50!important;}
+#snigel-cmp-framework .sn-b-def { border-color: #4CAF50!important;color: #4CAF50!important;}
+#snigel-cmp-framework .sn-selector ul li { color: #4CAF50!important}
+#snigel-cmp-framework .sn-selector ul li:after { background-color: #4CAF50!important; }
+#snigel-cmp-framework .sn-footer-tab .sn-privacy a {color:#4CAF50!important;}
+#snigel-cmp-framework .sn-arrow:after, #snigel-cmp-framework .sn-arrow:before { background-color: #4CAF50!important; }
+#snigel-cmp-framework .sn-switch input:checked+span::before { background-color: #4CAF50!important; }
+#adconsent-usp-link {border: 1px solid #4CAF50!important;color: #4CAF50!important;}
+#adconsent-usp-banner-optout input:checked+.adconsent-usp-slider {background-color:#4CAF50!important;}
+#adconsent-usp-banner-btn {color:#ffffff;border: solid 1px #4CAF50!important;background-color: #4CAF50!important;}</style>
+<script type="text/javascript">
+__cmp("setLogo", "https://www.w3schools.com/images/img_logo_small.png");
+__cmp("setPrivacyPolicy", "https://www.w3schools.com/about/about_privacy.asp");
+</script>
+<script async="" type="text/javascript" src="./Tryit Editor v3.6_files/snhb-loader.min.js.téléchargement"></script>
+<script>
+  snhb.queue.push(function(){
+
+    snhb.startAuction(["try_it_leaderboard"]);
+
+   });
+</script>
+<script>
+if (window.addEventListener) {              
+    window.addEventListener("resize", browserResize);
+} else if (window.attachEvent) {                 
+    window.attachEvent("onresize", browserResize);
+}
+var xbeforeResize = window.innerWidth;
+
+function browserResize() {
+    var afterResize = window.innerWidth;
+    if ((xbeforeResize < (970) && afterResize >= (970)) || (xbeforeResize >= (970) && afterResize < (970)) ||
+        (xbeforeResize < (728) && afterResize >= (728)) || (xbeforeResize >= (728) && afterResize < (728)) ||
+        (xbeforeResize < (468) && afterResize >= (468)) ||(xbeforeResize >= (468) && afterResize < (468))) {
+        xbeforeResize = afterResize;
+        
+        snhb.queue.push(function(){  snhb.startAuction(["try_it_leaderboard"]); });
+         
+    }
+    if (window.screen.availWidth <= 768) {
+      restack(window.innerHeight > window.innerWidth);
+    }
+    fixDragBtn();
+    showFrameSize();    
+}
+var fileID = "";
+var loadSave = false;
+function getSavedFile() {
+    loadSave = true;
+    var htmlCode;
+    var paramObj = {};
+    paramObj.fileid = "";
+    fileID = paramObj.fileid;
+    var paramA = JSON.stringify(paramObj);
+    var httpA = new XMLHttpRequest();
+    httpA.open("POST", globalURL, true);
+    httpA.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    httpA.onreadystatechange = function() {
+        if(httpA.readyState == 4 && httpA.status == 200) {
+            document.getElementById("textareaCode").value = httpA.responseText;
+            window.editor.getDoc().setValue(httpA.responseText);
+            loadSave = false;
+        }
+    }
+    httpA.send(paramA);   
+}
+</script>
+<style>
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  color:#000000;
+  margin:0px;
+  font-size:100%;
+}
+.trytopnav {
+  height:40px;
+  overflow:hidden;
+  min-width:380px;
+  position:absolute;
+  width:100%;
+  top:99px;
+  background-color:#E7E9EB;
+}
+.topnav-icons {
+  margin-right:8px;
+}
+.trytopnav a {
+  color:#999999;
+}
+.w3-bar .w3-bar-item:hover {
+  color:#757575 !important;
+}
+a.w3schoolslink {
+  padding:0 !important;
+  display:inline !important;
+}
+a.w3schoolslink:hover,a.w3schoolslink:active {
+  text-decoration:underline !important;
+  background-color:transparent !important;
+}
+#dragbar{
+  position:absolute;
+  cursor: col-resize;
+  z-index:3;
+  padding:5px;
+}
+#shield {
+  display:none;
+  top:0;
+  left:0;
+  width:100%;
+  position:absolute;
+  height:100%;
+  z-index:4;
+}
+#framesize span {
+  xfont-family:Consolas, monospace;
+}
+#container {
+  background-color:#E7E9EB;
+  width:100%;
+  overflow:auto;
+  position:absolute;
+  top:144px;
+  bottom:0;
+
+  height:auto;
+}
+#textareacontainer, #iframecontainer {
+  float:left;
+  height:100%;
+  width:50%;
+}
+#textarea, #iframe {
+  height:100%;
+  width:100%;
+  padding-bottom:10px;
+  padding-top:1px;
+}
+#textarea {
+  padding-left:10px;
+  padding-right:5px;  
+}
+#iframe {
+  padding-left:5px;
+  padding-right:10px;  
+}
+#textareawrapper {
+  width:100%;
+  height:100%;
+  background-color: #ffffff;
+  position:relative;
+  box-shadow:0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+#iframewrapper {
+  width:100%;
+  height:100%;
+  -webkit-overflow-scrolling: touch;
+  background-color: #ffffff;
+  box-shadow:0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+#textareaCode {
+  background-color: #ffffff;
+  font-family: consolas,"courier new",monospace;
+  font-size:15px;
+  height:100%;
+  width:100%;
+  padding:8px;
+  resize: none;
+  border:none;
+  line-height:normal;    
+}
+.CodeMirror.cm-s-default {
+  line-height:normal;
+  padding: 4px;
+  height:100%;
+  width:100%;
+}
+#iframeResult, #iframeSource {
+  background-color: #ffffff;
+  height:100%;
+  width:100%;  
+}
+#stackV {background-color:#999999;}
+#stackV:hover {background-color:#BBBBBB !important;}
+#stackV.horizontal {background-color:transparent;}
+#stackV.horizontal:hover {background-color:#BBBBBB !important;}
+#stackH.horizontal {background-color:#999999;}
+#stackH.horizontal:hover {background-color:#999999 !important;}
+#textareacontainer.horizontal,#iframecontainer.horizontal{
+  height:50%;
+  float:none;
+  width:100%;
+}
+#textarea.horizontal{
+  height:100%;
+  padding-left:10px;
+  padding-right:10px;
+}
+#iframe.horizontal{
+  height:100%;
+  padding-right:10px;
+  padding-bottom:10px;
+  padding-left:10px;  
+}
+#container.horizontal{
+  min-height:200px;
+  margin-left:0;
+}
+#tryitLeaderboard {
+  overflow:hidden;
+  text-align:center;
+  margin-top:5px;
+  height:90px;
+}
+.w3-dropdown-content {width:350px}
+
+@media screen and (max-width: 727px) {
+  .trytopnav {top:70px;}
+  #container {top:116px;}
+
+}
+@media screen and (max-width: 467px) {
+  .trytopnav {top:60px;}
+  #container {top:106px;}
+  .w3-dropdown-content {width:100%}
+}
+@media only screen and (max-device-width: 768px) {
+  #iframewrapper {overflow: auto;}
+  #container     {min-width:310px;}
+  .stack         {display:none;}
+  #tryhome       {display:block;}
+}
+
+.fa {
+  display:inline-block;
+  font:normal normal normal 14px/1 FontAwesome;
+  font-size:inherit;
+  text-rendering:auto;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  transform:translate(0,0);
+}
+.fa-2x {
+  font-size:2em;
+}
+.fa-home:before {content: '\e800'; }
+.fa-save:before {content: '\e804'; }
+.fa-rotate:before {content: '\e813'; }
+.fa-menu:before { content: '\f0c9'; }
+.fa-adjust:before { content: '\e80b'; }
+.loader {
+    border: 6px solid #f3f3f3; /* Light grey */
+    border-top: 6px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+}
+#saveLoader {
+    margin:20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+#iframewrapper {
+	
+}
+
+body.darktheme {
+  background-color:rgb(40, 44, 52);
+}
+body.darktheme #tryitLeaderboard{
+  background-color:rgb(40, 44, 52);
+}
+body.darktheme .trytopnav{
+  background-color:#616161;
+  color:#dddddd;
+}
+body.darktheme #container {
+  background-color:#616161;
+}
+body.darktheme .trytopnav a {
+  color:#dddddd;
+}
+body.darktheme ::-webkit-scrollbar {width:12px;height:3px;}
+body.darktheme ::-webkit-scrollbar-track-piece {background-color:#000;}
+body.darktheme ::-webkit-scrollbar-thumb {height:50px;background-color: #616161;}
+body.darktheme ::-webkit-scrollbar-thumb:hover {background-color: #aaaaaa;}
+
+.trytopnav {
+  height:48px!important;
+}
+.fa {
+  padding: 10px 10px!important;
+}
+#saveGDriveBtn, #loadGDriveBtn {
+  padding:22px 26px;
+}
+a.topnav-icons, a.topnav-icons.fa-home, a.topnav-icons.fa-menu {
+    font-size: 28px!important;
+}
+</style>
+<!--[if lt IE 8]>
+<style>
+#textareacontainer, #iframecontainer {width:48%;}
+#container {height:500px;}
+#textarea, #iframe {width:90%;height:450px;}
+#textareaCode, #iframeResult {height:450px;}
+.stack {display:none;}
+</style>
+<![endif]-->
+<script type="text/javascript" src="./Tryit Editor v3.6_files/snhb-w3schools.com.min.js.téléchargement"></script><link type="text/css" rel="stylesheet" charset="UTF-8" href="./Tryit Editor v3.6_files/translateelement.css"><script type="text/javascript" src="./Tryit Editor v3.6_files/snhbMLSettings.js.téléchargement" async=""></script><script type="text/javascript" src="./Tryit Editor v3.6_files/snhbGlobalSettings.js.téléchargement" async=""></script><script type="text/javascript" src="./Tryit Editor v3.6_files/gpt.js.téléchargement" async=""></script><meta http-equiv="origin-trial" content="A+b/H0b8RPXNaJgaNFpO0YOFuGK6myDQXlwnJB3SwzvNMfcndat4DZYMrP4ClJIzYWo3/yP2S+8FTZ/lpqbPAAEAAABueyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzVGhpcmRQYXJ0eSI6dHJ1ZX0="><meta http-equiv="origin-trial" content="A9ZgbRtm4pU3oZiuNzOsKcC8ppFSZdcjP2qYcdQrFKVzkmiWH1kdYY1Mi9x7G8+PS8HV9Ha9Cz0gaMdKsiVZIgMAAAB7eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AxL6oBxcpn5rQDPKSAs+d0oxNyJYq2/4esBUh3Yx5z8QfcLu+AU8iFCXYRcr/CEEfDnkxxLTsvXPJFQBxHfvkgMAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A9KPtG5kl3oLTk21xqynDPGQ5t18bSOpwt0w6kGa6dEWbuwjpffmdUpR3W+faZDubGT+KIk2do0BX2ca16x8qAcAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AookgM0K6zABiuRTZwpn+R95G2CKmUH/2+zf2kS/QpMlVZ6HTI6QekeLkrJyxeIi62p2ejcQTF464pkdlx0Nwg0AAABmeyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJUcnVzdFRva2VucyIsImV4cGlyeSI6MTYzNDA4MzE5OSwiaXNTdWJkb21haW4iOnRydWV9"><meta http-equiv="origin-trial" content="A3HucHUo1oW9s+9kIKz8mLkbcmdaj5lxt3eiIMp1Nh49dkkBlg1Fhg4Fd/r0vL69mRRA36YutI9P/lJUfL8csQoAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A0OysezhLoCRYomumeYlubLurZTCmsjTb087OvtCy95jNM65cfEsbajrJnhaGwiTxhz38ZZbm+UhUwQuXfVPTg0AAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="AxoOxdZQmIoA1WeAPDixRAeWDdgs7ZtVFfH2y19ziTgD1iaHE5ZGz2UdSjubkWvob9C5PrjUfkWi4ZSLgWk3Xg8AAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A7+rMYR5onPnACrz+niKSeFdH3xw1IyHo2AZSHmxrofRk9w4HcQPMYcpBUKu6OQ6zsdxf4m/vqa6tG6Na4OLpAQAAAB4eyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AwfG8hAcHnPa/kJ1Co0EvG/K0F9l1s2JZGiDLt2mhC3QI5Fh4qmsmSwrWObZFbRC9ieDaSLU6lHRxhGUF/i9sgoAAACBeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AwQ7dCmHkvR6FuOFxAuNnktYSQrGbL4dF+eBkrwNLALc69Wr//PnO1yzns3pjUoCaYbKHtVcnng2hU+8OUm0PAYAAACHeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AysVDPGQTLD/Scn78x4mLwB1tMfje5jwUpAAzGRpWsr1NzoN7MTFhT3ClmImi2svDZA7V6nWGIV8YTPsSRTe0wYAAACHeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><script src="./Tryit Editor v3.6_files/pubads_impl_2021062205.js.téléchargement" async=""></script><link rel="preload" href="./Tryit Editor v3.6_files/f(5).txt" as="script"><script type="text/javascript" src="./Tryit Editor v3.6_files/f(5).txt"></script><link rel="preload" href="./Tryit Editor v3.6_files/f(6).txt" as="script"><script type="text/javascript" src="./Tryit Editor v3.6_files/f(6).txt"></script></head>
+<body>
+
+<div id="tryitLeaderboard">
+<!-- TryitLeaderboard -->
+
+  <!--<pre>try_it_leaderboard, all: [320,50][728,90][468,60]</pre>-->
+  <div id="snhb-try_it_leaderboard-0" data-google-query-id="COHzl4bGsvECFRYuGwodJugLmQ"><div id="google_ads_iframe_/22152718/sws-hb//w3schools.com//try_it_leaderboard_0__container__" style="border: 0pt none; display: inline-block; width: 728px; height: 90px;"><iframe frameborder="0" src="./Tryit Editor v3.6_files/container.html" id="google_ads_iframe_/22152718/sws-hb//w3schools.com//try_it_leaderboard_0" title="Contenu publicitaire tiers" name="" scrolling="no" marginwidth="0" marginheight="0" width="728" height="90" data-is-safeframe="true" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="conversion-measurement" data-google-container-id="1" style="border: 0px; vertical-align: bottom;" data-load-complete="true"></iframe></div></div>
+  <!-- adspace tryit-->
+ 
+</div>
+<script>globalURL = 'https://tryit.w3schools.com/code_datas.php';</script>
+<div id="saveModal" class="w3-modal" style="z-index: 4; display: none;">
+  <div class="w3-modal-content">
+    <div class="w3-display-container">
+      <span onclick="hideAndResetModal()" class="w3-button w3-display-topright" style="font-weight:bold;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">×</font></font></span>
+      <div id="preSave" class="w3-panel" style="display: block;">
+        <h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Enregistrez votre code</font></font></h2>
+        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Si vous cliquez sur le bouton Enregistrer, votre code sera enregistré et vous obtiendrez une URL que vous pourrez partager avec d'autres.</font></font></p>
+        <div style="height:34px">
+        <p>
+            <button class="w3-btn" style="background-color:#04AA6D;color:white;margin-right:15px" title="Sauvegarder" onclick="saveFile(document.getElementById(&#39;textareaCode&#39;).value);"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sauvegarder</font></font></button>
+            <button class="w3-btn w3-red ws-hover-black" title="Annuler" style="margin-right:15px" onclick="hideAndResetModal();"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Annuler</font></font></button>
+        </p>
+        </div>
+        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">En cliquant sur le bouton "Enregistrer", vous acceptez nos </font></font><a href="javascript:void(0);" class="w3-hover-text-green" onclick="document.getElementById(&#39;saveDisclaimer&#39;).style.display=&#39;block&#39;;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">termes et conditions</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> .</font></font></p>
+        <p><a href="https://www.w3schools.com/default.asp" style="background-color:#E7E9EB;color:black" class="w3-button" onclick="event.preventDefault();displayError()"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Signaler une erreur</font></font></a></p>
+        <div id="saveDisclaimer" style="display:none;">
+          <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tout le code dans les fichiers partagés est fourni par les utilisateurs et appartient à l'affiche.</font></font></p>
+          <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tous les fichiers partagés sont rendus publics. </font><font style="vertical-align: inherit;">Aucune licence n'est appliquée.</font></font></p>
+          <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tout code peut être supprimé sans avertissement (s'il est jugé offensant, dommageable ou pour toute autre raison).</font></font></p>        
+          <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">w3schools.com n'est pas responsable de toute perte ou dommage de quelque nature que ce soit lors de l'utilisation du code fourni.</font></font></p>
+        </div>
+      </div>
+      <div id="errorSave" style="display:none" class="w3-panel">
+          <h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Votre code n'a pas pu être enregistré</font></font></h2>
+          <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Le code a trop de caractères.</font></font></p>
+      </div>
+      <div id="postSave" class="w3-panel" style="display: none;">
+        <div id="saveLoader" class="loader" style="display: block;"></div>
+        <div id="saveModalSaved" style="display: none;">
+          <h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Votre code a été enregistré</font></font></h2>
+          <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Le fichier a été enregistré dans&nbsp;: </font></font><a id="shareLink" class="w3-hover-text-green" href="https://www.w3schools.com/code/tryit.asp?filename=GRUOFHLFYBCB" target="_blank"><span id="shareLinkText"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">https://www.w3schools.com/code/tryit.asp?filename=GRUOFHLFYBCB</font></font></span></a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="driveSaveModal" class="w3-modal" style="z-index:4">
+  <div class="w3-modal-content">
+    <div class="w3-display-container">
+      <span onclick="resetDriveSaveModal()" class="w3-button w3-display-topright ws-hover-black" style="font-weight:bold;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">×</font></font></span>
+      <div id="driveText" class="w3-panel w3-large">
+        <h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Enregistrer sur Google Drive</font></font></h2>
+        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Si vous avez un compte Google, vous pouvez enregistrer ce code sur votre Google Drive.</font></font></p>
+        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Google vous demandera de confirmer l'accès à Google Drive.</font></font></p>
+        <p><label class="w3-text-black"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Enregistrer le fichier sous&nbsp;:</font></font></b></label>
+        <input class="w3-input w3-border" type="text" id="googleFileName" value="trycss_default">
+        <button class="w3-button w3-light-grey w3-hover-grey w3-hover-text-white w3-margin-top" title="Enregistrer le fichier sur Google Drive" onclick="handleAuthClick(event,&#39;save&#39;)"><img style="margin-right:5px" alt="Enregistrer le fichier sur Google Drive" title="Enregistrer le fichier sur Google Drive" src="./Tryit Editor v3.6_files/driveicon.png"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Enregistrer le fichier</font></font></button>
+        </p><p class="w3-warning" style="margin-left:-16px;margin-right:-16px;margin-bottom:-16px;padding-bottom:26px;"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Avertissement&nbsp;:</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Le 10&nbsp;juin&nbsp;2021, nous interromprons la possibilité d'enregistrer sur Google&nbsp;Drive. </font></font><br><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Vous pourrez toujours accéder à votre code stocké sur Google Drive.</font></font></p>
+      </div>
+      <div class="w3-panel w3-large loader" id="driveSavedPanel" style="display:none">
+      <p id="driveSavedText"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="driveLoadModal" class="w3-modal" style="z-index:4">
+  <div class="w3-modal-content">
+    <div class="w3-display-container">
+      <span onclick="resetDriveLoadModal()" class="w3-button w3-display-topright ws-hover-black" style="font-weight:bold;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">×</font></font></span>
+      <div class="w3-panel w3-large">
+        <h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ouvrir depuis Google Drive</font></font></h2>
+        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Si vous avez enregistré un fichier sur Google&nbsp;Drive, vous pouvez l'ouvrir ici&nbsp;:</font></font></p>
+        <p><button class="w3-button w3-light-grey w3-hover-grey w3-hover-text-white" title="Ouvrir le fichier depuis Google Drive" onclick="handleAuthClick(event,&#39;open&#39;)"><img style="margin-right:5px" alt="Ouvrir le fichier depuis Google Drive" title="Ouvrir le fichier depuis Google Drive" src="./Tryit Editor v3.6_files/driveicon.png"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Fichier ouvert</font></font></button></p>
+        <p class="w3-warning" style="margin-left:-16px;margin-right:-16px;margin-bottom:-16px;padding-bottom:26px;"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Avertissement&nbsp;:</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Le 10&nbsp;juin&nbsp;2021, nous interromprons la possibilité d'enregistrer sur Google&nbsp;Drive. </font></font><br><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Vous pourrez toujours accéder à votre code stocké sur Google Drive.</font></font></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="trytopnav">
+<div class="w3-bar" style="overflow: auto;">
+  <a id="tryhome" href="https://www.w3schools.com/" target="_blank" title="w3schools.com Accueil" class="w3-button w3-bar-item topnav-icons fa fa-home" style="margin-top:-2px;"></a>
+  <a href="javascript:void(0);" onclick="openMenu();gDrive()" id="menuButton" title="Ouvrir le menu" class="w3-dropdown-click w3-button w3-bar-item topnav-icons fa fa-menu" style="margin-top:-2px;x"></a>
+  <a href="javascript:void(0);" onclick="click_savebtn()" title="Sauvegarder" class="w3-button w3-bar-item topnav-icons w3-hide-small fa fa-save" style="margin-top:-2px;"></a>
+  <a href="javascript:void(0);" onclick="restack(currentStack)" title="Changer d&#39;orientation" class="w3-button w3-bar-item topnav-icons fa fa-rotate" style="margin-top:-2px;"></a>
+  <a href="javascript:void(0);" onclick="retheme()" title="Change le thème" class="w3-button w3-bar-item topnav-icons fa fa-adjust" style="margin-top:-2px;"></a>
+  <button class="w3-button w3-bar-item w3-hover-white w3-hover-text-green" style="background-color:#04AA6D;color:white;font-size:20px" onclick="submitTryit(1);ga(&#39;send&#39;, &#39;event&#39;, &#39;runCode&#39;, &#39;click&#39;);snhb.queue.push(function(){googletag.pubads().setTargeting(&#39;page_section&#39;,(function () {var folder = location.pathname;folder = folder.replace(&#39;/&#39;, &#39;&#39;); folder = folder.substr(0, folder.indexOf(&#39;/&#39;)); return folder + &#39;tryitUA&#39;; })());snhb.startAuction([&#39;try_it_leaderboard&#39;]);});"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cours "</font></font></button>
+<a class="w3-button w3-bar-item w3-hover-white w3-hover-text-green w3-hide-small" style="background-color: rgb(4, 170, 109); color: white; font-size: 16px; padding: 8px 16px; margin-right: 10px; margin-top: 3px; display: block; float: right; border-radius: 25px;" href="https://www.w3schools.com/spaces/" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;spacesFromTryit&#39;, &#39;click&#39;)"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Obtenez votre propre site Web</font></font></a>
+  
+  <span class="w3-right w3-hide-small w3-hide-medium" style="padding:8px 8px 8px 8px;display:block"></span>
+  <span class="w3-right w3-hide-small w3-hide-medium" style="padding:8px 0;display:block;float:right;font-size:16px;margin-top:4px"><span id="framesize"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Taille du résultat : </font></font><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">637 x 453</font></font></span></span></span>
+</div>
+
+</div>
+
+<div id="shield" style="display: none;"></div>
+
+<a href="javascript:void(0)" id="dragbar" style="width: 5px; top: 144px; left: 638.5px; height: 453px; cursor: col-resize;"></a>
+<div id="container">
+<div id="navbarDropMenu" class="w3-dropdown-content w3-bar-block w3-border" style="z-index:5">
+<span onclick="openMenu()" class="w3-button w3-display-topright w3-transparent ws-hover-black" title="Fermer le menu" style="font-weight:bold;padding-top:10px;padding-bottom:11px;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">×</font></font></span>
+  <div class="w3-bar-block">
+    <a class="w3-bar-item w3-button" href="javascript:void(0);" title="Changer d&#39;orientation" onclick="openMenu();restack(currentStack)"><i class="fa fa-rotate" style="font-size:26px;margin-left:-4px;margin-right:8px"></i><span style="position:relative;top:-4px;left:2px;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Changer d'orientation</font></font></span></a>
+    <a class="w3-bar-item w3-button" href="javascript:void(0);" title="Sauvegarder" onclick="openMenu();click_savebtn()"><i class="fa fa-save" style="font-size:26px;margin-right:10px;"></i><span style="position:relative;top:-4px;left:2px;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Enregistrer le code</font></font></span></a>
+    <a class="w3-bar-item w3-button" href="javascript:void(0);" id="saveGDriveBtn" title="Enregistrer sur Google Drive" onclick="openMenu();click_google_savebtn()"><img src="./Tryit Editor v3.6_files/driveicon_32.png" alt="Enregistrer sur Google Drive" title="Enregistrer sur Google Drive" style="margin-right:10px;width:24px;"><span style="position:relative;left:1px;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Enregistrer sur Google Drive</font></font></span></a>
+    <a class="w3-bar-item w3-button" href="javascript:void(0);" id="loadGDriveBtn" title="Charger depuis Google Drive" onclick="openMenu();click_google_loadbtn()"><img src="./Tryit Editor v3.6_files/driveicon_32.png" alt="Charger depuis Google Drive" title="Charger depuis Google Drive" style="margin-right:10px;width:24px;"><span style="position:relative;left:1px;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Charger depuis Google Drive</font></font></span></a>
+    <a class="w3-bar-item w3-button" href="javascript:void(0);" title="Change le thème" onclick="openMenu();retheme()"><i class="fa fa-adjust" style="font-size:26px;margin-right:8px"></i><span style="position:relative;top:-4px;left:2px;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Changer de thème, sombre/clair</font></font></span></a>
+  </div>
+  <footer class="w3-container w3-small ws-grey">
+  <p><a style="display:inline;padding:0;" href="https://www.w3schools.com/about/about_privacy.asp" target="_blank" onclick="openMenu();" class="w3-hover-none ws-hover-text-green"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Politique de confidentialité</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> et 
+   </font></font><a style="display:inline;padding:0;" href="https://www.w3schools.com/about/about_copyright.asp" target="_blank" onclick="openMenu();" class="w3-hover-none ws-hover-text-green"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Copyright 1999-2021</font></font></a></p>
+  </footer>
+</div>
+<div id="menuOverlay" class="w3-overlay w3-transparent" style="cursor:pointer;z-index:4"></div>
+  <div id="textareacontainer">
+    <div id="textarea">
+      <div id="textareawrapper">
+        <textarea autocomplete="off" id="textareaCode" wrap="logical" spellcheck="false" style="display: none;">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;style&gt;
+body {
+  background-color: lightblue;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+p {
+  font-family: verdana;
+  font-size: 20px;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h1&gt;My First CSS Example&lt;/h1&gt;
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</textarea><div class="CodeMirror cm-s-default CodeMirror-wrap"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 116px; left: 16.25px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea></div><div class="CodeMirror-vscrollbar" cm-not-content="true" style="display: block; bottom: 0px;"><div style="min-width: 1px; height: 502px;"></div></div><div class="CodeMirror-hscrollbar" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: -17px; border-right-width: 13px; min-height: 494px; padding-right: 17px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines"><div style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors" style=""><div class="CodeMirror-cursor" style="left: 12.25px; top: 108px; height: 18px;">&nbsp;</div></div><div class="CodeMirror-code" style=""><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-m-xml cm-meta"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&lt;!DOCTYPE html&gt;</font></font></span></span></pre><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-m-xml cm-tag cm-bracket"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&lt; </font></font></span><span class="cm-m-xml cm-tag"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">html </font></font></span><span class="cm-m-xml cm-tag cm-bracket"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&gt;</font></font></span></span></pre><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-m-xml cm-tag cm-bracket"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&lt; </font></font></span><span class="cm-m-xml cm-tag"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">tête </font></font></span><span class="cm-m-xml cm-tag cm-bracket"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&gt;</font></font></span></span></pre><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-m-xml cm-tag cm-bracket"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&lt; </font></font></span><span class="cm-m-xml cm-tag"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">style </font></font></span><span class="cm-m-xml cm-tag cm-bracket"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&gt;</font></font></span></span></pre><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-m-css cm-tag"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">corps </font></font></span><span class="cm-m-css"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{</font></font></span></span></pre><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-m-css"> &nbsp;</span><span class="cm-m-css cm-property"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">background-color </font></font></span><span class="cm-m-css"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">: </font></font></span><span class="cm-m-css cm-keyword"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">bleu clair </font></font></span><span class="cm-m-css"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">;</font></font></span></span></pre><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-m-css"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">}</font></font></span></span></pre><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span cm-text=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&#8203;</font></font></span></span></pre><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-m-css cm-tag"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">h1 </font></font></span><span class="cm-m-css"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{</font></font></span></span></pre><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-m-css"> &nbsp;</span><span class="cm-m-css cm-property"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">couleur </font></font></span><span class="cm-m-css"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">: </font></font></span><span class="cm-m-css cm-keyword"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">blanc </font></font></span><span class="cm-m-css"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">;</font></font></span></span></pre><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-m-css"> &nbsp;</span><span class="cm-m-css cm-property"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">text-align </font></font></span><span class="cm-m-css"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">: </font></font></span><span class="cm-m-css cm-atom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">center </font></font></span><span class="cm-m-css"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">;</font></font></span></span></pre><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-m-css"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">}</font></font></span></span></pre><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span cm-text=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&#8203;</font></font></span></span></pre><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-m-css cm-tag"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">p </font></font></span><span class="cm-m-css"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{</font></font></span></span></pre><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-m-css"> &nbsp;</span><span class="cm-m-css cm-property"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">famille de polices </font></font></span><span class="cm-m-css"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">: </font></font></span><span class="cm-m-css cm-variable"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">verdana </font></font></span><span class="cm-m-css"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">;</font></font></span></span></pre><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-m-css"> &nbsp;</span><span class="cm-m-css cm-property"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">taille de police </font></font></span><span class="cm-m-css"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">: </font></font></span><span class="cm-m-css cm-number"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">20px </font></font></span><span class="cm-m-css"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">;</font></font></span></span></pre><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-m-css"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">}</font></font></span></span></pre><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-m-xml cm-tag cm-bracket"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&lt;/ </font></font></span><span class="cm-m-xml cm-tag"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">style </font></font></span><span class="cm-m-xml cm-tag cm-bracket"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&gt;</font></font></span></span></pre><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-m-xml cm-tag cm-bracket"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&lt;/ </font></font></span><span class="cm-m-xml cm-tag"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">tête </font></font></span><span class="cm-m-xml cm-tag cm-bracket"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&gt;</font></font></span></span></pre><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-m-xml cm-tag cm-bracket"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&lt; </font></font></span><span class="cm-m-xml cm-tag"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">corps </font></font></span><span class="cm-m-xml cm-tag cm-bracket"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&gt;</font></font></span></span></pre><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span cm-text=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&#8203;</font></font></span></span></pre><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-m-xml cm-tag cm-bracket"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&lt; </font></font></span><span class="cm-m-xml cm-tag"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">h1 </font></font></span><span class="cm-m-xml cm-tag cm-bracket"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&gt; </font></font></span><span class="cm-m-xml"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mon premier exemple CSS </font></font></span><span class="cm-m-xml cm-tag cm-bracket"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&lt;/ </font></font></span><span class="cm-m-xml cm-tag"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">h1 </font></font></span><span class="cm-m-xml cm-tag cm-bracket"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&gt;</font></font></span></span></pre><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-m-xml cm-tag cm-bracket"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&lt; </font></font></span><span class="cm-m-xml cm-tag"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">p </font></font></span><span class="cm-m-xml cm-tag cm-bracket"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&gt; </font></font></span><span class="cm-m-xml"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ceci est un paragraphe. </font></font></span><span class="cm-m-xml cm-tag cm-bracket"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&lt;/ </font></font></span><span class="cm-m-xml cm-tag"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">p </font></font></span><span class="cm-m-xml cm-tag cm-bracket"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&gt;</font></font></span></span></pre><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span cm-text=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&#8203;</font></font></span></span></pre><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-m-xml cm-tag cm-bracket"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&lt;/ </font></font></span><span class="cm-m-xml cm-tag"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">corps </font></font></span><span class="cm-m-xml cm-tag cm-bracket"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&gt;</font></font></span></span></pre><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-m-xml cm-tag cm-bracket"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&lt;/ </font></font></span><span class="cm-m-xml cm-tag"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">html </font></font></span><span class="cm-m-xml cm-tag cm-bracket"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&gt;</font></font></span></span></pre><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span cm-text=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&#8203;</font></font></span></span></pre></div></div></div></div></div><div style="position: absolute; height: 13px; width: 1px; border-bottom: 0px solid transparent; top: 494px;"></div><div class="CodeMirror-gutters" style="display: none; height: 507px;"></div></div></div>
+        <form id="codeForm" autocomplete="off" style="margin:0px;display:none;">
+          <input type="hidden" name="code" id="code">
+        </form>
+       </div>
+    </div>
+  </div>
+  <div id="iframecontainer">
+    <div id="iframe">
+      <div id="iframewrapper"><iframe frameborder="0" id="iframeResult" name="iframeResult" allowfullscreen="true" src="./Tryit Editor v3.6_files/saved_resource.html"></iframe></div>
+    </div>
+  </div>
+</div>
+<div id="err_form" class="w3-modal" style="z-index:4">
+  <div class="w3-modal-content w3-display-container">
+    <span onclick="document.getElementById(&#39;err_form&#39;).style.display=&#39;none&#39;" class="w3-button w3-display-topright w3-padding ws-green" style="font-weight:bold;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">×</font></font></span>
+    <div class="w3-container ws-green">
+      <h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Signaler un problème:</font></font></h2>
+    </div>
+    <div class="w3-container"> 
+      <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Si vous souhaitez signaler une erreur, ou si vous souhaitez faire une suggestion, n'hésitez pas à nous envoyer un e-mail :</font></font></p>
+      <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">help@w3schools.com</font></font></p>
+    </div>
+  </div>
+</div>
+<style>
+#backtotutcontainer {
+  position:absolute;
+  bottom:0;
+  background-color:#F1F1F1;
+  width:100%;
+  height:50px;
+  padding-left:10px;
+  color:#555;
+}
+.w3-btn:hover.w3-blue, .w3-btn:active.w3-blue {
+  background-color: #0d8bf2!important;
+  color: #fff!important;
+  box-shadow: none;
+}
+body.darktheme #backtotutcontainer {
+  background-color:#616161;
+  color:#ddd;
+}
+</style>
+
+<script src="./Tryit Editor v3.6_files/codemirror.js.téléchargement"></script><iframe name="__tcfapiLocator" style="display: none;" src="./Tryit Editor v3.6_files/saved_resource(1).html"></iframe><iframe name="__uspapiLocator" style="display: none;" src="./Tryit Editor v3.6_files/saved_resource(2).html"></iframe>
+<script src="./Tryit Editor v3.6_files/codemirror_jsx.js.téléchargement"></script>
+<script>
+submitTryit()
+
+function submitTryit(n) {
+  if (window.editor) {
+    window.editor.save();
+  }
+  var text = document.getElementById("textareaCode").value;
+  var ifr = document.createElement("iframe");
+  ifr.setAttribute("frameborder", "0");
+  ifr.setAttribute("id", "iframeResult");
+  ifr.setAttribute("name", "iframeResult");  
+  ifr.setAttribute("allowfullscreen", "true");  
+  document.getElementById("iframewrapper").innerHTML = "";
+  document.getElementById("iframewrapper").appendChild(ifr);
+  if (loadSave == true ) {
+    ifr.setAttribute("src", "/code/opentext.htm");
+  } else if (fileID != "" && loadSave == false) {
+    var t=text;
+    t=t.replace(/=/gi,"w3equalsign");
+    t=t.replace(/\+/gi,"w3plussign");    
+    var pos=t.search(/script/i)
+    while (pos>0) {
+      t=t.substring(0,pos) + "w3" + t.substr(pos,3) + "w3" + t.substr(pos+3,3) + "tag" + t.substr(pos+6);
+	    pos=t.search(/script/i);
+    }
+    document.getElementById("code").value=t;
+    document.getElementById("codeForm").action = "https://tryit.w3schools.com/tryit_view.php?x=" + Math.random();
+    document.getElementById('codeForm').method = "post";
+    document.getElementById('codeForm').acceptCharset = "utf-8";
+    document.getElementById('codeForm').target = "iframeResult";
+    document.getElementById("codeForm").submit();
+  } else {
+    var ifrw = (ifr.contentWindow) ? ifr.contentWindow : (ifr.contentDocument.document) ? ifr.contentDocument.document : ifr.contentDocument;
+    ifrw.document.open();
+    ifrw.document.write(text);  
+    ifrw.document.close();
+    //23.02.2016: contentEditable is set to true, to fix text-selection (bug) in firefox.
+    //(and back to false to prevent the content from being editable)
+    //(To reproduce the error: Select text in the result window with, and without, the contentEditable statements below.)  
+    if (ifrw.document.body && !ifrw.document.body.isContentEditable) {
+      ifrw.document.body.contentEditable = true;
+      ifrw.document.body.contentEditable = false;
+    }
+  }
+}
+var currentStack=true;
+if ((window.screen.availWidth <= 768 && window.innerHeight > window.innerWidth) || "" == " horizontal") {restack(true);}
+function restack(horizontal) {
+    var tc, ic, t, i, c, f, sv, sh, d, height, flt, width;
+    tc = document.getElementById("textareacontainer");
+    ic = document.getElementById("iframecontainer");
+    t = document.getElementById("textarea");
+    i = document.getElementById("iframe");
+    c = document.getElementById("container");    
+    sv = document.getElementById("stackV");
+    sh = document.getElementById("stackH");
+    tc.className = tc.className.replace("horizontal", "");
+    ic.className = ic.className.replace("horizontal", "");        
+    t.className = t.className.replace("horizontal", "");        
+    i.className = i.className.replace("horizontal", "");        
+    c.className = c.className.replace("horizontal", "");                        
+    if (sv) {sv.className = sv.className.replace("horizontal", "")};
+    if (sv) {sh.className = sh.className.replace("horizontal", "")};
+    stack = "";
+    if (horizontal) {
+        tc.className = tc.className + " horizontal";
+        ic.className = ic.className + " horizontal";        
+        t.className = t.className + " horizontal";        
+        i.className = i.className + " horizontal";                
+        c.className = c.className + " horizontal";                
+        if (sv) {sv.className = sv.className + " horizontal"};
+        if (sv) {sh.className = sh.className + " horizontal"};
+        stack = " horizontal";
+        document.getElementById("textareacontainer").style.height = "50%";
+        document.getElementById("iframecontainer").style.height = "50%";
+        document.getElementById("textareacontainer").style.width = "100%";
+        document.getElementById("iframecontainer").style.width = "100%";
+        currentStack=false;
+    } else {
+        document.getElementById("textareacontainer").style.height = "100%";
+        document.getElementById("iframecontainer").style.height = "100%";
+        document.getElementById("textareacontainer").style.width = "50%";
+        document.getElementById("iframecontainer").style.width = "50%";
+        currentStack=true;        
+    }
+    fixDragBtn();
+    showFrameSize();
+}
+function showFrameSize() {
+  var t;
+  var width, height;
+  width = Number(w3_getStyleValue(document.getElementById("iframeResult"), "width").replace("px", "")).toFixed();
+  height = Number(w3_getStyleValue(document.getElementById("iframeResult"), "height").replace("px", "")).toFixed();
+  document.getElementById("framesize").innerHTML = "Result Size: <span>" + width + " x " + height + "</span>";
+}
+var dragging = false;
+var stack;
+function fixDragBtn() {
+  var textareawidth, leftpadding, dragleft, containertop, buttonwidth
+  var containertop = Number(w3_getStyleValue(document.getElementById("container"), "top").replace("px", ""));
+  if (stack != " horizontal") {
+    document.getElementById("dragbar").style.width = "5px";    
+    textareasize = Number(w3_getStyleValue(document.getElementById("textareawrapper"), "width").replace("px", ""));
+    leftpadding = Number(w3_getStyleValue(document.getElementById("textarea"), "padding-left").replace("px", ""));
+    buttonwidth = Number(w3_getStyleValue(document.getElementById("dragbar"), "width").replace("px", ""));
+    textareaheight = w3_getStyleValue(document.getElementById("textareawrapper"), "height");
+    dragleft = textareasize + leftpadding + (leftpadding / 2) - (buttonwidth / 2);
+    document.getElementById("dragbar").style.top = containertop + "px";
+    document.getElementById("dragbar").style.left = dragleft + "px";
+    document.getElementById("dragbar").style.height = textareaheight;
+    document.getElementById("dragbar").style.cursor = "col-resize";
+    
+  } else {
+    document.getElementById("dragbar").style.height = "5px";
+    if (window.getComputedStyle) {
+        textareawidth = window.getComputedStyle(document.getElementById("textareawrapper"),null).getPropertyValue("height");
+        textareaheight = window.getComputedStyle(document.getElementById("textareawrapper"),null).getPropertyValue("width");
+        leftpadding = window.getComputedStyle(document.getElementById("textarea"),null).getPropertyValue("padding-top");
+        buttonwidth = window.getComputedStyle(document.getElementById("dragbar"),null).getPropertyValue("height");
+    } else {
+        dragleft = document.getElementById("textareawrapper").currentStyle["width"];
+    }
+    textareawidth = Number(textareawidth.replace("px", ""));
+    leftpadding = Number(leftpadding .replace("px", ""));
+    buttonwidth = Number(buttonwidth .replace("px", ""));
+    dragleft = containertop + textareawidth + leftpadding + (leftpadding / 2);
+    document.getElementById("dragbar").style.top = dragleft + "px";
+    document.getElementById("dragbar").style.left = "5px";
+    document.getElementById("dragbar").style.width = textareaheight;
+    document.getElementById("dragbar").style.cursor = "row-resize";        
+  }
+}
+function dragstart(e) {
+  e.preventDefault();
+  dragging = true;
+  var main = document.getElementById("iframecontainer");
+}
+function dragmove(e) {
+  if (dragging) 
+  {
+    document.getElementById("shield").style.display = "block";        
+    if (stack != " horizontal") {
+      var percentage = (e.pageX / window.innerWidth) * 100;
+      if (percentage > 5 && percentage < 98) {
+        var mainPercentage = 100-percentage;
+        document.getElementById("textareacontainer").style.width = percentage + "%";
+        document.getElementById("iframecontainer").style.width = mainPercentage + "%";
+        fixDragBtn();
+      }
+    } else {
+      var containertop = Number(w3_getStyleValue(document.getElementById("container"), "top").replace("px", ""));
+      var percentage = ((e.pageY - containertop + 20) / (window.innerHeight - containertop + 20)) * 100;
+      if (percentage > 5 && percentage < 98) {
+        var mainPercentage = 100-percentage;
+        document.getElementById("textareacontainer").style.height = percentage + "%";
+        document.getElementById("iframecontainer").style.height = mainPercentage + "%";
+        fixDragBtn();
+      }
+    }
+    showFrameSize();    
+  }
+}
+function dragend() {
+  document.getElementById("shield").style.display = "none";
+  dragging = false;
+  var vend = navigator.vendor;
+  if (window.editor && vend.indexOf("Apple") == -1) {
+      window.editor.refresh();
+  }
+}
+if (window.addEventListener) {              
+  document.getElementById("dragbar").addEventListener("mousedown", function(e) {dragstart(e);});
+  document.getElementById("dragbar").addEventListener("touchstart", function(e) {dragstart(e);});
+  window.addEventListener("mousemove", function(e) {dragmove(e);});
+  window.addEventListener("touchmove", function(e) {dragmove(e);});
+  window.addEventListener("mouseup", dragend);
+  window.addEventListener("touchend", dragend);
+  window.addEventListener("load", fixDragBtn);
+  window.addEventListener("load", showFrameSize);
+}
+function click_savebtn() {
+  if (window.editor) {
+    window.editor.save();
+  }
+  document.getElementById('saveModal').style.display = 'block';
+}
+function click_google_savebtn() {
+  if (window.editor) {
+    window.editor.save();
+  }
+  document.getElementById('driveSaveModal').style.display='block'
+}
+
+function click_google_loadbtn() {
+  document.getElementById('driveLoadModal').style.display='block'
+}
+function retheme() {
+  var cc = document.body.className;
+  if (cc.indexOf("darktheme") > -1) {
+    document.body.className = cc.replace("darktheme", "");
+    if (opener) {opener.document.body.className = cc.replace("darktheme", "");}
+    localStorage.setItem("preferredmode", "light");
+  } else {
+    document.body.className += " darktheme";
+    if (opener) {opener.document.body.className += " darktheme";}
+    localStorage.setItem("preferredmode", "dark");
+  }
+}
+(
+function setThemeMode() {
+  var x = localStorage.getItem("preferredmode");
+  if (x == "dark") {
+    document.body.className += " darktheme";
+  }
+})();
+function colorcoding() {
+  var ua = navigator.userAgent;
+  //Opera Mini refreshes the page when trying to edit the textarea.
+  if (ua && ua.toUpperCase().indexOf("OPERA MINI") > -1) { return false; }
+  window.editor = CodeMirror.fromTextArea(document.getElementById("textareaCode"), {
+    mode: "text/html",
+    htmlMode: true,
+    lineWrapping: true,
+    smartIndent: false,
+    addModeClass: true
+  });
+//  window.editor.on("change", function () {window.editor.save();});
+}
+colorcoding();
+
+function w3_getStyleValue(elmnt,style) {
+    if (window.getComputedStyle) {
+        return window.getComputedStyle(elmnt,null).getPropertyValue(style);
+    } else {
+        return elmnt.currentStyle[style];
+    }
+}
+//SAVE AND OPEN SCRIPT
+var oauthToken;
+var userAction;
+var pickerApiLoaded;
+var developerKey = 'AIzaSyAMZDPXiGcCNWs1UCWG9LS6kkW5YiABfJ0';
+var CLIENT_ID = '451843133508-ckbr5r6ch1ofqbmh87oll4u6ltinqv2t.apps.googleusercontent.com';
+var SCOPES = ['https://www.googleapis.com/auth/drive.file'];
+
+//Check if current user has authorized this application
+function checkAuth() {
+    gapi.auth.authorize(
+    {
+        'client_id': CLIENT_ID,
+        'scope': SCOPES.join(' '),
+        'immediate': true
+    }, handleAuthResult);
+}
+
+//Handle response from authorization server
+function handleAuthResult(authResult) {
+    if (authResult && !authResult.error) {
+        oauthToken = authResult.access_token;
+        loadApi();
+    }
+}
+
+// Initiate auth flow in response to user clicking authorize button
+function handleAuthClick(event,userClick) {
+    userAction = userClick;
+    gapi.auth.authorize(
+        {client_id: CLIENT_ID, scope: SCOPES, immediate: false},
+        handleAuthResult);
+    return false;
+}
+
+// Load API library
+function loadApi() {
+    gapi.client.load('drive', 'v3');
+    gapi.load('picker', {'callback': onPickerApiLoad});
+}
+function onPickerApiLoad() {
+    pickerApiLoaded = true;
+    if (userAction=="save") {
+        userAction="";
+        document.getElementById('driveText').style.display='none';
+        document.getElementById('driveSavedPanel').style.display='block';
+        createFileWithHTMLContent(document.getElementById('googleFileName').value,document.getElementById('textareaCode').value)     
+    }
+    if (userAction=="open") {
+        userAction="";
+        createPicker();
+    }
+}
+
+// Create and render a Picker object for picking HTML file
+function createPicker() {
+    if (pickerApiLoaded) {
+        var view = new google.picker.View(google.picker.ViewId.DOCS);
+        view.setMimeTypes("text/html");
+        var picker = new google.picker.PickerBuilder().
+            addView(view).
+            setOAuthToken(oauthToken).
+            setDeveloperKey(developerKey).
+            setCallback(pickerCallback).
+            build();
+        picker.setVisible(true);
+    }
+}
+// Put content of file in tryit editor
+function pickerCallback(data) {
+    var docID = '';
+    if (data[google.picker.Response.ACTION] == google.picker.Action.PICKED) {
+        var doc = data[google.picker.Response.DOCUMENTS][0];
+        docID = doc[google.picker.Document.ID];
+        getContentOfFile(docID);
+    }
+}
+
+//Get contents
+function getContentOfFile(theID){
+    gapi.client.request({'path': '/drive/v3/files/'+theID+'?alt=media&key='+developerKey,'method': 'GET',callback: function ( theResponseJS, theResponseTXT ) {
+        var myToken = gapi.auth.getToken();
+        var code = JSON.parse(theResponseTXT);
+        code = code.gapiRequest.data.body;
+        document.getElementById("textareaCode").value=code;
+        window.editor.getDoc().setValue(code);
+        submitTryit(1);
+        resetDriveLoadModal();
+        }
+    });
+}
+
+var createFileWithHTMLContent = function(name,data,callback) {
+    const boundary = '-------314159265358979323846';
+    const delimiter = "\r\n--" + boundary + "\r\n";
+    const close_delim = "\r\n--" + boundary + "--";
+    const contentType = 'text/html';
+
+    var metadata = {
+        'name': name,
+        'mimeType': contentType
+    };
+
+    var multipartRequestBody =
+        delimiter +
+        'Content-Type: application/json\r\n\r\n' +
+        JSON.stringify(metadata) +
+        delimiter +
+        'Content-Type: ' + contentType + '\r\n\r\n' +
+        data +
+        close_delim;
+
+    var request = gapi.client.request({
+        'path': '/upload/drive/v3/files',
+        'method': 'POST',
+        'params': {'uploadType': 'multipart'},
+        'headers': {
+            'Content-Type': 'multipart/related; boundary="' + boundary + '"'
+        },
+        'body': multipartRequestBody});
+    if (!callback) {
+        callback = function(file) {
+            console.log(file);
+            document.getElementById("driveSavedText").innerHTML = file.name + " saved in Google Drive";
+            document.getElementById("driveSavedPanel").className = "w3-panel w3-large";
+        };
+    }
+    request.execute(callback);
+}
+
+if (navigator.userAgent.indexOf("MSIE") > 0 || navigator.userAgent.indexOf("Edge") > 0) {
+    document.getElementById("saveGDriveBtn").style.display = "none";
+    document.getElementById("loadGDriveBtn").style.display = "none";
+}
+
+
+function resetDriveSaveModal() {
+    document.getElementById('driveSavedText').innerHTML='';
+    document.getElementById('driveSaveModal').style.display='none'
+    document.getElementById('driveSavedPanel').style.display='none'
+    document.getElementById('driveText').style.display='block'
+    document.getElementById("driveSavedPanel").className = "w3-panel w3-large loader";
+}
+function resetDriveLoadModal() {
+    document.getElementById('driveLoadModal').style.display='none'
+}
+
+function saveFile(code) {
+    document.getElementById('preSave').style.display='none';
+    if (code.length>20000) {
+        document.getElementById('errorSave').style.display='block';    
+        return;
+    }
+    document.getElementById('postSave').style.display='block';    
+    var paramObj = {};
+    paramObj.code = code;
+    var paramB = JSON.stringify(paramObj);
+    var httpB = new XMLHttpRequest();
+    httpB.open("POST", globalURL, true);
+
+    httpB.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+    httpB.onreadystatechange = function() {
+    if(httpB.readyState == 4 && httpB.status == 200) {
+        if(httpB.responseText.substr(0,2) == "OK" ) {
+          var getId = httpB.responseText.substr(2);
+          document.getElementById("shareLink").href = "/code/tryit.asp?filename=" + getId;
+          document.getElementById("shareLinkText").innerHTML = "https://www.w3schools.com/code/tryit.asp?filename=" + getId;
+          document.getElementById('saveLoader').style.display = "none";
+          document.getElementById("saveModalSaved").style.display  = "block";
+        }
+    }
+    }
+    httpB.send(paramB);
+}
+function hideAndResetModal() {
+    document.getElementById("saveModal").style.display = "none";
+    document.getElementById('preSave').style.display = "block";
+    document.getElementById('errorSave').style.display = "none";    
+    document.getElementById('postSave').style.display = "none";
+    document.getElementById("saveModalSaved").style.display = "none";
+    document.getElementById('saveDisclaimer').style.display= "none";
+    document.getElementById('saveLoader').style.display = "block";
+}
+
+function displayError() {
+  document.getElementById("err_form").style.display = "block";
+  hideSent();
+}
+function hideError() {
+  document.getElementById("err_form").style.display = "none";
+}
+function hideSent() {
+  document.getElementById("err_sent").style.display = "none";
+}
+function openMenu() {
+    var x = document.getElementById("navbarDropMenu");
+    var y = document.getElementById("menuOverlay");
+    var z = document.getElementById("menuButton");
+    if (z.className.indexOf("w3-text-gray") == -1) {
+        z.className += " w3-text-gray";
+    } else { 
+        z.className = z.className.replace(" w3-text-gray", "");
+    }
+    if (z.className.indexOf("w3-gray") == -1) {
+        z.className += " w3-gray";
+    } else { 
+        z.className = z.className.replace(" w3-gray", "");
+    }
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+    if (y.className.indexOf("w3-show") == -1) {
+        y.className += " w3-show";
+    } else { 
+        y.className = y.className.replace(" w3-show", "");
+    }
+
+}
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == document.getElementById("saveModal")) {
+        hideAndResetModal();
+    }
+    if (event.target == document.getElementById("driveSaveModal")) {
+        resetDriveSaveModal();
+    }
+    if (event.target == document.getElementById("driveLoadModal")) {
+        resetDriveLoadModal();
+    }
+    if (event.target == document.getElementById("menuOverlay")) {
+        openMenu();
+    }
+    
+}
+
+function gDrive() {
+
+  var gDri = document.createElement('script'); gDri.id = 'gDri'; gDri.type = 'text/javascript'; gDri.async = true;
+  gDri.src = 'https://apis.google.com/js/client.js?onload=checkAuth';
+  var el = document.getElementById('gDri');
+  if (el == null) {
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gDri, s);
+  }
+
+};
+</script><iframe src="./Tryit Editor v3.6_files/container(1).html" style="visibility: hidden; display: none;"></iframe><div id="goog-gt-tt" class="skiptranslate" dir="ltr"><div style="padding: 8px;"><div><div class="logo"><img src="./Tryit Editor v3.6_files/translate_24dp.png" width="20" height="20" alt="Google Traduction"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">Texte d'origine</h1></div><div class="middle" style="padding: 8px;"><div class="original-text"></div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">Proposer une meilleure traduction</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div class="status-message" style="display: none;"></div></div>
+
+
+<div class="goog-te-spinner-pos"><div class="goog-te-spinner-animation"><svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66"><circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div><iframe id="google_osd_static_frame_4952905976155" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;" src="./Tryit Editor v3.6_files/saved_resource(3).html"></iframe><iframe src="./Tryit Editor v3.6_files/aframe.html" width="0" height="0" style="display: none;"></iframe></body></html>

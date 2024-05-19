@@ -1,0 +1,34 @@
+section {
+	border-style: solid;
+	margin-top: auto;
+	margin: 15px;
+}
+
+strong {
+	color: #20B2AA;
+	font-weight: bold;
+	font-style: italic;
+}
+
+div {
+	width: 75%;
+	font-style: italic;
+	margin: 10px;
+	padding: 10px;
+	border: 3px;
+	color: #808080;
+}
+
+.titre {
+	text-align: center;
+}
+
+h1, h2, h3 {
+	border: 2px;
+	color: #008888;
+
+}
+
+.num {
+	list-style-type: none;
+}

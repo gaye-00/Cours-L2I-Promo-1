@@ -1,0 +1,13 @@
+thead,tfoot{
+    background-color:#7FFF00;
+    border-bottom:1px solid black;
+}
+
+tbody tr:nth-child(even){
+    background-color: #808080;
+  
+}
+tbody tr:nth-child(odd)
+{
+   background-color:#DCDCDC/* Couleur mauve clair */; /*Donne la couleur au ligne pair*/
+}

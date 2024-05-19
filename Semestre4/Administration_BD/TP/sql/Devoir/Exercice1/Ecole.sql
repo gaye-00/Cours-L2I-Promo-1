@@ -1,0 +1,42 @@
+CREATE DATABASE IF NOT EXISTS UNIVERSITE;
+USE UNIVERSITE;
+
+CREATE TABLE IF NOT EXISTS Classe (
+	Filiere VARCHAR(40),
+	Niveau VARCHAR(10),
+	Effectif SMALLINT UNSIGNED,
+	CONSTRAINT PK_Classe PRIMARY KEY(Filiere, Niveau)
+);
+
+CREATE TABLE IF NOT EXISTS Matiere (
+	Nom VARCHAR(30),
+	Niveau VARCHAR(10),
+	Credit SMALLINT UNSIGNED CHECK(Credit IN(2, 3, 4, 5, 6)),
+	Vol_Horaire SMALLINT UNSIGNED,
+	Coefficient SMALLINT UNSIGNED CHECK(Coefficient IN(1, 2, 3)),
+	Domaine VARCHAR(20),
+	CONSTRAINT PK_Matiere PRIMARY KEY(Nom)
+);
+
+CREATE TABLE IF NOT EXISTS FaireCours (
+	Filiere VARCHAR(40),
+	Niveau VARCHAR(10),
+	Matiere VARCHAR(30),
+	Salle VARCHAR(15),
+	Duree SMALLINT UNSIGNED CHECK(Duree IN(1, 2)),
+	CONSTRAINT PK_FaireCours PRIMARY KEY(Filiere, Niveau, Matiere),
+	CONSTRAINT FK_FaireCours_Classe FOREIGN KEY(Filiere, Niveau) REFERENCES Classe(Filiere, Niveau),
+	CONSTRAINT FK_FaireCours_Matiere FOREIGN KEY(Matiere) REFERENCES Matiere(Nom)
+);
+
+CREATE TABLE IF NOT EXISTS Etat (
+	Filiere VARCHAR(40),
+	Niveau VARCHAR(10),
+	Matiere VARCHAR(30),
+	HeureEffec TIME,
+	HeureRest TIME,
+	Etat VARCHAR(10) CHECK(Etat in('EN_ATTENTE', 'EN_COURS', 'TERMINER')),
+	CONSTRAINT PK_Etat PRIMARY KEY(Filiere, Niveau, Matiere),
+	CONSTRAINT FK_Etat_Classe FOREIGN KEY(Filiere, Niveau) REFERENCES Classe(Filiere, Niveau),
+	CONSTRAINT FK_Etat_Matiere FOREIGN KEY(Matiere) REFERENCES Matiere(Nom)
+);

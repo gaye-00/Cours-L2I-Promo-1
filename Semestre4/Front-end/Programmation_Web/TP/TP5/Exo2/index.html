@@ -1,0 +1,70 @@
+<!-- Analyser le code HTML suivant et écrit moi code JavaScript pour contrôler la formulaire. -->
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<link href="./styles/styles.css" type="text/css" rel="stylesheet">
+	<title>Exercice2</title>
+</head>
+<body>
+	<h2 style="text-align: center;">Formulaire d'inscription</h2>
+	<form name="RegForm" action="/submit.php" onsubmit="return valider()"
+	method="post" class="w3docs">
+	<div>
+		<label for="Nom">Nom:</label>
+		<input type="text" id="Nom" size="60" name="Nom" />
+	</div>
+	<br />
+	<div>
+		<label for="adresse">Adresse:</label>
+		<input type="text" id="adresse" size="60" name="Adresse" />
+	</div>
+	<br />
+	<div>
+		<label for="E-mail">Adresse électronique:</label>
+		<input type="text" id="E-mail" size="60" name="Email" />
+	</div>
+	<br />
+	<div>
+		<label for="mdp">Mot de passe:</label>
+		<input type="password" id="mdp" size="60" name="mdp" />
+	</div>
+	<br />
+	<div>
+		<label for="mdpc">Confirmation mot de passe:</label>
+		<input type="password" id="mdpc" size="60" name="mdpc" />
+	</div>
+	<br />
+	<div>
+		<label for="Téléphone">Téléphone: </label>
+		<input type="text" id="Téléphone" size="60" name="Téléphone" />
+	</div>
+	<br />
+	<div>
+		<label>Sélectionnez le Livre</label>
+		<select name="Sujet">
+			<option></option>
+			<option>HTML</option>
+			<option>CSS</option>
+			<option>PHP</option>
+			<option>JavaScript</option>
+		</select>
+	</div>
+	<br />
+	<div>
+		<label for="commentaire">Commentaires: </label>
+		<textarea
+		cols="62"
+		id="commentaire"
+		name="Commentaire"></textarea>
+	</div>
+	<div class="buttons">
+		<input type="submit" value="Envoyer" name="Envoyer" />
+		<input type="reset" value="Rénit" name="Reset" />
+	</div>
+
+	<script src="script/script.js"></script>
+</form>
+</body>
+</html>

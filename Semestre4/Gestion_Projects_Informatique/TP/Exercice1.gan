@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="Project_2" company="" webLink="http://" view-date="2022-12-05" view-index="0" gantt-divider-location="351" resource-divider-location="300" version="3.2.3247" locale="fr_FR">
+    <description/>
+    <view zooming-state="default:5" id="gantt-chart">
+        <field id="tpd3" name="Nom" width="200" order="0"/>
+        <field id="tpd4" name="Date de début" width="75" order="1"/>
+        <field id="tpd5" name="Date de fin" width="75" order="2"/>
+        <option id="filter.completedTasks" value="false"/>
+        <option id="color.recent">
+            <![CDATA[#66ff66 #33ff33]]>
+        </option>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Nom" width="210" order="0"/>
+        <field id="1" name="Rôle par défaut" width="86" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="0" name="A Definition du budget" color="#66ff66" meeting="false" start="2022-11-29" duration="20" complete="0" thirdDate="2022-11-29" thirdDate-constraint="0" expand="true">
+            <depend id="3" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="1" name="B Sélection théme" color="#8cb6ce" meeting="false" start="2022-11-29" duration="5" complete="0" thirdDate="2022-11-29" thirdDate-constraint="0" expand="true">
+            <depend id="2" type="2" difference="0" hardness="Strong"/>
+            <depend id="3" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="2" name="C Annonce interne" color="#8cb6ce" meeting="false" start="2022-12-06" duration="7" complete="0" thirdDate="2022-11-29" thirdDate-constraint="0" expand="true">
+            <depend id="4" type="2" difference="0" hardness="Strong"/>
+            <depend id="5" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="3" name="D Annonce de presse" color="#8cb6ce" meeting="false" start="2022-12-27" duration="5" complete="0" thirdDate="2022-11-29" thirdDate-constraint="0" expand="true">
+            <depend id="5" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="4" name="E Sélection menu" color="#8cb6ce" meeting="false" start="2022-12-15" duration="8" complete="0" thirdDate="2022-11-29" thirdDate-constraint="0" expand="true"/>
+        <task id="5" name="F Location équipements" color="#8cb6ce" meeting="false" start="2023-01-03" duration="9" complete="0" thirdDate="2022-11-29" thirdDate-constraint="0" expand="true">
+            <depend id="6" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="6" name="G Préparatif" color="#8cb6ce" meeting="false" start="2023-01-16" duration="4" complete="0" thirdDate="2022-11-29" thirdDate-constraint="0" expand="true">
+            <depend id="7" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="7" name="H Evénement" color="#8cb6ce" meeting="false" start="2023-01-20" duration="3" complete="0" thirdDate="2022-11-29" thirdDate-constraint="0" expand="true"/>
+    </tasks>
+    <resources>
+        <resource id="0" name="Pierre" function="Default:1" contacts="" phone=""/>
+        <resource id="1" name="Demba" function="2" contacts="" phone=""/>
+        <resource id="3" name="Charle" function="3" contacts="" phone=""/>
+        <resource id="4" name="Petro" function="4" contacts="" phone=""/>
+        <resource id="5" name="Vincent" function="5" contacts="" phone=""/>
+        <resource id="6" name="Memedou" function="6" contacts="" phone=""/>
+        <resource id="7" name="Luis" function="5" contacts="" phone=""/>
+        <resource id="8" name="Jean" function="2" contacts="" phone=""/>
+    </resources>
+    <allocations>
+        <allocation task-id="0" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="1" resource-id="1" function="2" responsible="true" load="100.0"/>
+        <allocation task-id="2" resource-id="3" function="3" responsible="true" load="100.0"/>
+        <allocation task-id="3" resource-id="4" function="4" responsible="true" load="100.0"/>
+        <allocation task-id="4" resource-id="5" function="5" responsible="true" load="100.0"/>
+        <allocation task-id="5" resource-id="6" function="6" responsible="true" load="100.0"/>
+        <allocation task-id="6" resource-id="7" function="5" responsible="true" load="100.0"/>
+        <allocation task-id="7" resource-id="8" function="2" responsible="true" load="100.0"/>
+    </allocations>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+    <roles>
+        <role id="1" name="Chef de projet"/>
+        <role id="2" name="Maitre d'ouvrage"/>
+        <role id="3" name="Graphiste"/>
+        <role id="4" name="Journaliste"/>
+        <role id="5" name="Développeur"/>
+        <role id="6" name="Logistique"/>
+        <role id="7" name="Développeur"/>
+        <role id="8" name="Maitre d'ouvrage"/>
+    </roles>
+</project>

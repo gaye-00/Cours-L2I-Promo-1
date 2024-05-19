@@ -1,0 +1,13 @@
+.vert {
+	background-color: #7FFF00;
+}
+
+tbody tr:nth-child(odd)
+{
+   background-color:#DCDCDC/* Couleur mauve clair */; /*Donne la couleur au ligne pair*/
+}
+
+tbody tr:nth-child(even){
+    background-color: #808080;
+  
+}

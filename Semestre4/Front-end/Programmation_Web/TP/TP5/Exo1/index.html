@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<title>Exercice1</title>
+	</head>
+
+	<body>
+		<!-- 1- au chargement de la page , -->
+
+		<!-- 2- quand on passe sur une image, -->
+		<img src="img/img.png" id="monImage" width="200" height="200">
+
+		<!-- 3- quand on clique sur un bouton, -->
+		</br> </br>
+		<!-- <button onclick="alert('Alerte Alerte')">Cliquez</button> -->
+		<button id="clik">Cliquer moi</button>
+
+		<!-- 4- quand on appuie sur une touche. -->
+		<br>
+		<p id="ap">Appuller sur une touche ?</p>
+
+		<!-- 5. Ajouter un bouton qui, quand on clique dessus, fait appel à document.write() pour
+		produire un affichage. Que se passe-t-il ? -->
+		<button onclick="document.write('Ecrire')">Writer</button>
+		<!-- On constate que tout le reste de la page et effacer et on affiche
+		le contenu de document.write()-->
+
+		<!-- 6. changer la couleur de fond du document quand on clique sur un bouton, -->
+		<br> <br>
+		<button id = "col">Change couleur</button>
+
+		<!-- 7. changer aussi l'apparence du bouton, -->
+		<br> <br>
+		<button id="apa">Change Apparence</button>
+
+		<!-- 8. ajouter un bouton qui permette de revenir à la normale. -->
+		<br> <br>
+
+		<!-- 9. changer une image par une autre quand la souris passe dessus, -->
+		<br> <br>
+		<img src="img/img1.png" id="bigImage" class="image" />
+
+		<br>
+		<a onmouseover="changeImage('img/img1.png')" >Image01</a>
+		<a onmouseover="changeImage('img/img.png')" >Image02</a>
+		<!-- <a id="Image01" >Image01</a>
+		<a id="Image02" >Image02</a> -->
+
+		<script type="text/javascript" src="js/script.js"></script>
+	</body>
+</html>
