@@ -1,0 +1,464 @@
+<!DOCTYPE html><html lang='fr'><head><meta charset='UTF-8'><title>Pentominos</title><script src='http://pabbati.free.fr/PentominoesAll.txt'></script><script src='http://pabbati.free.fr/PentominoesAllSans.txt'></script>
+<style>
+body{margin:0;padding:0;border:0;}
+</style>
+<script>
+'use strict';
+const radian=Math.PI/180.0;
+//var grey="rgb(128,128,128)";
+var black="rgb(0,0,0)";
+var white="rgb(255,255,255)";
+var Color=[
+	new point(255,  0,255),
+	new point(255,  0,  0),
+	new point(  0,255,255),
+	new point(  0,255,  0),
+	new point(255,255,  0),
+	new point(  0,  0,255),
+	new point(190,  0,190),
+	new point(190,  0,  0),
+	new point(220,220,220),
+	new point(  0,190,  0),
+	new point(190,190,  0),
+	new point(  0,  0,190),
+];
+
+var angleX=180+30;
+var angleY=30;
+var angleZ=30;
+var cosX=Math.cos(angleX*radian);
+var cosY=Math.cos(angleY*radian);
+var cosZ=Math.cos(angleZ*radian);
+var sinX=Math.sin(angleX*radian);
+var sinY=Math.sin(angleY*radian);
+var sinZ=Math.sin(angleZ*radian);
+var Faces;//toutes les faces bougées
+var bouge=false;
+var mousepos;
+var faces;//toutes les faces initiales
+var a=-36*radian;
+var c=Math.cos(a);
+var s=Math.sin(a);
+function getfaces(F,tx,ty,tz,color)
+{
+	let p=1;
+	F.push(new Array(
+		new point(-p+tx,-p+ty, p+tz),
+		new point( p+tx,-p+ty, p+tz),
+		new point( p+tx, p+ty, p+tz),
+		new point(-p+tx, p+ty, p+tz),
+		color));
+	F.push(new Array(
+		new point(-p+tx, p+ty,-p+tz),
+		new point( p+tx, p+ty,-p+tz),
+		new point( p+tx,-p+ty,-p+tz),
+		new point(-p+tx,-p+ty,-p+tz),
+		color));
+	F.push(new Array(
+		new point( p+tx,-p+ty, p+tz),
+		new point( p+tx,-p+ty,-p+tz),
+		new point( p+tx, p+ty,-p+tz),
+		new point( p+tx, p+ty, p+tz),
+		color));
+	F.push(new Array(
+		new point(-p+tx, p+ty, p+tz),
+		new point( p+tx, p+ty, p+tz),
+		new point( p+tx, p+ty,-p+tz),
+		new point(-p+tx, p+ty,-p+tz),
+		color));
+	F.push(new Array(
+		new point(-p+tx,-p+ty, p+tz),
+		new point(-p+tx,-p+ty,-p+tz),
+		new point( p+tx,-p+ty,-p+tz),
+		new point( p+tx,-p+ty, p+tz),
+		color));
+	F.push(new Array(
+		new point(-p+tx,-p+ty, p+tz),
+		new point(-p+tx, p+ty, p+tz),
+		new point(-p+tx, p+ty,-p+tz),
+		new point(-p+tx,-p+ty,-p+tz),
+		color));
+	return F;
+}
+
+function point(x,y,z) {
+	this.x=x;		      
+	this.y=y;
+	this.z=z;
+	this.vector=function(p){return new point(p.x-this.x,p.y-this.y,p.z-this.z);}//this->p
+	this.copy=function(){return new point(this.x,this.y,this.z);}
+	this.move=function(i,j,k){this.x+=i;this.y+=j;this.z+=k;}
+	this.round=function(){this.x=Math.round(this.x);this.y=Math.round(this.y);this.z=Math.round(this.z);}
+	this.X180=function(){this.y=-this.y,this.z=-this.z;}//idem -180
+	this.Y180=function(){this.x=-this.x,this.z=-this.z;}
+	this.Z180=function(){this.x=-this.x,this.y=-this.y;}
+	this.X90=function() {let d=this.y;this.y=-this.z;this.z=d;}// sens trigonométrique (on tourne "réellement")
+	this.X_90=function(){let d=this.y;this.y=this.z;this.z=-d;}//sens des aiguilles
+	this.Y90=function(){let d=this.z;this.z=-this.x;this.x=d;}
+	this.Y_90=function(){let d=this.z;this.z=this.x;this.x=-d;}
+	this.Z90=function(){let d=this.x;this.x=-this.y;this.y=d;}
+	this.Z_90=function(){let d=this.x;this.x=this.y;this.y=-d;}
+	this.rotateX=function() {//on renvoit un nouveau point "tourné" sans "toucher" au cube
+	    return new point(this.x,this.y*cosX-this.z*sinX,this.y*sinX+this.z*cosX);}
+	this.rotateY=function() {
+	    return new point(this.z*sinY+this.x*cosY,this.y,this.z*cosY-this.x*sinY);}
+	this.rotateZ=function() {
+	    return new point(this.x*cosZ-this.y*sinZ,this.x*sinZ+this.y*cosZ,this.z);}
+	this.project=function(viewWidth, viewHeight, fov, viewDistance) {//projection des points
+	    let factor=fov/(viewDistance+this.z);
+	    return new point(this.x*factor+viewWidth/2.0,this.y*factor+viewHeight/2.0,this.z);}
+	this.rX=function()
+	{//on tourne "réellement"
+		let j=this.y*c-this.z*s;
+		let k=this.y*s+this.z*c;
+		this.y=j;
+		this.z=k;
+	}
+	this.rY=function()
+	{
+		let k=this.z*c-this.x*s;
+		let i=this.z*s+this.x*c;
+		this.x=i;
+		this.z=k;
+	}
+	this.rZ=function()
+	{
+		let i=this.x*c-this.y*s;
+		let j=this.x*s+this.y*c;
+		this.x=i;
+		this.y=j;
+	}
+}
+function pointToRGB(p)
+{//if(p.length==3)
+	return "rgb("+p.x+","+p.y+","+p.z+")";
+}//else return "rgb(0,0,0)"
+function getmilieu(f)
+{
+	let n=f.length-2;
+	let x=0;
+	let y=0;
+	let z=0;
+	for(let i=0;i<n;i++)
+	{
+		x+=f[i].x;
+		y+=f[i].y;
+		z+=f[i].z;
+	}
+	return new point(x/n,y/n,z/n);
+}
+/*function getclickface(x,y)
+{
+	let n=Faces.length;
+	for(let i=n-1;i>=0;i--)
+	{
+		let f=Faces[i];
+		for(let m=1;m<f.length-3;m++)
+		{
+			if(IsPointInsideTriangle(f[0],f[m],f[m+1],x,y))return f;
+		}
+	}
+	return 0;
+}*/
+function ComputeZCoordinate(p1,p2,p3)
+{
+	return p1.x*(p2.y-p3.y)+p2.x*(p3.y-p1.y)+p3.x*(p1.y-p2.y);
+}
+function point2(x,y){this.x=x;this.y=y;}
+/*
+function IsPointInsideTriangle(p1,p2,p3,x,y)
+{
+	let p=new point2(x,y);
+	let z1 = ComputeZCoordinate(p1,p2,p);
+	let z2 = ComputeZCoordinate(p2,p3,p);
+	let z3 = ComputeZCoordinate(p3,p1,p);
+	return ((z1>0.0)&&(z2>0.0)&&(z3>0.0))||((z1<0.0)&&(z2<0.0)&&(z3<0.0));
+}
+*/
+function getFaces()//toutes les faces "tournées" des cubes
+{//on peut limiter en ne prenant que les faces tournées vers l'observateur (produit scalaire)
+	Faces=new Array();//on garde les faces en global
+	for(let k in faces)//les faces
+	{
+		let face=faces[k];//1 face
+			let t=new Array();
+			for(let j=0;j<face.length-1;j++)
+			{
+				let v = face[j];//les points
+				let r = v.rotateY().rotateX();
+				let p = r.project(largeur,hauteur,1000,ZOOM);
+				t.push(p);//on sauvegarde tous les points "finaux" d'une face
+			}
+			t.push(face[face.length-1]);//on sauvegarde la couleur
+			t.push(k);//on sauvegarde le numéro de la face initiale
+			Faces.push(t);//on sauvegarde les faces recalculées en 2D
+	}
+	Faces.sort(function(a,b)//triage des faces selon l'axe Z
+	{
+		let milieua=getmilieu(a);//milieu de la face a
+		let milieub=getmilieu(b);//milieu de la face b
+		return milieub.z-milieua.z;
+	});
+	return Faces;
+}
+function ProduitVectoriel(v1,v2)
+{
+	return new point(
+	v1.y * v2.z - v1.z * v2.y,
+	v1.z * v2.x - v1.x * v2.z,
+	v1.x * v2.y - v1.y * v2.x
+	);
+}
+</script></head><body onload='document.getElementById("sel").focus()'><canvas id="canvas" width="800" height="550"></canvas><script>
+'use strict';
+var canvas = document.getElementById("canvas");
+canvas.width=window.innerWidth;
+var ctx = canvas.getContext("2d");
+var rect=canvas.getBoundingClientRect();
+var hauteur=rect.bottom-rect.top;
+var largeur=rect.right-rect.left;
+
+function setInput(o)
+{
+	document.getElementById('input').setAttribute('value',o);
+}
+var jeu="FILNPTUVWXYZ.";
+var F=[];
+
+[P,O]=[O,P];
+
+function addfaces(sorte,numero,seuls="FILNPTUVWXYZ")
+{
+	let rec=[];
+	let ordre="";
+	let S=P.split(sorte)[1].split(numero)[1];
+	let N=sorte.split('*');
+	let Z=parseInt(N[0]);let Z2=Z/2;
+	let Y=parseInt(N[1]);let Y2=Y/2;
+	let X=parseInt(N[2]);let X2=X/2;
+	let n=0;
+	for(let y=0;y<Y;y++)
+	{
+		rec[y]=[];
+		for(let z=0;z<Z;z++)
+		{
+			rec[y][z]=[];
+			for(let x=0;x<X;x++,n++)
+			{
+				while(jeu.indexOf(S[n])<0)n++;
+				let A=S[n];
+				rec[y][z][x]=A;
+				if(A=='.')continue;
+				let C=jeu.indexOf(A);
+				if(seuls.indexOf(A)>=0)
+				{
+					faces=getfaces(F,(x-X2)*2,(y-Y2)*2,(z-Z2)*2,Color[C]);
+				}
+			}
+		}
+	}
+	for(let x=X-1;x>=0;x--)
+	for(let z=0;z<Z;z++)
+	for(let y=0;y<Y;y++)
+	{
+		if(rec[y][z][x]!='.')
+			if(ordre.indexOf(rec[y][z][x])<0)ordre+=rec[y][z][x];
+	}
+	setTimeout(setInput,0,ordre);
+	//return rec;
+}
+var ZOOM=60;
+var NOMBRE=1;
+var MAX=2;
+var SORTE="1*3*20";
+addfaces(SORTE,1);
+
+
+function affiche() {
+	ctx.fillStyle = white;//black;
+	ctx.fillRect(rect.left,rect.top,largeur,hauteur);
+	/*Faces=*/getFaces();
+	for( var i in Faces )
+	{
+		let f=Faces[i];// 1 face
+		//var coul=f[f.length-2];
+		//ctx.globalAlpha = 0.98;//transparencyValue
+		//if(ProduitVectoriel(f[0].vector(f[1]),f[0].vector(f[2])).z>0)//continue;
+			//ctx.fillStyle = black;//la face est tournée vers l'arrière
+		//else
+		if(ProduitVectoriel(f[0].vector(f[1]),f[0].vector(f[2])).z<=0)//continue;
+			ctx.fillStyle = pointToRGB(f[f.length-2]);
+		//ctx.strokeStyle = black;
+		//ctx.lineWidth = 1;
+		//ctx.lineJoin="round";
+		ctx.beginPath();
+		ctx.moveTo(f[0].x,f[0].y);
+		for(var n=1;n<f.length-2;n++)
+			ctx.lineTo(f[n].x,f[n].y);
+		ctx.closePath();
+		ctx.fill();
+		ctx.stroke();
+	}
+}//affiche
+
+affiche();
+function setangles()
+{
+	if(angleX>=360)angleX-=360;
+	if(angleY>=360)angleY-=360;
+	if(angleX<=-360)angleX+=360;
+	if(angleY<=-360)angleY+=360;
+	var angle_X=angleX*radian;
+	var angle_Y=angleY*radian;
+	cosX=Math.cos(angle_X);
+	cosY=Math.cos(angle_Y);
+	sinX=Math.sin(angle_X);
+	sinY=Math.sin(angle_Y);
+}
+canvas.addEventListener("touchmove", handleMove, {passive: false});
+var exx=-1;
+var exy=hauteur/2;
+function handleMove(evt)
+{
+	evt.preventDefault();
+	var touches = evt.changedTouches;
+		var x=touches[0].pageX;
+		var y=touches[0].pageY;
+		if(exx!=-1)
+		{
+		angleY+=(x-exx);
+		angleX+=(y-exy);
+		setangles();
+		exx=x;exy=y;
+		affiche();
+		}
+		else{exx=x;exy=y;}
+}
+function getMousePos(canvas, evt)
+{
+	return {
+		x: evt.clientX - rect.left,
+		y: evt.clientY - rect.top
+		};
+}
+var mousePos;
+canvas.addEventListener('mouseup', function(evt){bouge=false;});
+canvas.addEventListener('mousedown', function(evt){
+	mousePos=getMousePos(canvas,evt);
+	/*if(evt.button==1)
+	{
+		var f=getclickface(mousePos.x,mousePos.y);
+		if(f!=0)
+		{
+			evt.preventDefault();
+			f=faces[f[f.length-1]];//on avait sauvé le numéro de la face en f[f.length-1]
+			//là f est la face initiale
+			bouge=false;
+			var q=f.length-1;
+			if(f[q]==Magenta){f[q]=Red;}
+			else if(f[q]==Red){f[q]=White;}
+			else if(f[q]==White){f[q]=Green;}
+			else if(f[q]==Green){f[q]=Yellow;}
+			else if(f[q]==Yellow){f[q]=Blue;}
+			else if(f[q]==Blue){f[q]=Magenta;}
+			affiche();
+			return;
+		}
+	}*/	
+	bouge=true;
+});
+canvas.addEventListener('mousemove', function(evt) {
+	if(bouge)
+	{
+		evt.preventDefault();
+		var mp = getMousePos(canvas, evt);
+		angleY+=(mp.x-mousePos.x);
+		angleX+=(mp.y-mousePos.y);
+		setangles();
+		mousePos=mp;
+		affiche();
+	}
+});//,false);
+
+var MAXI=[2,368,1010,2339,12,26,3940,2];
+function select(v)
+{
+	v=parseInt(v);
+	MAX=MAXI[v];
+	SORTE=["1*3*20","1*4*15","1*5*12","1*6*10","2*3*10","2*5*6","3*4*5","3*5*5"][v];
+	ZOOM=[60,50,40,40,40,30,30,30][v];
+	document.getElementById("range").value=ZOOM;
+	document.getElementById("range2").max=MAX;
+	document.getElementById("range2").value=NOMBRE=1;
+	document.getElementById("range3").value=12;
+	document.getElementById('div').innerText='1 / '+MAX;
+	F=[];
+	addfaces(SORTE,1);
+	affiche();
+}
+function range(t)
+{
+	let v=t.value;
+	document.getElementById('div').innerText=v+' / '+t.max;
+	document.getElementById("range3").value=12;
+	NOMBRE=parseInt(v);
+	F=[];
+	addfaces(SORTE,NOMBRE);
+	affiche();
+}
+function range3(t)
+{
+	let v=t.value;
+	//let jeu="FILNPTUVWXYZ";
+	let jeu=document.getElementById('input').value;
+	F=[];
+	addfaces(SORTE,NOMBRE,jeu.substr(0,v));
+	affiche();
+}
+
+function text(t,event)
+{
+	let keyCode = event.which ? event.which : event.keyCode;
+	let touche = String.fromCharCode(keyCode);
+	if(t.value.indexOf(touche)>=0)return false;
+	if('FILNPTUVWXYZ'.indexOf(touche) >= 0)	return true;//t.value += touche;
+	return false;
+}
+function txt(t,event)
+{
+	let keyCode = event.which ? event.which : event.keyCode;
+	if(((keyCode)==8)&&(t.value.length<2))return false;
+	return true;
+}
+
+function chb(t)
+{
+	let v=document.getElementById('sel').value;
+	if(t.checked)
+	{
+		MAXI=[2,368,1010,2339,12,264,3940,2];
+		[P,O]=[O,P];
+	}
+	else
+	{
+		MAXI=[8,1472,4040,9356,96,2112,31520,240];
+		[P,O]=[O,P];
+	}
+	document.getElementById('div').innerText = '1 / '+MAXI[v];
+	document.getElementById('range2').max=MAXI[v];
+}
+</script>
+<br/>&nbsp; <select id='sel' onchange='select(this.value);'>
+<option value='0'>1 x 3 x 20</option>
+<option value='1'>1 x 4 x 15</option>
+<option value='2'>1 x 5 x 12</option>
+<option value='3'>1 x 6 x 10</option>
+<option value='4'>2 x 3 x 10</option>
+<option value='5'>2 x 5 x 6</option>
+<option value='6'>3 x 4 x 5</option>
+<option value='7'>3 x 5 x 5</option>
+</select>&nbsp;
+<input id='range' type="range" oninput="ZOOM=parseInt(this.value);affiche();" min="30" max="60" value="60"/>&nbsp;
+<input id='range2' type="range" oninput="range(this);" min="1" max="2" value="1"/>&nbsp;<span id='div'>1 / 2</span>&nbsp; &nbsp;
+<input id='range3' type="range" oninput="range3(this);" min="1" max="12" value="12"/>&nbsp;&nbsp;<input id="input" onkeydown="return txt(this,event);" onkeypress="return text(this,event);" type="TEXT" value="FILNPTUVWXYZ" maxlength="12"/>&nbsp; FILNPTUVWXYZ 
+&nbsp; &nbsp; <label for='chb'>Sans les symétries et rotations</label> <input onchange="chb(this);" id='chb' type='checkbox' checked></input></body></html>

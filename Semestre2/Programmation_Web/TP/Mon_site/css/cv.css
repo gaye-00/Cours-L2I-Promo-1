@@ -1,0 +1,53 @@
+.page{
+	width: 100%;
+	margin: auto;
+	font-size: 14px;
+	font-family: "Roboto", "Arial", "sans-serif";
+}
+.gauche{
+	width: 20%;
+	float: left;
+	margin-right: 20px;
+}
+.droite{
+	width: 70%;
+	float: right;
+	margin-left: 20px;
+}
+.info_photo, header{
+	text-align: center;
+}
+strong{
+	font-size: 15px;
+}
+section{
+	margin-bottom: 20px;
+}
+h3{
+	font-weight: bold;
+	font-style: italic;
+	font-size: 20px;
+	color: steelblue;
+	text-transform: uppercase;
+	border-bottom: 2px solid;
+}
+table{
+	width: 100%;
+}
+.colonne_gauche{
+	width: 15%;
+	text-align: left;
+	font-weight: bold;
+}
+.colonne_droite{
+	width: 85%;
+	text-align: justify;
+}
+.titre_element{
+	font-weight: bold;
+}
+.duree{
+	font-style: italic;
+	text-align: center;
+	font-weight: normal;
+}

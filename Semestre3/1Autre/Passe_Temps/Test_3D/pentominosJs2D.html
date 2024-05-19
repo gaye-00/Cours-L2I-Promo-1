@@ -1,0 +1,324 @@
+<!DOCTYPE html><html lang='fr'><head><meta charset='UTF-8'>
+<title>Pentominos</title>
+<style>
+input{vertical-align:baseline;}
+label{vertical-align:top;}
+span{vertical-align:text-bottom;}
+table{border:1px solid black;border-collapse:collapse;margin:auto;}
+td{width:25px;height:25px;text-align:center;border:0px;}
+td.F{background-color:khaki;}
+td.I{background-color:orange;}
+td.L{background-color:yellow;}
+td.N{background-color:aqua;}
+td.P{background-color:dodgerblue;}
+td.T{background-color:chocolate;}
+td.U{background-color:lime;}
+td.V{background-color:forestgreen;}
+td.W{background-color:violet;}
+td.X{background-color:silver;}
+td.Y{background-color:red;}
+td.Z{background-color:pink;}
+</style>
+</head><body>
+<label for="nbr">Nombre de solutions maxi (1-10000) : </label>
+<input type='range' id='nbr' min='1' max='10000' value='1' oninput='document.getElementById("nb").innerText=this.value;document.getElementById("bt").innerText="Lancer "+this.value;'></input> <span id='nb'>1</span>
+<br/>
+<select id='sel' onchange="valeur=this.value;if(document.getElementById('nbr').value==1)Select(valeur);">
+<option value="3x20" selected>3 x 20</option>
+<option value="4x15">4 x 15</option>
+<option value="5x12">5 x 12</option>
+<option value="6x10">6 x 10</option>
+<option value="3x5">3 x 5</option>
+<option value="4x5">4 x 5</option>
+<option value="5x5">5 x 5</option>
+<option value="5x6">5 x 6</option>
+<option value="5x7">5 x 7</option>
+<option value="5x9">5 x 9</option>
+<option value="6x5">6 x 5</option>
+<option value="4x10">4 x 10</option>
+<option value="8x8">8 x 8</option>
+<option value="8x8\">8 x 8 \</option>
+<option value="rnd8x8">rnd8x8</option>
+<option value="rnd8x9">rnd8x9</option>
+<option value="rnd9x9">rnd9x9</option>
+<option value="rnd9x10">rnd9x10</option>
+<option value="rnd10x10">rnd10x10</option>
+</select>
+ &nbsp; &nbsp; <label for="cb">Affichage vertical</label><input type="checkbox" id="cb" onchange="if(document.getElementById('nbr').value==1)Select(valeur);"></input> &nbsp; &nbsp; <button id='bt' onclick="Select(valeur);">Lancer 1</button>
+<pre><div id='div'></div><script>
+
+'use strict';
+
+document.getElementById('sel').focus();
+const div=document.getElementById('div');
+
+var max=1;//nombre de solutions souhaitées
+var valeur='3x20';
+
+//FILNPTUVWXYZ
+const F=[
+" O ",
+"OOO",
+"  O"];
+const I=[
+"OOOOO"];
+const L=[
+"OOOO",
+"   O"];
+const N=[
+"OO  ",
+" OOO"];
+const P=[
+"OOO",
+" OO"];
+const T=[
+"OOO",
+" O ",
+" O "];
+const U=[
+"OOO",
+"O O"];
+const V=[
+"OOO",
+"  O",
+"  O"];
+const W=[
+"OO ",
+" OO",
+"  O"];
+const X=[
+" O ",
+"OOO",
+" O "];
+const Y=[
+"OOOO",
+"  O "];
+const Z=[
+"OO ",
+" O ",
+" OO"];
+
+function piece(p,k)//retourne les 5 valeurs existantes d'une pièce (2D en 1D)
+{
+	let j=[];
+	let i=[];
+	for(let y=0;y<p.length;y++)
+		for(let x=0;x<p[0].length;x++)	
+			if(p[y][x]=='O'){j.push(y);i.push(x);}
+	let a=j[k];
+	let b=i[k];
+	for(let x=0;x<5;x++)//toutes les possibilités par rapport à 1 case
+	{
+		j[x]-=a;
+		i[x]-=b;
+	}
+	return [j,i];
+}
+
+function rotate90(source){
+	let destination = [];
+	for (let i = 0; i < source[0].length; i++) {
+		destination[i] = [];
+		for (let j = 0; j < source.length; j++)
+			destination[i][j] = source[source.length - j - 1][i];
+	}
+	return destination;
+}
+
+function symetrie(source){
+	let destination = [];
+	for (let j = 0; j < source.length; j++) {
+		destination[j] = [];
+		for (let i = 0; i < source[0].length; i++)
+			destination[j][i] = source[j][source[0].length-i-1];
+	}
+	return destination;
+}
+
+function creerpiece(x,rot,sym)//toutes les positions d'une pièce
+{
+	let u=[];
+	function rotate()
+	{
+		for(let n=0;n<rot;n++)
+		{
+			for(let m=0;m<5;m++)
+				u.push(piece(x,m));//5 positions de la même pièce
+			x=rotate90(x);
+		}
+	}
+	rotate();
+	if(sym){x=symetrie(x);rotate();}
+	return u;
+}
+
+const pieces=[
+creerpiece(F,4,true),
+creerpiece(I,2,false),
+creerpiece(L,4,true),
+creerpiece(N,4,true),
+creerpiece(P,4,true),
+creerpiece(T,4,false),
+creerpiece(U,4,false),
+creerpiece(V,4,false),
+creerpiece(W,4,false),
+creerpiece(X,1,false),
+creerpiece(Y,4,true),
+creerpiece(Z,2,true)];
+
+const FILN="FILNPTUVWXYZ";
+const l=" "+FILN+"\u00a0";
+var w, h, n, tableau, str, notdeja;
+
+function init(width, height, lettres, ote)
+{
+	w = width;
+	h = height;
+	tableau=[];
+	for(let j=0;j<h;j++)
+	{
+		tableau[j]=[];
+		for(let i=0;i<w;i++)
+			tableau[j][i]=0;//cases vides
+	}
+	for(let i=0;i<ote.length;i+=2)
+		tableau[ote[i]][ote[i+1]] = 13;//1 à 12 pour les pièces et 13 impossible
+	n = 0;
+	str="";
+	notdeja=new Array(12).fill(false);
+	for(let i=0;i<lettres.length;i++)
+	{
+		let c=l.indexOf(lettres[i]);
+		if(c>=0)notdeja[c-1]=true;
+	}
+}
+
+function affiche1()
+{
+	str+="<table><caption>"+(++n)+"</caption>";  
+	for(let col=0;col<w;col++)
+	{
+		str+="<tr>";  
+		for(let row=0;row<h;row++)
+		{
+			let L=l[tableau[row][col]];
+			str+="<td class='"+L+"'>"+L+"</td>";
+		}
+		str+="</tr>";  
+	}
+	str+="</table><br/>";
+}
+
+function affiche()
+{
+	if(document.getElementById("cb").checked)return affiche1();
+	str+="<table><caption>"+(++n)+"</caption>";  
+	for(let row=0;row<h;row++)
+	{
+		str+="<tr>";  
+		for(let col=0;col<w;col++)
+		{
+			let L=l[tableau[row][col]];
+			str+="<td class='"+L+"'>"+L+"</td>";
+		}
+		str+="</tr>";  
+	}
+	str+="</table><br/>";
+}
+
+function solve()
+{
+	for(let i=0;i<w;i++)
+	for(let j=0;j<h;j++)
+	{
+		if(!tableau[j][i])//si case vide
+		{
+			for(let P=0;P<12;P++)//pour toutes les pièces
+			{
+				if(notdeja[P])//non placées
+				for(let S=0;S<pieces[P].length;S++)//toutes les configurations de cette pièce
+				{
+					let C,r=pieces[P][S];
+					for(C=0;C<5;C++)
+					{
+						let J=j+r[0][C];
+						if((J<0)||(J>=h))break;//pour rester dans les clous
+						let I=i+r[1][C];
+						if((I<0)||(I>=w))break;
+						if(tableau[J][I])break;//si différent de 0 on poursuit
+					}
+					if(C>=5)//les cases sont vides
+					{
+						for(C=0;C<5;C++)tableau[j+r[0][C]][i+r[1][C]] = P+1;//on place la pièce p
+						notdeja[P]=false;
+						if((notdeja.indexOf(true)<0)&&(n<max))affiche();//si plus de pièce, on affiche
+						if(n<max)solve();//sinon on poursuit la recherche
+						notdeja[P]=true;
+						for(C=0;C<5;C++)tableau[j+r[0][C]][i+r[1][C]] = 0;//on remet les cases à 0
+					}
+				}
+			}
+			return;
+		}
+	}
+}
+
+function run()
+{
+	solve();
+	if(n<1)div.innerHTML="Pas de solution pour cette configuration";
+	else if(n<100)div.innerHTML=str;
+	else if(confirm("Afficher les "+n+" solutions ?"))
+		div.innerHTML=str;
+}
+
+function pentomino(width=10, height=6, lettres=FILN, ote=[])
+{
+	max=document.getElementById("nbr").value;
+	if(width<height)[height,width]=[width,height];
+	init(width, height, lettres, ote);
+	setTimeout(run);
+}
+
+function rnd(a){return Math.floor(a*Math.random());}
+function hasard(a,b)
+{
+	if(a<8)a=8;
+	if(b<8)b=8;
+	let p=[];
+	let c=a*b-60;
+	for(let n=0;n<c;n++)
+		p.push(rnd(a),rnd(b));
+	pentomino(a,b,'UFILNPZTVWXY',p);
+}
+
+function Select(v)
+{
+	switch(v)
+	{
+		case '3x20':pentomino(3,20);break;
+		case '4x15':pentomino(4,15);break;
+		case '5x12':pentomino(5,12);break;
+		case '6x10':pentomino(6,10);break;
+		case '3x5':pentomino(3,5,"UPF");break;
+		case '4x5':pentomino(4,5,"YNVT");break;
+		case '5x5':pentomino(5,5,"LXUPF");break;
+		case '5x6':pentomino(5,6,"UXVFPN");break;
+		case '5x7':pentomino(5,7,"INZWVTY");break;
+		case '5x9':pentomino(5,9,"ILYZVWNXT");break;
+		case '6x5':pentomino(5,6,"ITYZWL");break;
+		case '4x10':pentomino(4,10,"PZLXIWFU");break;
+		case '8x8\\':pentomino(8,8,FILN,[2,2,3,3,4,4,5,5]);break;
+		case '8x8':pentomino(8,8,FILN,[3,3,3,4,4,3,4,4]);break;
+		case 'rnd8x8':hasard(8,8);break;
+		case 'rnd8x9':hasard(8,9);break;
+		case 'rnd9x9':hasard(9,9);break;
+		case 'rnd9x10':hasard(9,10);break;
+		case 'rnd10x10':hasard(10,10);break;
+	}
+}
+
+pentomino(3,20);
+
+</script>
+</pre></body></html>

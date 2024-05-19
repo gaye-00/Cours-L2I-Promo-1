@@ -1,0 +1,27 @@
+1) Pour installer les packages
+  ==> install.packages("fBasics")
+
+2) Changer de chemin de travaille
+  ==> setwd("C:/Users/Abdoulaye Gaye/Desktop/Semestre_3/Matiers/Analyse_De_Donnee/Scripts")
+On change les "\" par les "/" dans la chemin
+
+3) Pour deux au carre
+  ==> 2**2
+  ==> 3**4 // Pour trois a la puissance quatre
+
+4) Pour les affectations
+  ==> <nom_variable> = <Valeur a affecter>
+
+5) La fonction ls() permet de lister les "variables" #thinks
+
+5) Pour supprimer un objet on utilise la fonction rm(objet) et pour supprimer l'ensemble des objets
+   on utilise la fonctions rm(list=ls())
+
+6) Pour effacer les ecriture dans l'ecrant on tape shell("cls") ==> MACOS or LINUX shell("clear")
+
+7) Pour cree un vecteur
+  ==> x = c(0,1,2,3,4,5,6,7) ==(equivaut) x = 1:7
+  ==> x = c(3,2,1) ==(equivaut) x = 3:1
+  ==> z = seq(1,11,by=2) cree une suite allant de 1 à 11 de pas 2
+
+  seq(1,10,length.out = 20) ==> cree 20 termes dont le premier est <= 1 et le dernier est >= 10

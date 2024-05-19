@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+{% block title %} Candidature {% endblock %}
+{% block content %}
+	<div class="page-header">
+		<h1>
+			RECRUTEMENTS
+			<small>
+				<i class="ace-icon fa fa-angle-double-right"></i>
+				Liste de mes demandes de recrutements
+			</small>
+		</h1>
+	</div><!-- /.page-header -->
+
+	<div class="row">
+		<div class="col-xs-12">
+			<!-- PAGE CONTENT BEGINS -->
+			<div>
+                 <div class="row search-page" id="search-page-1">
+                    <div class="col-xs-12">
+                     	<div class="row">							
+							<div class="col-xs-12">
+	                          <!-- LIST OF RECRUTEMENTS ON DYNAMIC TABLE -->
+	                          <div class="row">
+	                            <div class="col-xs-12">
+	                              <!--<div class="clearfix">
+	                                <div class="pull-right tableTools-container"></div>
+	                              </div>-->
+	                              <div class="table-header">
+	                                <i class="ace-icon fa fa-sliders bigger-130"></i>&nbsp;LISTE DES DEMANDES DE RECRUTEMENT
+	                              </div>
+
+	                              <!-- div.table-responsive -->
+
+	                              <!-- div.dataTables_borderWrap -->
+	                              <div>
+	                                <table id="dynamic-table2" class="table table-striped table-bordered table-hover">
+	                                  <thead>
+	                                    <tr>
+	                                      <th >
+	                                        <i class="ace-icon fa fa-comments-o blue bigger-110">&nbsp;Développeur
+	                                      </th>
+	                                      <th><i class="ace-icon fa fa-comments blue bigger-110">&nbsp;Profession</th>
+	                                      <th><i class="ace-icon fa fa-calendar blue bigger-110">&nbsp;Années d'expériences</th>
+	                                      <th>
+	                                        <i class="ace-icon fa fa-heart blue bigger-110">&nbsp;
+	                                        Entreprise
+	                                      </th>
+	                                      <th >
+	                                        <i class="ace-icon fa fa-glass blue bigger-110">&nbsp;Poste proposé
+	                                      </th>
+
+	                                      <th >
+	                                        <i class="ace-icon fa fa-cloud blue bigger-110">&nbsp;Date démarrage
+	                                      </th>
+
+	                                      <th><i class="ace-icon fa fa-cogs blue bigger-110">&nbsp;Actions</th>
+	                                    </tr>
+	                                  </thead>
+
+	                                  <tbody>
+	                                    {% for rec in recrutements %}
+	                                    <tr>
+	                                      <td >
+	                                        {{rec.candidat_a_recruter}}
+	                                      </td>
+
+	                                      <td>
+	                                        {{rec.candidat_a_recruter.profession_candidat}}
+	                                      </td>                                      
+	                                      <td >
+	                                        {{rec.candidat_a_recruter.anneesDExperiences}} ans d'expériences
+	                                      </td>
+	                                      <td>
+	                                        {{rec.nom_entreprise}}
+	                                      </td>
+
+	                                      <td >
+	                                        {{rec.poste_propose}}
+	                                      </td>
+	                                      <td>
+	                                        {{rec.date_demande}}
+	                                      </td>
+	                                      <td>
+	                                        <div class="hidden-sm hidden-xs action-buttons">
+	                                          <a class="green" href="./mes_recrutements/modifier/{{rec.id}}">
+	                                            <i class="ace-icon fa fa-pencil bigger-130"></i>
+	                                          </a>
+	                                          <a class="red" href="./mes_recrutements/supprimer/{{rec.id}}">
+	                                            <i class="ace-icon fa fa-trash-o bigger-130"></i>
+	                                          </a>
+	                                        </div>
+
+	                                        <div class="hidden-md hidden-lg">
+	                                          <div class="inline pos-rel">
+	                                            <button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown" data-position="auto">
+	                                              <i class="ace-icon fa fa-caret-down icon-only bigger-120"></i>
+	                                            </button>
+
+	                                            <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
+	                                              <li>
+	                                                <a href="#" class="tooltip-info" data-rel="tooltip" title="View">
+	                                                  <span class="blue">
+	                                                    <i class="ace-icon fa fa-search-plus bigger-120"></i>
+	                                                  </span>
+	                                                </a>
+	                                              </li>
+
+	                                              <li>
+	                                                <a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
+	                                                  <span class="green">
+	                                                    <i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
+	                                                  </span>
+	                                                </a>
+	                                              </li>
+
+	                                              <li>
+	                                                <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+	                                                  <span class="red">
+	                                                    <i class="ace-icon fa fa-trash-o bigger-120"></i>
+	                                                  </span>
+	                                                </a>
+	                                              </li>
+	                                            </ul>
+	                                          </div>
+	                                        </div>
+	                                      </td>
+	                                    </tr>
+	                                    {% endfor %}
+	                                  </tbody>
+	                                </table>
+	                              </div>
+	                              <div class="clearfix">
+	                                <div class="pull-right tableTools-container"></div>
+	                              </div>
+	                            </div>
+	                          </div>
+	                          <!-- /. LIST OF RECRUTEMENTS ON DYNAMIC TABLE END -->
+	                        </div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- PAGE CONTENT ENDS -->
+		</div><!-- /.col -->
+	</div><!-- /.row -->
+	
+{% endblock %}

@@ -1,0 +1,236 @@
+{% extends "base.html" %}
+{% block title %} Candidature {% endblock %}
+{% block content %}
+	<div class="page-header">
+		<h1>
+			Développeurs
+			<small>
+				<i class="ace-icon fa fa-angle-double-right"></i>
+				CV d'un développeur
+			</small>
+		</h1>
+	</div><!-- /.page-header -->
+
+	<div class="row">
+		<div class="col-xs-12">
+			<!-- PAGE CONTENT BEGINS -->
+			<div>
+				<div id="user-profile-1" class="user-profile row">
+					<div class="col-xs-12 col-sm-3 center">
+						<div>
+							<span class="profile-picture">
+								<img id="avatar" class="editable img-responsive" alt="Alex's Avatar" src="/static/ace-master/assets/images/avatars/profile-pic.jpg" />
+							</span>
+
+							<div class="space-4"></div>
+
+							<div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
+								<div class="inline position-relative">
+									<a href="/apptest/recruter/{{unCV.id}}" title="Cliquer pour recruter {{unCV}}" >
+										<i class="ace-icon fa fa-circle light-green"></i>
+										&nbsp;
+										<span class="white">{{unCV}}</span>
+									</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="space-6"></div>
+					</div>
+
+					<div class="col-xs-12 col-sm-9">						
+						<div class="space-12"></div>
+
+						<div class="profile-user-info profile-user-info-striped">
+							<div class="profile-info-row">
+								<div class="profile-info-name"> Nom complet </div>
+
+								<div class="profile-info-value">
+									<span class="editable" id="username">{{unCV}}</span>
+								</div>
+							</div>
+
+							<div class="profile-info-row">
+								<div class="profile-info-name"> Adresse </div>
+
+								<div class="profile-info-value">
+									<i class="fa fa-map-marker light-orange bigger-110"></i>
+									<span class="editable" id="country">{{unCV.adresse_candidat}}</span>
+								</div>
+							</div>
+
+							<div class="profile-info-row">
+								<div class="profile-info-name"> Age </div>
+
+								<div class="profile-info-value">
+									<span class="editable" id="age">{{unCV.age}} ans</span>
+								</div>
+							</div>
+
+							<div class="profile-info-row">
+								<div class="profile-info-name"> Téléphone </div>
+
+								<div class="profile-info-value">
+									<span class="editable" id="signup">{{unCV.telephone_candidat}}</span>
+								</div>
+							</div>
+
+							<div class="profile-info-row">
+								<div class="profile-info-name"> Email </div>
+
+								<div class="profile-info-value">
+									<span class="editable" id="login">{{unCV.mail_candidat}}</span>
+								</div>
+							</div>
+
+							<div class="profile-info-row">
+								<div class="profile-info-name"> Profession </div>
+
+								<div class="profile-info-value">
+									<span class="editable" id="about">{{unCV.profession_candidat}}</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="space-20"></div>
+
+						<div class="widget-box transparent">
+							<div class="widget-header widget-header-small">
+								<h4 class="widget-title blue smaller">
+									<i class="ace-icon fa fa-rss orange"></i>
+									Expériences professionnelles
+								</h4>								
+							</div>
+
+							<div class="widget-body">
+								<div class="widget-main padding-8">
+									<div id="profile-feed-1" class="profile-feed">
+										<div class="profile-activity clearfix">
+											{% for exp in unCV.getExperiences %}
+												<div>
+													<img class="pull-left" alt="Alex Doe's avatar" src="/static/ace-master/assets/images/avatars/avatar5.png" />
+													<a href="#">{{exp}}</a>
+													Du:<a href="#">{{exp.debut_experience}}</a>
+													Au:<a href="#">{{exp.fin_experience}}</a>
+													({{exp.duree_experience}} ans)
+
+													<div class="time">
+														<i class="ace-icon fa fa-folder-o bigger-110"></i>
+														{{exp.details_experience}}
+													</div>
+												</div>
+												<div class="space-10"></div>
+											{% endfor %}
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="space-10"></div>
+
+						<div class="widget-box transparent">
+							<div class="widget-header widget-header-small">
+								<h4 class="widget-title blue smaller">
+									<i class="ace-icon fa fa-rss orange"></i>
+									Formations
+								</h4>								
+							</div>
+
+							<div class="widget-body">
+								<div class="widget-main padding-8">
+									<div id="profile-feed-1" class="profile-feed">
+										<div class="profile-activity clearfix">
+											{% for form in unCV.getFormations %}
+												<div>
+													<img class="pull-left" alt="Alex Doe's avatar" src="/static/ace-master/assets/images/avatars/avatar5.png" />
+													<a href="#">{{form}}</a>
+													Du:<a href="#">{{form.debut_formation}}</a>
+													Au:<a href="#">{{form.fin_formation}}</a>
+
+													<div class="time">
+														<i class="ace-icon fa fa-folder-o bigger-110"></i>
+														{{form.details_formation}}
+													</div>
+												</div>
+												<div class="space-10"></div>
+											{% endfor %}
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="space-10"></div>
+
+						<div class="widget-box transparent">
+							<div class="widget-header widget-header-small">
+								<h4 class="widget-title blue smaller">
+									<i class="ace-icon fa fa-rss orange"></i>
+									Educations
+								</h4>								
+							</div>
+
+							<div class="widget-body">
+								<div class="widget-main padding-8">
+									<div id="profile-feed-1" class="profile-feed">
+										<div class="profile-activity clearfix">
+											{% for edu in unCV.getEducations %}
+												<div>
+													<img class="pull-left" alt="Alex Doe's avatar" src="/static/ace-master/assets/images/avatars/avatar5.png" />
+													<a href="#">{{edu}}</a>
+													Du:<a href="#">{{edu.debut_formation}}</a>
+													Au:<a href="#">{{edu.fin_formation}}</a>
+
+													<div class="time">
+														<i class="ace-icon fa fa-folder-o bigger-110"></i>
+														{{edu.details_formation}}
+													</div>
+												</div>
+												<div class="space-10"></div>
+											{% endfor %}
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="space-10"></div>
+
+						<div class="widget-box transparent">
+							<div class="widget-header widget-header-small">
+								<h4 class="widget-title blue smaller">
+									<i class="ace-icon fa fa-rss orange"></i>
+									Langues et Hobbies
+								</h4>								
+							</div>
+
+							<div class="widget-body">
+								<div class="widget-main padding-8">
+									<div id="profile-feed-1" class="profile-feed">
+										<div class="profile-activity clearfix">
+											{% for lh in unCV.getLangueEtHobbies %}
+												<div>
+													<img class="pull-left" alt="Alex Doe's avatar" src="/static/ace-master/assets/images/avatars/avatar5.png" />
+													<a href="#">{{lh}}</a>
+
+													<div class="time">
+														<i class="ace-icon fa fa-folder-o bigger-110"></i>
+														{{lh.details_element}}
+													</div>
+												</div>
+												<div class="space-10"></div>
+											{% endfor %}
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- PAGE CONTENT ENDS -->
+		</div><!-- /.col -->
+	</div><!-- /.row -->
+	
+{% endblock %}

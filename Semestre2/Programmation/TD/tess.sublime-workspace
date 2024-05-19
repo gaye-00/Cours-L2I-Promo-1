@@ -1,0 +1,838 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"b",
+				"begin"
+			],
+			[
+				"tr",
+				"tri_p_croissant"
+			],
+			[
+				"tri",
+				"tri_pdemander"
+			],
+			[
+				"ch",
+				"choix"
+			],
+			[
+				"c",
+				"choix"
+			],
+			[
+				"arr",
+				"arrivage"
+			],
+			[
+				"p",
+				"prix"
+			],
+			[
+				"no",
+				"note"
+			],
+			[
+				"trr",
+				"tri_p_croissant"
+			],
+			[
+				"proc",
+				"procedure"
+			],
+			[
+				"co",
+				"controle"
+			],
+			[
+				"ph",
+				"phone"
+			],
+			[
+				"m",
+				"mn"
+			],
+			[
+				"whi",
+				"while"
+			],
+			[
+				"an",
+				"annee"
+			],
+			[
+				"wh",
+				"while"
+			],
+			[
+				"w",
+				"while"
+			],
+			[
+				"fo",
+				"for"
+			],
+			[
+				"ima",
+				"imax"
+			],
+			[
+				"iam",
+				"imax_f"
+			],
+			[
+				"i",
+				"imax"
+			],
+			[
+				"ta",
+				"tab_chs"
+			],
+			[
+				"po",
+				"phone"
+			],
+			[
+				"ma",
+				"imax"
+			],
+			[
+				"pr",
+				"prix"
+			],
+			[
+				"str",
+				"String"
+			],
+			[
+				"tab_",
+				"tab_chaussure"
+			],
+			[
+				"ar",
+				"article"
+			],
+			[
+				"ty",
+				"type_article"
+			],
+			[
+				"int",
+				"Integer"
+			],
+			[
+				"lon",
+				"Longword"
+			],
+			[
+				"text",
+				"textcolor"
+			],
+			[
+				"in",
+				"Integer"
+			],
+			[
+				"clos",
+				"close"
+			],
+			[
+				"res",
+				"reset"
+			],
+			[
+				"cl",
+				"close"
+			],
+			[
+				"ca",
+				"candidat"
+			],
+			[
+				"ins",
+				"insertion_pos"
+			],
+			[
+				"inse",
+				"Insertion"
+			],
+			[
+				"wit",
+				"with"
+			],
+			[
+				"whie",
+				"while"
+			],
+			[
+				"prco",
+				"procedure"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"eo",
+				"eof"
+			],
+			[
+				"supp",
+				"Suppression"
+			],
+			[
+				"as",
+				"assign"
+			],
+			[
+				"clo",
+				"close"
+			],
+			[
+				"assig",
+				"assign"
+			],
+			[
+				"read",
+				"read"
+			],
+			[
+				"re",
+				"red"
+			],
+			[
+				"h",
+				"h1"
+			],
+			[
+				"fi",
+				"fileSize"
+			],
+			[
+				"mo",
+				"modifier_id"
+			],
+			[
+				"en",
+				"ens_choix"
+			],
+			[
+				"wrt",
+				"writeln"
+			],
+			[
+				"wri",
+				"writeln"
+			],
+			[
+				"ajo",
+				"Ajout"
+			],
+			[
+				"writ",
+				"writeln"
+			],
+			[
+				"ass",
+				"assign"
+			],
+			[
+				"pro",
+				"procedure"
+			],
+			[
+				"id",
+				"Identifiant"
+			],
+			[
+				"be",
+				"begin"
+			],
+			[
+				"proce",
+				"procedure"
+			],
+			[
+				"file",
+				"fileSize"
+			],
+			[
+				"rese",
+				"reset"
+			],
+			[
+				"wr",
+				"writeln"
+			],
+			[
+				"can",
+				"candidats"
+			],
+			[
+				"write",
+				"write"
+			],
+			[
+				"rep",
+				"repeat"
+			],
+			[
+				"cm",
+				"cmp"
+			],
+			[
+				"aute",
+				"auteurs"
+			],
+			[
+				"numer",
+				"numero_ISBN1"
+			],
+			[
+				"da",
+				"date_paru"
+			],
+			[
+				"beg",
+				"begin"
+			],
+			[
+				"st",
+				"String"
+			],
+			[
+				"reco",
+				"record"
+			],
+			[
+				"type",
+				"type_tab"
+			],
+			[
+				"srt",
+				"String"
+			],
+			[
+				"cos",
+				"const"
+			],
+			[
+				"ra",
+				"random"
+			],
+			[
+				"la",
+				"last_bus"
+			],
+			[
+				"nb",
+				"nb_per"
+			],
+			[
+				"con",
+				"controle_int"
+			],
+			[
+				"sa",
+				"saisie_note"
+			],
+			[
+				"e",
+				"etudiant"
+			],
+			[
+				"ad",
+				"admis_h"
+			],
+			[
+				"a",
+				"admis_h"
+			],
+			[
+				"rea",
+				"Real"
+			],
+			[
+				"s",
+				"saisie_note"
+			],
+			[
+				"n",
+				"n°2"
+			],
+			[
+				"repe",
+				"repeat"
+			],
+			[
+				"rec",
+				"recherche"
+			],
+			[
+				"N",
+				"NCE"
+			],
+			[
+				"note",
+				"note1"
+			],
+			[
+				"af",
+				"affiche_des"
+			],
+			[
+				"el",
+				"element"
+			],
+			[
+				"com",
+				"complexe"
+			],
+			[
+				"Var",
+				"var"
+			],
+			[
+				"begi",
+				"begin"
+			],
+			[
+				"whil",
+				"while"
+			],
+			[
+				"var",
+				"var"
+			],
+			[
+				"Ta",
+				"Tab_entier"
+			],
+			[
+				"t",
+				"Tab_entier"
+			],
+			[
+				"v",
+				"var"
+			],
+			[
+				"inte",
+				"Integer"
+			],
+			[
+				"fr",
+				"for"
+			],
+			[
+				"va",
+				"var"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"Tab",
+				"Tab_entier"
+			],
+			[
+				"tab",
+				"Tab_entier"
+			],
+			[
+				"P",
+				"Ptab"
+			],
+			[
+				"pri",
+				"println"
+			],
+			[
+				"sti",
+				"stdlib.h"
+			],
+			[
+				"T",
+				"Tableau"
+			],
+			[
+				"br",
+				"Nbre"
+			],
+			[
+				"for",
+				"fore"
+			],
+			[
+				"sy",
+				"System"
+			],
+			[
+				"im",
+				"import"
+			],
+			[
+				"pi",
+				"public"
+			],
+			[
+				"pa",
+				"parole"
+			],
+			[
+				"l",
+				"length"
+			],
+			[
+				"imp",
+				"import"
+			],
+			[
+				"che",
+				"check"
+			],
+			[
+				"nuber",
+				"NumberFormatException"
+			],
+			[
+				"pu",
+				"public"
+			],
+			[
+				"bu",
+				"bouton1"
+			],
+			[
+				"fin",
+				"finally"
+			],
+			[
+				"fac",
+				"facto"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"install pa",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"install pascal",
+				"Package Control: Install Local Dependency"
+			],
+			[
+				"pas",
+				"Set Syntax: Pascal"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 213.333333333,
+		"history":
+		[
+			"java apparution",
+			"java",
+			"exit",
+			"java"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/User/Desktop/Semestre_2/TD_Algo/2/Exo2_Algo.pas",
+		"/C/Users/User/Desktop/TD Algo/2/Program_infos_des_etudiant.pas",
+		"/C/Users/User/Desktop/Semestre_2/Passe_Temps/Controle_Chaine.pas",
+		"/C/Users/User/Desktop/TD Algo/2/triage_decroissante.pas",
+		"/C/Users/User/Desktop/TD Algo/2/Echange_de_tableau.pas",
+		"/C/Users/User/Desktop/TD Algo/2/Exo1_Program les_nombres_complexes.pas",
+		"/C/Users/User/Desktop/TD Algo/les_nombres_premiers.pas",
+		"/C/Users/User/Desktop/TD Algo/test.pas",
+		"/C/Users/User/Desktop/TD Algo/java.pas",
+		"/C/Users/User/Desktop/TD programmation/exercice.pas",
+		"/C/Users/User/Desktop/TD programmation/2.pas",
+		"/C/Users/User/Desktop/TD programmation/3.pas",
+		"/C/Users/User/Desktop/sublime_text_build_4107_x64/Data/Packages/User/Pascal - Copy.sublime-settings",
+		"/C/Users/User/Desktop/sublime_text_build_4107_x64/Data/Packages/User/Pascal.sublime-settings",
+		"/C/Users/User/Desktop/sublime_text_build_4107_x64/Data/Packages/User/Kotlinc.sublime-build",
+		"/C/Users/User/Desktop/TD programmation/TD4/exo3.pas",
+		"/C/Users/User/Desktop/TD programmation/Passe temps/les_infs.cpp",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Pasal/TD4/avec_for.pas",
+		"/C/Users/Al_Hamine/Desktop/Code Annexe/exo8.pas",
+		"/C/Users/Al_Hamine/Desktop/algo sous programme/test.pas",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Pasal/Devoir MPI/EXO1 - Copie (2).pas",
+		"/C/Users/Al_Hamine/Desktop/algo sous programme/poss.pas",
+		"/C/Users/Al_Hamine/Desktop/algo sous programme/e4.pas",
+		"/C/Users/Al_Hamine/Desktop/algo sous programme/e3.pas",
+		"/C/Users/Al_Hamine/Desktop/algo sous programme/e2.pas",
+		"/C/Users/Al_Hamine/Desktop/tableau/exam.pas",
+		"/C/Users/Al_Hamine/Desktop/tableau/ddfd.pas",
+		"/C/Users/Al_Hamine/Desktop/tableau/Produit de n nombre par addsucce.pas",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Pasal/TD4/exo13.pas",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Pasal/TD4/exo12.pas",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Pasal/TD4/Exo10.pas",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Pasal/TD4/Exo9.pas",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Pasal/TD4/Exo1.pas",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Pasal/TD4/Exo5.pas",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Pasal/TD4/Exo4.pas",
+		"/C/Users/Al_Hamine/Desktop/algo sous programme/pourcent.pas",
+		"/C/Users/Al_Hamine/Desktop/algo sous programme/etoile.pas",
+		"/C/Users/Al_Hamine/Desktop/algo sous programme/Palindrome.pas",
+		"/C/Users/Al_Hamine/Desktop/Code Annexe/PGDC.pas",
+		"/C/Users/Al_Hamine/Desktop/Code Annexe/Recherche.pas",
+		"/C/Users/Al_Hamine/Desktop/Code Annexe/preparation devoir/exo4.pas",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Pasal/TD3/Exo11.pas",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Pasal/TD3/Exo7.pas",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Pasal/TD3/Exo6.pas",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Pasal/TD3/Exo5.pas",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Pasal/TD3/Exo4.pas",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Pasal/TD3/Exo3.pas",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Java/Fenetre.java",
+		"/C/Users/Al_Hamine/Desktop/Code Annexe/amicaux baby.pas",
+		"/C/Users/Al_Hamine/Desktop/Code Annexe/preparation devoir/pape.pas",
+		"/C/Users/Al_Hamine/Desktop/Code Annexe/algorithme_devoir.pas",
+		"/C/Users/Al_Hamine/Desktop/Code Annexe/dsf.pas",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Java/Fenetres.java",
+		"/C/Users/Al_Hamine/Desktop/Code Annexe/table_de_multi.pas",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/Editeur de code/sublime_text_build_4107_x64/Data/Packages/User/Pascal.sublime-settings",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/Editeur de code/sublime_text_build_4107_x64/Data/Packages/User/Pascal - Copy.sublime-settings",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/Editeur de code/sublime_text_build_4107_x64/Data/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/Editeur de code/sublime_text_build_4107_x64/Data/Installed Packages/Object Pascal.sublime-package",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/Editeur de code/sublime_text_build_4107_x64/Data/Cache/Pascal/Pascal.sublime-syntax.cache",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/Editeur de code/sublime_text_build_4107_x64/Data/Packages/User/Package Control.sublime-settings",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/Editeur de code/sublime_text_build_4107_x64/Data/Packages/SublimeREPL/SublimeREPL (OSX).sublime-settings",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/Editeur de code/sublime_text_build_4107_x64/Data/Cache/Object Pascal/Object Pascal.sublime-syntax.cache",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Pasal/TD4/exo11-.pas",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Pasal/TD4/Exo7.pas",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Pasal/TD4/exo14.pas",
+		"/C/Users/Al_Hamine/Desktop/Code Annexe/sc.pas",
+		"/C/Users/Al_Hamine/Desktop/Code Annexe/succ.pas",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Pasal/TD4/exo15.pas",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Pasal/TD4/Somme_chiffred1nombre.pas",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Pasal/TD4/nombre_repetition.pas",
+		"/C/Users/Al_Hamine/Desktop/Code Annexe/err.pas",
+		"/C/Users/Al_Hamine/Desktop/tableau/exo2.pas",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Kotlin/s.kt",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Pasal/TD4/Exo7 - Copy.pas",
+		"/C/Users/Al_Hamine/Desktop/Code Annexe/noteEtudiant.pas",
+		"/C/Users/Al_Hamine/Desktop/algo sous programme/PalindromePrime.pas",
+		"/C/Users/Al_Hamine/Desktop/Code Annexe/exo4td3SousProgramme.pas",
+		"/C/Users/Al_Hamine/Desktop/algo sous programme/long.pas",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Pasal/TD4/Exo6.pas",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Pasal/TD3/Exo8.pas",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Pasal/TD3/exo11-.pas",
+		"/C/Users/Al_Hamine/Desktop/algo sous programme/e1.pas",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Pasal/TD3/Exo10.pas",
+		"/C/Users/Al_Hamine/Desktop/Code Annexe/exo8.pdf",
+		"/C/Users/Al_Hamine/Desktop/algo sous programme/e3_oru.pas",
+		"/C/Users/Al_Hamine/Desktop/algo sous programme/e3corre.pas",
+		"/C/Users/Al_Hamine/Desktop/Code Annexe/exo10.pas",
+		"/C/Users/Al_Hamine/Desktop/Code Annexe/Main.java",
+		"/C/Users/Al_Hamine/Desktop/Code Annexe/ndieguene.pas",
+		"/C/Users/Al_Hamine/Desktop/Code Annexe/table de multi.pas",
+		"/C/Users/Al_Hamine/Desktop/Code Annexe/dfdf.pas",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Pasal/TD4/Exo8.pas",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#C/exo sur les tableaux/exo.c",
+		"/C/Users/Al_Hamine/Desktop/algo sous programme/laye.pas",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Java/apparution.java",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Pasal/Exo algo code/TD3/exo8.pas",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Pasal/TD1/Exo10.pas",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Pasal/Exo algo code/version 2.0.pas",
+		"/C/Users/Al_Hamine/Desktop/tableau/test2.pas",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#C/calculatrice.c",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#C/exo sur les tableaux/exo (2).c",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#C/exo sur les tableaux/g.c",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/Editeur de code/sublime_text_build_4107_x64/Data/Packages/User/c_compile.sublime-build",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Pasal/TD4/pa.pas",
+		"/C/Users/Al_Hamine/Videos/Formation/Programmation Genie Logiciel#/Language C #/Ming/MinGW/include/conio.h",
+		"/C/Users/Al_Hamine/Videos/Formation/Programmation Genie Logiciel#/Language C #/Ming/MinGW/include/stdio.h",
+		"/C/Users/Al_Hamine/Videos/Formation/Programmation Genie Logiciel#/Language C #/Ming/MinGW/include/sddl.h",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/Editeur de code/sublime_text_build_4107_x64/Data/Packages/User/Kotlinc.sublime-build",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/Editeur de code/sublime_text_build_4107_x64/Data/Packages/User/Gcc (2).sublime-build",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/Editeur de code/sublime_text_build_4107_x64/Data/Packages/User/PASCAL.sublime-build",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/Editeur de code/sublime_text_build_4107_x64/Data/Packages/User/gcc.sublime-build",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#C/exo sur les tableaux/Exo4/exo4.c",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#C/exo sur les tableaux/exo3.c",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#C/exo sur les tableaux/exo2.c",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#C/exo sur les tableaux/exo1.c",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#C/test.c",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#C/Mainapp.java",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#C/exo5.c",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Java/Complexe.java",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Java/Orion.java",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Java/Simple.java",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Java/Root.java",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Pasal/TD4/s.kt",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Pasal/Notes_Etudian_Laye.pas",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Pasal/Annee_bissextille.pas",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Pasal/exo1.pas",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Pasal/TD4/Exo11.pas",
+		"/C/Users/Al_Hamine/Videos/Formation/Laboratoire/#Pasal/TD4/gf.java"
+	],
+	"find":
+	{
+		"height": 37.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 37.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "tess.sublime-project",
+	"replace":
+	{
+		"height": 70.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"le",
+				"C:\\Users\\User\\Desktop\\Semestre_2\\Algo\\TD_Algo\\3\\Exo1_les_articles.pas"
+			],
+			[
+				"",
+				"C:\\Users\\Al_Hamine\\Desktop\\Code Annexe\\preparation devoir\\exo2.pas"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 88.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

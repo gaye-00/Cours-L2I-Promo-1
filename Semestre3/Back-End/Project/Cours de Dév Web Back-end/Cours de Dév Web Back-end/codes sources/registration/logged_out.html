@@ -1,0 +1,26 @@
+{% extends "base_registration.html" %}
+
+{% block content %}
+
+  <div class="widget-body">
+  <div class="widget-main">
+    <h4 class="header blue lighter bigger">
+      <i class="ace-icon fa fa-coffee green"></i>
+      Vous êtes déconnecté de GDM !
+    </h4>
+
+    <div class="space-6"></div>
+
+    <div class="toolbar clearfix">
+    <div>
+      <a href="{% url 'login' %}"  class="forgot-password-link">
+        <i class="ace-icon fa fa-arrow-left"></i>
+        Se connecter
+      </a>
+    </div>
+  </div>
+    
+  </div><!-- /.widget-main -->
+</div><!-- /.widget-body -->
+
+{% endblock %}

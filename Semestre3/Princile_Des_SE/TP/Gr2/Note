@@ -1,0 +1,7 @@
+vi nom.c
+:wq ==> Pour quitter
+gedit nom.c ==> Pour ouvrir le fichier
+
+//--------------------------------------------------------------------------------//
+gedit fork.c  ==> Pour ouvrir gedit avec gcc
+Dans le pere la fonction renvoir l'id du fils

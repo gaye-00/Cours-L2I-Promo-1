@@ -1,0 +1,90 @@
+Exo12 Insertion
+
+P1^.valeur := 15;
+P1^.suivant := P2;
+
+
+//***********************************************************************************************************
+procedure saisie_note(var X : classe; n : Integer);
+var i : Integer;
+    avis : String;
+begin
+	writeln;
+	for i := 1 to n do
+			writeln(i,' : ',X[i].prenom,' ',X[i].nom);
+
+	repeat
+		writeln;
+		write('Entrer l''indice de l''etudiant dans la classe : ');
+		readln(i);
+
+		if ((i < 0) or (i > n)) then
+		begin
+			writeln('L''etudiant n''est pas dans la classe');
+
+			repeat
+				repeat
+					write('Voulez-vous saisir encore (Oui ou Non) : ');
+					read(avis);
+				until ((avis = 'Oui') or (avis = 'Non'));
+
+				if (avis = 'Oui') then
+				begin
+				    repeat
+					     write('Entrer encore l''indice de l''etudiant : ');
+					     readln(i);
+					until ((i > 0) and (i <= n));
+				end;
+			until ((avis = 'Oui') or (avis = 'Non'));
+		end;
+
+		if (avis <> 'Non') then 
+		begin
+			writeln;
+			writeln(X[i].prenom,'	',X[i].nom);
+		end;
+
+		if ((avis = 'Oui') or ((i > 0) and (i <= n))) then
+		begin
+			if (X[i].note1 = -20) then
+			begin
+				repeat
+					write('Entrer la note du devoir numero[1] de l''etudiant : ');
+					readln(X[i].note1);
+				until ((X[i].note1 >= 0) and (X[i].note1 <= 20));
+			end
+
+			else
+			 writeln('La note du devoir numero[1] est deja saisie');
+
+			 if (X[i].note2 = -20) then
+			 begin
+			 	repeat
+			 		write('Entrer la note du devoir numero[2] de l''etudiant : ');
+			 		readln(X[i].note2);
+			 	until ((X[i].note2 >= 0) and (X[i].note2 <= 20));
+			 end
+
+			 else
+			 	writeln('La note du devoir numero[2] est deja saisie');
+
+			 if (X[i].note_exam = -20) then
+			 begin
+			 	repeat
+			 		write('Entrer la note de l''examen : ');
+			 		readln(X[i].note_exam);
+			 	until ((X[i].note_exam >= 0) and (X[i].note_exam <= 20));
+			 end
+
+			 else
+			 	writeln('La note de l''examen est deja saisie');
+		end;
+
+		if (i >= n) then
+			repeat
+				writeln;
+				write('Voulez-vous saisir encore (Oui ou Non): ');
+				readln(avis);
+			until ((avis = 'Oui') or (avis = 'Non'));
+	until (avis = 'Non');
+end;

@@ -1,0 +1,501 @@
+<!DOCTYPE html><html lang='fr'><head><meta charset='UTF-8'>
+<title>Pentominos 3D</title>
+<style>
+input{vertical-align:baseline;}
+label{vertical-align:top;}
+span{vertical-align:text-bottom;}
+table{border:2px solid black;border-collapse:collapse;margin:auto;}
+td{text-align:center;border:0px;}
+td.F{width:25px;height:25px;background-color:khaki;}
+td.I{width:25px;height:25px;background-color:orange;}
+td.L{width:25px;height:25px;background-color:yellow;}
+td.N{width:25px;height:25px;background-color:aqua;}
+td.P{width:25px;height:25px;background-color:dodgerblue;}
+td.T{width:25px;height:25px;background-color:chocolate;}
+td.U{width:25px;height:25px;background-color:lime;}
+td.V{width:25px;height:25px;background-color:forestgreen;}
+td.W{width:25px;height:25px;background-color:violet;}
+td.X{width:25px;height:25px;background-color:silver;}
+td.Y{width:25px;height:25px;background-color:red;}
+td.Z{width:25px;height:25px;background-color:pink;}
+</style>
+</head><body>
+<label for="nbr">Nombre de solutions maxi (1 à 31520) : </label>
+<input type='range' id='nbr' min='1' max='31520' value='1' oninput='document.getElementById("nb").innerText=this.value;document.getElementById("bt").innerText="Lancer "+this.value;'></input> <span id='nb'>1</span>
+<br/>
+<select id='sel' onchange="valeur=this.value;if(max==1)Select(valeur);">
+<option value="2x3x10">2 x 3 x 10</option>
+<option value="2x5x6">2 x 5 x 6</option>
+<option value="3x4x5" selected>3 x 4 x 5</option>
+<option value="" disabled>————</option>
+<option value="3x20">3 x 20</option>
+<option value="4x15">4 x 15</option>
+<option value="5x12">5 x 12</option>
+<option value="6x10">6 x 10</option>
+<option value="3x5">3 x 5</option>
+<option value="4x5">4 x 5</option>
+<option value="5x5">5 x 5</option>
+<option value="5x6">5 x 6</option>
+<option value="5x7">5 x 7</option>
+<option value="5x9">5 x 9</option>
+<option value="6x5">6 x 5</option>
+<option value="4x10">4 x 10</option>
+<option value="8x8">8 x 8</option>
+<option value="8x8\">8 x 8 \</option>
+<option value="" disabled>————</option>
+<option value="rnd8x8">rnd8x8</option>
+<option value="rnd8x9">rnd8x9</option>
+<option value="rnd9x9">rnd9x9</option>
+<option value="rnd9x10">rnd9x10</option>
+<option value="rnd10x10">rnd10x10</option>
+</select>
+ &nbsp; &nbsp; <button id='bt' onclick="Select(valeur);">Lancer 1</button>
+<pre><div id='div'></div><div id='vid'></div><script>
+
+'use strict';
+
+document.getElementById('sel').focus();
+const div=document.getElementById('div');
+var max=1;//nombre de solutions souhaitées
+var FILN="FILNPTUVWXYZ";
+
+//FILNPTUVWXYZ
+const F=[
+" O ",
+"OOO",
+"  O"];
+const I=[
+"OOOOO"];
+const L=[
+"OOOO",
+"O   "];
+const N=[
+"OOO ",
+"  OO"];
+const P=[
+"OOO",
+"OO "];
+const T=[
+"OOO",
+" O ",
+" O "];
+const U=[
+"OOO",
+"O O"];
+const V=[
+"OOO",
+"O  ",
+"O  "];
+const W=[
+"OO ",
+" OO",
+"  O"];
+const X=[
+" O ",
+"OOO",
+" O "];
+const Y=[
+"OOOO",
+" O  "];
+const Z=[
+"OO ",
+" O ",
+" OO"];
+
+function piece(u,p,m,Z)//retourne les 5 possibilités existantes d'une pièce
+{
+	let px,py=p.length;
+	if(Z==1)//vertical rotation axe x
+	{
+		if(py>p)return;
+		px=p[0].length;
+	}
+	else
+	{
+		if(py>h)return;//horizontal ou vertical rotation axe y
+		px=p[0].length;
+		if((Z==2)&&(px>p))return;//vertical rotation axe y
+	}
+	let k=[];
+	let j=[];
+	let i=[];
+	for(let y=0;y<py;y++)
+		for(let x=0;x<px;x++)
+			if(p[y][x]=='O')
+			{
+				switch(Z)
+				{
+					case 0:k.push(0);j.push(y);i.push(x);break;//horizontal
+					case 1:k.push(y);j.push(0);i.push(x);break;//vertical rotation axe x
+					case 2:k.push(x);j.push(y);i.push(0);break;//vertical rotation axe y
+				}
+			}
+	let a=k[m];
+	let b=j[m];
+	let c=i[m];
+	for(let x=0;x<5;x++)
+	{
+		k[x]-=a;
+		j[x]-=b;
+		i[x]-=c;
+	}
+	u.push([k,j,i]);
+}
+
+function rotate90(source){
+	let destination = [];
+	for (let i = 0; i < source[0].length; i++) {
+		destination[i] = [];
+		for (let j = 0; j < source.length; j++)
+			destination[i][j] = source[source.length - j - 1][i];
+	}
+	return destination;
+}
+
+function symetrie(source){
+	let destination = [];
+	for (let j = 0; j < source.length; j++) {
+		destination[j] = [];
+		for (let i = 0; i < source[0].length; i++)
+			destination[j][i] = source[j][source[0].length-i-1];
+	}
+	return destination;
+}
+/*
+var deja; // pour étude des positions d'une pièce
+function egal(d,u)
+{
+	for(let n=0;n<3;n++)
+	for(let m=0;m<u[n].length;m++)
+		if(d[n][m]!=u[n][m])return false;
+	return true;
+}
+function pasdeja(u)//pour le I
+{
+	if(u.length<1)return false;
+	for(let n=0;n<deja.length;n++)
+		if(egal(deja[n],u))return false;
+	deja.push(u);
+	return true;
+}
+*/
+function creerpieceI(x)//toutes les positions de la pièce I
+{
+	let u=[];
+	for(let n=0;n<2;n++)
+	{
+		let xl=x[0].length;
+		for(let m=0;m<5;m++)
+		{
+			if(xl<2)piece(u,x,m,1);
+			piece(u,x,m,0);
+		}
+		x=rotate90(x);
+	}
+	return u;
+}
+
+function creerpiece(x,rot,sym)//toutes les positions d'une pièce sauf le I
+{
+	let u=[];
+	function rotate()
+	{
+		for(let n=0;n<rot;n++)
+		{
+			for(let m=0;m<5;m++)
+			{
+				piece(u,x,m,2);
+				piece(u,x,m,1);
+				piece(u,x,m,0);
+			}
+			x=rotate90(x);
+		}
+	}
+	rotate();
+	if(sym){x=symetrie(x);rotate();}
+	return u;
+}
+
+const l=" "+FILN+"\u00a0";
+var w, h, p, n, tableau, str, notdeja, pieces;
+
+function getpieces()
+{
+	return [
+	creerpiece(F,4,true),
+	creerpieceI(I),//pour gagner un peu de temps //	creerpiece(I,2,false),
+	creerpiece(L,4,true),
+	creerpiece(N,4,true),
+	creerpiece(P,4,true),
+	creerpiece(T,4,false),
+	creerpiece(U,4,false),
+	creerpiece(V,4,false),
+	creerpiece(W,4,false),
+	creerpiece(X,1,false),
+	creerpiece(Y,4,true),
+	creerpiece(Z,2,true)];
+}
+
+function init(prof, height, width, lettres, ote)
+{
+	w = width;
+	h = height;
+	p = prof;
+	pieces=getpieces();
+	tableau=[];
+	for(let k=0;k<p;k++)
+	{
+		tableau[k]=[];
+		for(let j=0;j<h;j++)
+		{
+			tableau[k][j]=[];
+			for(let i=0;i<w;i++)
+				tableau[k][j][i]=0;//cases vides
+		}
+	}
+	for(let i=0;i<ote.length;i+=3)
+		tableau[ote[i]][ote[i+1]][ote[i+2]] = 13;//1 à 12 pour les pièces et 13 impossible
+	n = 0;
+	str="";
+	notdeja=new Array(12).fill(false);
+	for(let i=0;i<lettres.length;i++)
+	{
+		let c=l.indexOf(lettres[i]);
+		if(c>=0)notdeja[c-1]=true;
+	}
+}
+
+function aff(k)
+{
+	for(let row=0;row<h;row++)
+	{
+		str+="<tr>";
+		for(let col=0;col<w;col++)
+		{
+			let L=l[tableau[k][row][col]];
+			str+="<td class='"+L+"'>"+L+"</td>";
+		}
+		str+="</tr>";
+	}
+}
+
+function affiche()
+{
+	str+="<table><caption>"+(++n)+"</caption><tr>";  
+	for(let k=0;k<p;k++)
+	{
+		if(p>1)str+="<td><table>";
+		aff(k);
+		if(p>1)str+="</table></td>";
+	}
+	str+="</tr></table><br/>";
+}
+
+function solve()
+{
+	for(let i=0;i<w;i++)
+	for(let j=0;j<h;j++)
+	for(let k=0;k<p;k++)
+	{
+		if(!tableau[k][j][i])//si case vide
+		{
+			for(let P=0;P<12;P++)//pour toutes les pièces
+			{
+				if(notdeja[P])//non placées
+				for(let S=0;S<pieces[P].length;S++)//toutes les configurations de cette pièce
+				{
+					let C=0,r=pieces[P][S];
+					for(C=0;C<5;C++)
+					{
+						let K=k+r[0][C];
+						if((K<0)||(K>=p))break;//pour rester dans les clous
+						let J=j+r[1][C];
+						if((J<0)||(J>=h))break;
+						let I=i+r[2][C];
+						if((I<0)||(I>=w))break;
+						if(tableau[K][J][I])break;//si différent de 0 on poursuit
+					}
+					if(C>=5)//les cases sont vides
+					{
+						for(C=0;C<5;C++)tableau[k+r[0][C]][j+r[1][C]][i+r[2][C]] = P+1;//on place la pièce p
+						notdeja[P]=false;
+						if((notdeja.indexOf(true)<0)&&(n<max))affiche();//si plus de pièce, on affiche
+						if(n<max)solve();//sinon on poursuit la recherche
+						notdeja[P]=true;
+						for(C=0;C<5;C++)tableau[k+r[0][C]][j+r[1][C]][i+r[2][C]] = 0;//on remet les cases à 0
+					}
+				}
+			}
+			return;
+		}
+	}
+}
+
+function run()
+{
+	solve();
+	if(n<1)div.innerHTML="Pas de solution pour cette configuration";
+	else if(n<100)div.innerHTML=str;
+	else if(confirm("Afficher les "+n+" solutions ?"))
+		div.innerHTML=str;
+}
+
+function pentomino(prof, height, width, lettres=FILN, ote=[])
+{
+	max=document.getElementById("nbr").value;
+	init(prof,height,width,lettres, ote);
+	setTimeout(run);
+}
+
+function rnd(a){return Math.floor(a*Math.random());}
+function hasard(a,b)
+{
+	if(a<8)a=8;
+	if(b<8)b=8;
+	let p=[];
+	let c=a*b-60;
+	for(let n=0;n<c;n++)
+		p.push(0,rnd(a),rnd(b));
+	pentomino(1,a,b,FILN,p);
+}
+
+function Select(v)
+{
+	switch(v)
+	{
+		case '2x3x10':pentomino(2,3,10);break;
+		case '2x5x6':pentomino(2,5,6);break;
+		case '3x4x5':pentomino(3,4,5);break;
+		case '3x20':pentomino(1,3,20);break;
+		case '4x15':pentomino(1,4,15);break;
+		case '5x12':pentomino(1,5,12);break;
+		case '6x10':pentomino(1,6,10);break;
+		case '3x5':pentomino(1,3,5,"UPF");break;
+		case '4x5':pentomino(1,4,5,"YNVT");break;
+		case '5x5':pentomino(1,5,5,"LXUPF");break;
+		case '5x6':pentomino(1,5,6,"UXVFPN");break;
+		case '5x7':pentomino(1,5,7,"INZWVTY");break;
+		case '5x9':pentomino(1,5,9,"ILYZVWNXT");break;
+		case '6x5':pentomino(1,5,6,"ITYZWL");break;
+		case '4x10':pentomino(1,4,10,"PZLXIWFU");break;
+		case '8x8\\':pentomino(1,8,8,FILN,[0,2,2,0,3,3,0,4,4,0,5,5]);break;
+		case '8x8':  pentomino(1,8,8,FILN,[0,3,3,0,3,4,0,4,3,0,4,4]);break;
+		case 'rnd8x8':hasard(8,8);break;
+		case 'rnd8x9':hasard(8,9);break;
+		case 'rnd9x9':hasard(9,9);break;
+		case 'rnd9x10':hasard(9,10);break;
+		case 'rnd10x10':hasard(10,10);break;
+	}
+}
+
+var valeur='3x4x5';
+Select(valeur);
+/*
+Explication de la démarche, soit la pièce U notée en dessous 12345
+On ne va conserver que les coordonnées des cases de la pièce
+Commençons à placer la case (1) en (0;0)
+On a donc la case (2) en (1;0), la case (3) en (2;0),
+la case (4) en (0;1) et la case 5 en (2;1) :
+   ^
+  y|
+   |
+   | 
+   4 5
+   123---------->
+             x
+
+puis la case 2 en (0;0)
+donc (1)(-1;0), (3)(1;0), (4)(-1;1) et (5)(1;1) :
+   ^
+  y|
+   |
+  4|5
+  123----------->
+             x
+
+puis la case 3 en (0;0)
+donc (1)(-2;0), (2)(-1;0), (4)(-2;1) et (5)(0;1) :
+   ^
+  y|
+   |
+ 4 5
+ 123----------->
+             x
+
+puis la case 4 en (0;0)
+donc (1)(0;-1), (2)(1;-1), (3)(2;-1) et (5)(2;0) :
+   ^
+  y|
+   |
+   |
+   4 5--------->
+   123       x
+
+puis la case 5 en (0;0)
+donc (1)(-2;-1), (2)(-1;-1), (3)(0;-1) et (4)(-2;0) :
+   ^
+  y|
+   |
+   |
+ 4 5----------->
+ 123         x
+
+Il y a donc 5 possibilités pour une pièce d'occuper la position (0;0)
+
+Maintenant, pour construire en 3D
+il suffit de faire pivoter selon l'axe des y en faisant z=x, y=y, x=0
+donc 5 positions de plus soit 10 en tout pour le moment  
+
+puis de faire pivoter les 5 positions initiales selon l'axe des x
+en faisant z=y, y=0, x=x
+donc 5 positions de plus soit 15 en tout pour le moment  
+
+On recommence le processus en faisont tourner la pièce U 3 fois
+14       321       53
+2        5 4        2
+35                 41
+
+On a donc maintenant 15 * 4 = 60 positions pour la pièce U
+Cette pièce n'a pas de symétrie différente des positions vues
+tout comme les pièces TVWZ
+Mais pour la pièce F il y a une symétrie différente des rotations
+ 34   ->  43
+12    -> 21
+ 5    ->  5
+On recommence tout avec le symétrique de F
+On aura donc 2 x 60 = 120 positions pour la pièce F
+120 aussi pour les pièces LNPY 
+Il reste donc 2 pièces I et X qui ont des rotations identiques
+Horizontalement I n'a que 2 possibilités par rotation et n'a pas de
+ symétrie différente
+Horizontalement X n'a pas d'autres possibilité par rotation
+ ni symétrie différente
+On a donc pour la pièce X, 5 possibilités + 5 verticales(x) + 5 verticales(y) 
+Soit 15 positions différentes
+Pour la lettre I, on pourrait penser le double mais il n'y a que 2 possibilités par plan
+mais elles ne sont pas toutes différentes, la moitié sont identiques  
+donc on a aussi 15 possibilités pour la pièce I 
+
+Récapitulatif :
+      Pièces :   F   I    L    N    P   T   U   V   W   X    Y   Z
+Possibilités : 120, 15, 120, 120, 120, 60, 60, 60, 60, 15, 120, 60
+soit 930 possibilités avec 3 coordonnées i, j et k soit 2790 x 5 cases = 13950
+Ce qui n'est pas énorme pour une résolution en force brute
+
+Pour la résolution, on passe en revue toutes les cases du tableau voulu :
+      (Le mieux est de prendre x >= y >= z. le tableau doit avoir au moins 60 cases)
+ pour tous les x
+  pour tous les y
+   pour tous les z
+    si la case (x;y;z) est vide alors
+     on essaye les 12 pièces
+      puis toutes les positions d'une pièce
+       puis les 5 cases de cette pièce, si ces cases sont vides, on peut placer cette pièce
+        si elles sont toutes placées on a trouvé une solution
+         on enlève la pièce pour poursuivre et trouver les autres solutions
+poursuite par récurrence (pour tous les x...)
+
+Les calculs sont de 60 cases x 930 = 55800
+et une gestion de 3 coordonnées x 55800 x 5 case = 837000 nombres
+*/
+</script></pre></body></html>

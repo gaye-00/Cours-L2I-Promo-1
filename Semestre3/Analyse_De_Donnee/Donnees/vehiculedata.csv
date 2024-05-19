@@ -1,0 +1,34 @@
+Type de véhicule;Prix;Cylindrée ;Puissance ;Poids ;Consommation 
+;(Frs);(cm3);(kW);(kg);(l/100km)
+;x1i;x2i;x3i;x4i;yi
+Daihatsu Cuore;11600;846;32;650;5,7
+Suzuki Swift 1.0 GLS;12490;993;39;790;5,8
+Fiat Panda Mambo L;10450;899;29;730;6,1
+VW Polo 1.4 60;17140;1390;44;955;6,5
+Opel Corsa 1.2i Eco;14825;1195;33;895;6,8
+Subaru Vivio 4WD;13730;658;32;740;6,8
+Toyota Corolla;19490;1331;55;1010;7,1
+Ferrari 456 GT;285000;5474;325;1690;21,3
+Mercedes S 600;183900;5987;300;2250;18,7
+Maserati Ghibli GT;92500;2789;209;1485;14,5
+Opel Astra 1.6i 16V;25000;1597;74;1080;7,4
+Peugeot 306 XS 108;22350;1761;74;1100;9
+Renault Safrane 2.2. V;36600;2165;101;1500;11,7
+Seat Ibiza 2.0 GTI;22500;1983;85;1075;9,5
+VW Golt 2.0 GTI;31580;1984;85;1155;9,5
+Citroen ZX Volcane;28750;1998;89;1140;8,8
+Fiat Tempra 1.6 Liberty;22600;1580;65;1080;9,3
+Fort Escort 1.4i PT;20300;1390;54;1110;8,6
+Honda Civic Joker 1.4;19900;1396;66;1140;7,7
+Volvo 850 2.5;39800;2435;106;1370;10,8
+Ford Fiesta 1.2 Zetec;19740;1242;55;940;6,6
+Hyundai Sonata 3000;38990;2972;107;1400;11,7
+Lancia K 3.0 LS;50800;2958;150;1550;11,9
+Mazda Hachtback V;36200;2497;122;1330;10,8
+Mitsubishi Galant;31990;1998;66;1300;7,6
+Opel Omega 2.5i V6;47700;2496;125;1670;11,3
+Peugeot 806 2.0;36950;1998;89;1560;10,8
+Nissan Primera 2.0;26950;1997;92;1240;9,2
+Seat Alhambra 2.0;36400;1984;85;1635;11,6
+Toyota Previa salon;50900;2438;97;1800;12,8
+Volvo 960 Kombi aut;49300;2473;125;1570;12,7

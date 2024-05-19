@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="10"/>
+    <BuildModes Active="Default"/>
+    <Units Count="19">
+      <Unit0>
+        <Filename Value="project1.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="13"/>
+        <CursorPos X="31" Y="5"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="unit1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="20"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="..\GestionCandidat.lpr"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="TD\Tri_les_articles.pas"/>
+        <UnitName Value="les_articles"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="..\Passe_Temps\Controle_Chaine.pas"/>
+        <UnitName Value="controle_Chaine"/>
+        <EditorIndex Value="12"/>
+        <CursorPos X="28"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="..\Passe_Temps\Les_nombres_premiers.pas"/>
+        <UnitName Value="les_nombres_premiers"/>
+        <EditorIndex Value="15"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="..\Algorithme\TD_Algo\Les_diffents_tris.pas"/>
+        <UnitName Value="les_diffents_tris"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="66"/>
+        <CursorPos X="30" Y="68"/>
+        <UsageCount Value="10"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="Les_nombres_premiers.pas"/>
+        <UnitName Value="fiche_nb_premiers"/>
+        <EditorIndex Value="1"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="Nombre_premier.pas"/>
+        <UnitName Value="nombre_premier"/>
+        <EditorIndex Value="2"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="Fiche_Des_nb_premiers.pas"/>
+        <UnitName Value="les_nb_premiers"/>
+        <EditorIndex Value="3"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="TD\Recursive_nombre_premier.pas"/>
+        <UnitName Value="modele"/>
+        <EditorIndex Value="4"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="..\Algorithme\TD_Algo\1\Exo3_Surface_rectangle.pas"/>
+        <UnitName Value="surface_du_rectangle"/>
+        <EditorIndex Value="5"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="..\Algorithme\TD_Algo\1\Exo2_Puissance_recursive.pas"/>
+        <UnitName Value="puissance_recursive"/>
+        <EditorIndex Value="14"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="..\Algorithme\TD_Algo\1\Exo5_Suite_de_Fibonacci.pas"/>
+        <UnitName Value="suite_de_Fibonacci"/>
+        <EditorIndex Value="6"/>
+        <TopLine Value="8"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="..\Algorithme\TD_Algo\1\Exo6_Boucle_Recursive.pas"/>
+        <UnitName Value="boucle_recursive_croissante"/>
+        <EditorIndex Value="7"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="..\Algorithme\TD_Algo\1\Exo7_BoucleControlee.pas"/>
+        <UnitName Value="boucle_controlee"/>
+        <EditorIndex Value="8"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="..\Algorithme\TD_Algo\2\Exo1_Program les_nombres_complexes.pas"/>
+        <UnitName Value="les_nombres_complexes"/>
+        <EditorIndex Value="9"/>
+        <TopLine Value="56"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="Test_impo.pas"/>
+        <UnitName Value="les_etudiants"/>
+        <EditorIndex Value="10"/>
+        <TopLine Value="120"/>
+        <CursorPos X="115" Y="138"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="Test2.pas"/>
+        <UnitName Value="les_etudiants"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="11"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit18>
+    </Units>
+    <JumpHistory Count="4" HistoryIndex="3">
+      <Position1>
+        <Filename Value="project1.lpr"/>
+      </Position1>
+      <Position2>
+        <Filename Value="project1.lpr"/>
+        <Caret Line="10" Column="10"/>
+      </Position2>
+      <Position3>
+        <Filename Value="project1.lpr"/>
+        <Caret Line="10" Column="10"/>
+      </Position3>
+      <Position4>
+        <Filename Value="Test_impo.pas"/>
+        <Caret Line="9" Column="49"/>
+      </Position4>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>

@@ -1,0 +1,63 @@
+{% extends "base_registration.html" %}
+
+{% block content %}
+
+  <div class="widget-body">
+  <div class="widget-main">
+    <h4 class="header blue lighter bigger">
+      <i class="ace-icon fa fa-coffee green"></i>
+      Entrez vos informations de connexion !
+    </h4>
+
+    <div class="space-6"></div>
+
+    <form method="post" action="{% url 'login' %}">
+      {% csrf_token %}
+        {{ form.username.label_tag }}
+        {{ form.username }}
+        <div class="space"></div>
+        {{ form.password.label_tag }}
+        {{ form.password }}
+        
+        <div class="space"></div>
+        <h5 style="color:red">            
+          {% if form.errors %}
+            <p>Your username and password didn't match. Please try again.</p>
+            {% else %}
+              <p>Merci de vous être connecté</p>
+          {% endif %}
+
+          {% if next %}
+            {% if user.is_authenticated %}
+              <p>Your account doesn't have access to this page. To proceed,
+              please login with an account that has access.</p>
+            {% else %}
+              <p>Merci de vous connecter pour ouvrir la page demandée</p>
+            {% endif %}
+          {% endif %}                       
+        </h5>
+        <div class="clearfix">
+          <button class="width-50 pull-center btn btn-sm btn-primary" type="submit">
+            <i class="ace-icon fa fa-key"></i>
+            <span class="bigger-110">Se connecter</span>
+          </button>
+        </div>
+
+        <div class="space-4"></div>
+      <input type="hidden" name="next" value="{{ next }}" />
+    </form>
+    
+  </div><!-- /.widget-main -->
+
+  <div class="toolbar clearfix">
+    
+    <div>
+      <a href="{% url 'password_reset' %}"  class="forgot-password-link">
+        <i class="ace-icon fa fa-arrow-left"></i>
+        Mot de passe oublié ?
+      </a>
+    </div>
+  </div>
+</div><!-- /.widget-body -->
+
+{% endblock %}

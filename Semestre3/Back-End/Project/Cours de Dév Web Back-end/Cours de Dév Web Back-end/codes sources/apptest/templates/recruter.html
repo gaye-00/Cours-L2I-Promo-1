@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+{% block title %} Candidature {% endblock %}
+{% block content %}
+	<div class="page-header">
+		<h1>
+			Développeurs
+			<small>
+				<i class="ace-icon fa fa-angle-double-right"></i>
+				Recruter {{theCV}}
+			</small>
+		</h1>
+	</div><!-- /.page-header -->
+
+	<div class="row">
+		<div class="col-xs-12">
+			<!-- PAGE CONTENT BEGINS -->
+			<div>
+            <div class="row search-page" id="search-page-1">
+            	<!--<div class="search-filter-header bg-primary">
+	               <h5 class="smaller no-margin-bottom">
+	                 <i class="ace-icon fa fa-arrow-down bigger-120"></i>
+	                 AJOUTER UN MEMBRE ICI
+	               </h5>
+	             </div>-->
+            <form class="form-horizontal" role="form" method="post" enctype="multipart/form-data" action="." >	
+            	{% csrf_token %}
+            	<div class="row">
+	               <div class="col-xs-12 col-sm-4">
+	                  {{ form.nom_entreprise.label }}<br/>
+                     <div class="input-group">                                
+                         <span class="input-group-addon">
+                           <i class="fa fa-user "></i>
+                         </span>
+                         {{ form.nom_entreprise }}
+                     </div>   	
+						</div>
+						<div class="col-xs-12 col-sm-4">
+	                  {{ form.adresse_entreprise.label }}<br/>
+                     <div class="input-group">                                
+                         <span class="input-group-addon">
+                           <i class="fa fa-user "></i>
+                         </span>
+                         {{ form.adresse_entreprise }}
+                     </div>   	
+						</div>
+						<div class="col-xs-12 col-sm-4">
+	                  {{ form.ville_entreprise.label }}<br/>
+                     <div class="input-group">                                
+                         <span class="input-group-addon">
+                           <i class="fa fa-user "></i>
+                         </span>
+                         {{ form.ville_entreprise }}
+                     </div>   	
+						</div>
+					</div>	
+					<div class="space-20"></div>
+					<div class="row">
+	               <div class="col-xs-12 col-sm-4">
+	                  {{ form.poste_propose.label }}<br/>
+                     <div class="input-group">                                
+                         <span class="input-group-addon">
+                           <i class="fa fa-user "></i>
+                         </span>
+                         {{ form.poste_propose }}
+                     </div>   	
+						</div>
+						<div class="col-xs-12 col-sm-4">
+	                  {{ form.temps_de_travail.label }}<br/>
+                     <div class="input-group">                                
+                         <span class="input-group-addon">
+                           <i class="fa fa-user "></i>
+                         </span>
+                         {{ form.temps_de_travail }}
+                     </div>   	
+						</div>
+						<div class="col-xs-12 col-sm-4">
+	                  {{ form.salaire_propose.label }}<br/>
+                     <div class="input-group">                                
+                         <span class="input-group-addon">
+                           <i class="fa fa-user "></i>
+                         </span>
+                         {{ form.salaire_propose }}
+                     </div>   	
+						</div>
+					</div>
+					<div class="space-20"></div>
+					<div class="row">
+	               <div class="col-xs-12 col-sm-4">
+	                  {{ form.date_demarrage.label }}<br/>
+                     <div class="input-group">                                
+                         <span class="input-group-addon">
+                           <i class="fa fa-user "></i>
+                         </span>
+                         {{ form.date_demarrage }}
+                     </div>   	
+						</div>
+						<div class="col-xs-12 col-sm-4">
+	                  {{ form.commentaire.label }}<br/>
+                     <div class="input-group">                                
+                         <span class="input-group-addon">
+                           <i class="fa fa-user "></i>
+                         </span>
+                         {{ form.commentaire }}
+                     </div>   	
+						</div>
+					</div>
+					<div class="space-20"></div>
+					<div class="text-center">
+                 <button type="submit" id="submit" class="btn btn-default btn-round btn-sm btn-primary">
+                   Enregistrer
+                   <i class="ace-icon fa fa-arrow-right icon-on-right bigger-110"></i>
+                 </button>
+                 <button type="reset" id="reset" class="btn btn-default btn-round btn-sm btn-danger" >
+                   <i class="ace-icon fa fa-remove white bigger-110"></i>
+                   Annuler
+                 </button>
+               </div>
+				</form>
+				</div>
+			</div>
+			<!-- PAGE CONTENT ENDS -->
+		</div><!-- /.col -->
+	</div><!-- /.row -->
+	
+{% endblock %}

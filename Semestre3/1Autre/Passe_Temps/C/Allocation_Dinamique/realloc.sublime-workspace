@@ -1,0 +1,206 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"fpr",
+				"fprintf"
+			],
+			[
+				"ta",
+				"tableau"
+			],
+			[
+				"st",
+				"stdio.h"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"pasc",
+				"Set Syntax: Pascal"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"pas",
+				"Package Control: Disable Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/User/Downloads/Doc/Doc mio/ALGO/Tp pascal/EXO 1/bb jatou.pas",
+		"/C/Users/User/Downloads/Doc/Doc mio/ALGO/Tp pascal/exo o.pas",
+		"/C/Users/User/Downloads/Doc/Doc mio/PASCAL/Algorithme et Programmation phase final/Exercices/tp1.pas",
+		"/C/Users/User/Desktop/Semestre 1/TD programmation/Passe temps/les_pointeurs.pas",
+		"/C/Users/User/Desktop/Semestre 1/TD programmation/Passe temps/les pointeurs.pas",
+		"/C/Users/User/Desktop/TD programmation/test demande2.pas",
+		"/C/Users/User/Desktop/TD programmation/test dv.pas",
+		"/C/Users/User/Desktop/TD programmation/Algo 3.1/Affichage.pas",
+		"/C/Users/User/Desktop/TD programmation/Algo 3.1/exo 2.pas",
+		"/C/Users/User/Desktop/Examen_2020_exo_3.pas",
+		"/C/Users/User/Desktop/Procedures.pas",
+		"/C/Users/User/Desktop/TD programmation/TD4/f.c",
+		"/C/Users/User/Desktop/TD programmation/Passe temps/les nombres d'un entier.cpp",
+		"/C/Users/User/Desktop/TD programmation/Passe temps/les_infs.cpp",
+		"/C/Users/User/Desktop/sup.pas",
+		"/C/Users/User/Desktop/Somme des nombres.pas"
+	],
+	"find":
+	{
+		"height": 0.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "realloc.sublime-project",
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 227.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
