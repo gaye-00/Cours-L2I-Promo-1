@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<logiciel Comptabilite>
+    <version>1</version>
+    <user>
+        <uid>abalde</uid>
+    </user>
+    <contact>
+        <lastName>Balde</lastName>
+        <firstName>Ansou</firstName>
+        <email>ansoubalde@exemple.com</email>
+    </contact>
+    <author auId="eseye" lastName="Seye" firstName="Elhadj" organism="">
+        <company>
+            <labId>15</labId>
+            <name>Analyse informatique des Données & Information</name>
+            <shortName></shortName>
+        </company>
+    </author>
+    <author autId="adiallo" lastName="Diallo" firstName="Abdoulaye" firstName="Thierno" organism="">
+        <company>
+            <labId>20</labId>
+            <name>La compta en vogue</name>
+            <shortName>Vogue la compta</shortName>
+        </company>
+        <company>
+            <labId>13</labId>
+            <name>En avant les chiffres</name>
+            <shortName>EAC</shortName>
+        </company>
+    </author>
+</logiciel Comptabilite>
+<date_mise_en_service>
+    20023-06-28
+</date_mise_en_service>

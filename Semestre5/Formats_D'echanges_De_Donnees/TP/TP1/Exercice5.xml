@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bibliotheque>
+    <livre titre="" authorvide="" edithor="">
+        <editionYear></editionYear>
+        <nbPage></nbPage>
+        <partie>
+            <numberPage></numberPage>
+            <title></title>
+        </partie>
+        <contenantPage numberPage="" title="">
+        </contenantPage>
+    </livre>
+</bibliotheque>

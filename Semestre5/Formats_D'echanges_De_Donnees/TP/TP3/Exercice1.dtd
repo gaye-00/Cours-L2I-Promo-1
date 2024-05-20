@@ -1,0 +1,7 @@
+<!ELEMENT tableau (etudiant+)>
+<!ELEMENT etudiant (nom, prenom, cc, examen, moy)>
+<!ELEMENT nom (#PCDATA)>
+<!ELEMENT prenom (#PCDATA)>
+<!ELEMENT cc (#PCDATA)>
+<!ELEMENT examen (#PCDATA)>
+<!ELEMENT moy (#PCDATA)>

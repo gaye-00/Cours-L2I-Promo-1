@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class>
+    <student>
+        <id>001</id>
+        <firstname>Mamadou</firstname>
+        <lastname>Ndiaye</lastname>
+        <subject>Math</subject>
+        <marks>15</marks>
+    </student>
+    <student>
+        <id>002</id>
+        <firstname>Aliou</firstname>
+        <lastname>Seck</lastname>
+        <subject>Chimie</subject>
+        <marks>13</marks>
+    </student>
+    <student>
+        <id>003</id>
+        <firstname>Sokhna</firstname>
+        <lastname>Fall</lastname>
+        <subject>Anglais</subject>
+        <marks>17</marks>
+    </student>
+    <student>
+        <id>004</id>
+        <firstname>Arame</firstname>
+        <lastname>Gueye</lastname>
+        <subject>Physique</subject>
+        <marks>14</marks>
+    </student>
+</class>

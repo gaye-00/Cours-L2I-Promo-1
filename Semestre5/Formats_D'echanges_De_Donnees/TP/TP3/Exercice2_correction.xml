@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE repertoire SYSTEM "repertoire.dtd">
+<!-- <!DOCTYPE repertoire SYSTEM "fichierAutreEtudiant.dtd"> -->
+<repertoire>
+  <categorie nom="1-perso">
+    <contact nom="desvignes" prenom="nicole">
+      <bureau telephone="0234542312" adresse="2 rue de l'espoir 44566 Chignole" />
+      <maison telephone="0870754566" adresse="2 rue de l'espoir 44566 Chignole" />
+    </contact>
+    <contact nom="fonteau" prenom="jeremie">
+
+      <bureau telephone="0465345622" adresse="54 bd de la liberte 65444 jalibert"> Batiment 6,Porte shhh 5,Bureau 304 </bureau>
+      <maison telephone="0445879044" adresse="6bis avenue Jean Charcot 65322 St Mazan" />
+    </contact>
+  </categorie>
+  <categorie nom="2-travail">
+    <contact nom="martin" prenom="paul">
+      <bureau telephone=" 0245664442" adresse="5 rue de l'epine 45665 Astorie"
+        courriel="paul.martin@gmail.com" fax="0245664412" />
+    </contact>
+    <contact nom="batiset" prenom="raymond">
+      <bureau telephone="0248666445" adresse="5 rue de l'epine 45665 Astorie"
+        courriel="rbatisset@free.fr" />
+    </contact>
+    <contact nom="fonteau" prenom="paul">
+      <bureau telephone="0345678966" adresse="34 chemin de la fraise 56789 Gheno"
+        email="paul-fonteau@yahoo.fr" />
+      <maison telephone="0256780032" adresse="11 rue du petit plaisir 56888Trigonet" />
+    </contact>
+  </categorie>
+</repertoire>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resume>
+  <personal_information>
+    <full_name>John Doe</full_name>
+    <email>john.doe@example.com</email>
+    <phone>123-456-7890</phone>
+    <address>
+      <street>123 Main Street</street>
+      <city>New York</city>
+      <state>NY</state>
+      <zip>10001</zip>
+    </address>
+  </personal_information>
+
+  <summary>
+    Experienced software engineer with a strong background in web development and a passion for creating efficient and user-friendly applications.
+  </summary>
+
+  <education>
+    <degree>Bachelor of Science in Computer Science</degree>
+    <university>University of XYZ</university>
+    <graduation_year>2020</graduation_year>
+  </education>
+
+  <experience>
+    <job>
+      <title>Software Engineer</title>
+      <company>ABC Tech Solutions</company>
+      <location>New York, NY</location>
+      <start_date>2018-01-01</start_date>
+      <end_date>2021-12-31</end_date>
+      <description>
+        Worked on the development of web applications, collaborated with cross-functional teams, and successfully delivered high-quality software products.
+      </description>
+    </job>
+
+    <job>
+      <title>Frontend Developer</title>
+      <company>Web Solutions Inc.</company>
+      <location>San Francisco, CA</location>
+      <start_date>2016-03-15</start_date>
+      <end_date>2017-12-31</end_date>
+      <description>
+        Developed responsive and user-friendly web interfaces, collaborated on design and usability improvements, and conducted code reviews.
+      </description>
+    </job>
+  </experience>
+
+  <skills>
+    <programming_languages>
+      <language>JavaScript</language>
+      <language>Python</language>
+      <language>Java</language>
+    </programming_languages>
+    <web_technologies>
+      <technology>HTML5</technology>
+      <technology>CSS3</technology>
+      <technology>React</technology>
+    </web_technologies>
+  </skills>
+</resume>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<body>
+    <!-- une note-->
+    <note date="3 janvier">
+        <to>Ndiaye</to>
+        <from>Samb</from>
+        <heading>Rappel</heading>
+        <body>Ne m'oublie pas ce weekend!</body>
+    </note>
+    <!-- une autre note-->
+    <note>
+        <to>Samb</to>
+        <from>Ndiaye</from>
+        <body>Pas de prolème et à bientôt !</body>
+    </note>
+</body>

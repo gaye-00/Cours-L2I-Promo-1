@@ -1,0 +1,18 @@
+<!ELEMENT repertoire (categorie*)>
+<!ELEMENT categorie (contact*)>
+<!ATTLIST categorie nom ID #REQUIRED>
+<!ELEMENT contact (bureau, maison?)>
+<!ATTLIST contact
+	nom ID #REQUIRED
+	prenom CDATA #REQUIRED>
+<!ELEMENT bureau EMPTY>
+<!ATTLIST bureau
+	telephone CDATA #REQUIRED
+	adresse CDATA #REQUIRED
+	courriel CDATA #IMPLIED
+	fax CDATA #IMPLIED>
+<!ELEMENT maison EMPTY>
+<!ATTLIST maison
+	telephone CDATA #REQUIRED
+	adresse CDATA #REQUIRED
+	courriel CDATA #IMPLIED>

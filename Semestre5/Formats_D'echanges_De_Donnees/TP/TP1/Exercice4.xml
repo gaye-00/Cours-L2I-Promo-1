@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bibliotheque>
+    <livre>
+        <titre></titre>
+        <authorvide>
+            <auteur></auteur>
+            <auteur></auteur>
+        </authorvide><numberPage></numberPage>
+        <title></title>
+        <edithor></edithor>
+        <editionYear></editionYear>
+        <nbPage></nbPage>
+        <parties>
+            <partie>
+                <chapitres>
+                    <chapitre>
+                        <numberPage></numberPage>
+                        <title></title>
+                    </chapitre>
+                </chapitres>
+            </partie>
+        </parties>
+        <contenantPage>
+            <numberPage></numberPage>
+            <title></title>
+        </contenantPage>
+    </livre>
+</bibliotheque>

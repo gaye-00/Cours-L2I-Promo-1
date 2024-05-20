@@ -1,0 +1,27 @@
+1- <!ELEMENT projet (tache | personne)*>
+A, B, C, E, F, G, H
+
+2- <!ELEMENT projet (tache* | personne*)>
+B, G, H
+
+3- <!ELEMENT projet (tache+ | personne*)>
+B, H
+
+4- <!ELEMENT projet (tache, personne)*>
+A, B, C, E, F
+
+5- <!ELEMENT projet (tache, personne+)*>
+C, E, 
+
+6- <!ELEMENT projet (tache | personne+)*>
+A, B, C, E, F, G, H
+
+7- <!ELEMENT projet (tache | personne+)>
+G, H
+
+8- <!ELEMENT projet (tache? | personne+)>
+F, G
+
+
+<!ELEMENT projet (tache, personne)*>
+<!ELEMENT projet (tache*, personne*)>

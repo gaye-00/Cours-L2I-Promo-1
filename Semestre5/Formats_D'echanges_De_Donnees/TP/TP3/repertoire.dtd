@@ -1,0 +1,42 @@
+<!ELEMENT repertoire (categorie+)>
+<!ELEMENT categorie (contact*)>
+<!ATTLIST categorie nom CDATA #REQUIRED>
+<!ELEMENT contact (bureau ,maison?)>
+<!ATTLIST contact
+    nom CDATA #REQUIRED
+    prenom CDATA #REQUIRED>
+<!ELEMENT bureau (#PCDATA)>
+<!ATTLIST bureau
+    telephone CDATA #REQUIRED
+    adresse CDATA #REQUIRED
+    courriel CDATA #IMPLIED
+    fax CDATA #IMPLIED
+    email CDATA #IMPLIED>
+<!ELEMENT maison (#PCDATA)>
+<!ATTLIST maison
+    telephone CDATA #REQUIRED
+    adresse CDATA #REQUIRED
+    >
+
+
+<!--  
+    <!ELEMENT repertoire (categorie*)>
+<!ELEMENT categorie (contact*)>
+<!ATTLIST categorie
+           nom  CDATA  #REQUIRED>
+<!ELEMENT contact (bureau | maison )+>
+<!ATTLIST contact
+          nom CDATA #REQUIRED
+          prenom CDATA #REQUIRED>
+<!ELEMENT bureau (#PCDATA)>
+<!ATTLIST bureau
+          adresse CDATA #REQUIRED
+          courriel CDATA #IMPLIED
+          email CDATA #IMPLIED
+          fax CDATA #IMPLIED
+          telephone CDATA #REQUIRED>
+<!ELEMENT maison (#PCDATA)>
+<!ATTLIST maison
+          adresse CDATA #REQUIRED
+          telephone CDATA #REQUIRED >
+ -->

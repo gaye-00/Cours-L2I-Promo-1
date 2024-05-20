@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<personnes>
+    <personne>
+        <numero></numero>
+        <nom></nom>
+        <prenom></prenom>
+        <adresse></adresse>
+        <prefession></prefession>
+    </personne>
+
+    <personne>
+        <numero></numero>
+        <nom></nom>
+        <prenom></prenom>
+        <adresse></adresse>
+        <prefession></prefession>
+    </personne>
+</personnes>
