@@ -2,6 +2,10 @@
 
 Bienvenue dans le repository des cours de la première promotion de la Licence en Ingénierie Informatique (L2I). Vous trouverez ici l'ensemble des cours organisés par année et semestre.
 
+## Pour télécharger tous les documents
+
+Appuyez sur le bouton vert **<> Code** puis téléchargez-le en fichier Zip.
+
 ## Structure du repository
 
 Ce repository contient les cours de la Licence en Ingénierie Informatique répartis sur trois années académiques.
